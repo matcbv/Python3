@@ -1,6 +1,7 @@
-# Um closure é uma função, contida dentro de outra função, armazenada em um objeto chamável.
-# Esse objeto, quando chamado em forma de função, irá retornar o resultado da função armazenada,
-# mantendo as variáveis que recebeu da função pai 'vivas'.
+# Um closure é uma função, contida dentro de outra função, que faz referência a variáveis
+# internas/externas de seu escopo. Referenciamos as closures a objetos,
+# que quando chamados em forma de função, irão retornar o resultado da função armazenada,
+# mantendo as variáveis que recebeu da função pai ou que foram passadas através da chamada.
 
 def chamadaFila(id, nome):
     def chamar():
