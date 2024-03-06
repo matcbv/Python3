@@ -1,6 +1,5 @@
 # Caso quisermos dar continuidade na contagem de um gerador por outro gerador,
 # podemos utilizar o método yield from.
-
 def gerador01():
     yield 1
     yield 2
