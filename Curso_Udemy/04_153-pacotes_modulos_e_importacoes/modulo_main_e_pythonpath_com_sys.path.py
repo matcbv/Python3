@@ -13,14 +13,14 @@ print(sys.path)
 
 # O primeiro módulo executado pelo Python chama-se main, sendo o ponto inicial do seu programa.
 # Já os importados terão o nome do próprio módulo.
-import modulo
+import modulo_secundario
 print('Este módulo se chama:', __name__)
-# Caso formos no modulo.py e dermos um print com __name__, veremos que se chamará main,
+# Caso formos no modulo_secundario.py e dermos um print com __name__, veremos que se chamará main,
 # pois ele será o módulo inicial daquela execução.
 
 # Quando um módulo é importado, ele é executado automaticamente.
 # Dessa maneira, o Pytho irá executar tudo o que for possível de imediato, como um comando print(),
 # mas não uma função, por exemplo.
 
-soma = modulo.somar(2, 3)
+soma = modulo_secundario.somar(2, 3)
 print(soma)
