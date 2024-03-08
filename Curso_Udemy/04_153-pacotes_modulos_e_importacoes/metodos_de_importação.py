@@ -14,3 +14,8 @@ from time import sleep as soneca
 # Dessa maneira, teremos duas opções de chamada:
 tempo.sleep(1)
 soneca(1)
+
+# Também conseguimos importar o próprio pacote que contém os módulos. Ex.:
+# Obs.: Acesse o módulo __ini__ do exportacao_de_modulos_04_153 para entender melhor.
+from exportacao_de_modulos_04_153 import msg
+print(msg)
