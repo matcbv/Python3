@@ -4,12 +4,13 @@
 
 lista_numeros = (num for num in range(10))
 
-# No exemplo acima, o primeiro num se refere ao nome do parâmetro do for, sendo o mesmo que:
+# No exemplo acima, o primeiro parâmetro num refere-se a expressão que iremos adicionar através do for,
+# sendo o mesmo que:
 # for num in range(10):
 #     lista_numeros.append(num)
 
 # -------# Mapeamento de dados em list comprehension #-------
-# O mapeamento em list comprehension é a aplicação de uma função a cada elemento de uma sequência
+# O mapeamento em list comprehension é a aplicação de uma função para cada elemento de uma sequência
 # (como uma lista) para criar uma nova sequência.
 produtos = [
     {'nome': 'p1', 'preco': 30},

@@ -4,7 +4,7 @@ from sys import getsizeof
 # Obs.: Todo generator é também um iterator, mas não o contrário.
 
 # Estaremos demonstrando abaixo um exemplo do descrito acima:
-# Uma lista armazena é armazenada por inteiro na memória, enquanto o gerador gera elemento por elemento.
+# Uma lista é armazenada por inteiro na memória, enquanto o gerador gera elemento por elemento.
 lista = [num for num in range(100)]
 # Um gerador é criado por parênteses junto de um iterável.
 gerador = (num for num in range(100))

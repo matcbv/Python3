@@ -1,11 +1,15 @@
 import os
 
-caminho = "H:\\GitHub\\Python3\\Udemy\\banco_de_dados"
-arqProc = 'texto.txt'
+caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\busca_arquivos"
+arqProc = 'dados.txt'
 
 for diretorio_atual, subdiretorios, arquivos in os.walk(caminho):
     for arquivo in arquivos:
+        # Com o método join, iremos unificar dois elementos em um só caminho.
+        print(diretorio_atual, subdiretorios, arquivos, sep='-----')
+        print('-' * 60)
         caminho_completo = os.path.join(diretorio_atual, arquivo)
+        # Com o método splitext, separamos o nome do arquivo de sua extensão, armazenando-os em duas variáveis
         arqAtual, ext = os.path.splitext(arquivo)
         if arqAtual == arqProc:
             print('O diretório atual é:', diretorio_atual)
