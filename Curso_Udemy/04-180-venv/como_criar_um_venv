@@ -1,0 +1,28 @@
+Estaremos criando um venv no diretório chamado 04_180_diretorio.
+
+O comando inicial é este:
+
+python -m venv "nome_ambiente_virtual"
+
+-m irá rodar nosso módulo venv, responsável por gerenciar
+ambientes virtual, como um script
+
+venv é a biblioteca padrão do Python responsável por criar e gerenciar ambientes virtuais.
+
+"nome_ambiente_virtual" é o nome do ambiente virtual que iremos utilizar. Podemos colocar qualquer
+nome que vir em mente, porém o padrão é sempre utilizarmos venv ou env.
+
+Para verificarmos o interpretador Python que está sendo utilizado em um projeto, podemos utilizar
+o seguinte comando no powershell:
+
+gcm python
+
+Para ativarmos o ambiente virtual local, devemos acessar o script activate, contido dentro da pasta
+Scripts. Ex.:
+
+venv\Scripts\activate
+
+Para desativarmos o ambiente local e utilizarmos o interpretador global, basta sairmos do script
+activate. Isso é feito através do comando:
+
+deactivate

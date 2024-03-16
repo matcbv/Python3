@@ -1,0 +1,14 @@
+Um venv é uma pasta que possui um ambiente virtual contendo todos os elementos necessários para rodar
+um projeto Python. Alguns exemplos de elementos são: a pasta Lib, que conterá todos os pacotes externos
+que forem baixados no projeto, e a pasta Scripts, que conterá todos os scripts de ativação e
+desativação do seu ambiente virtual, como o executável pip.exe, responsável pelo gerenciamento dos
+pacotes do projeto e o próprio executável python.exe.
+
+Ao criarmos um ambiente virtual, uma cópia do interpretador python (python.exe) é criada dentro da
+pasta Scripts. Essa cópia terá a versão da cópia original no momento em que foi criada. Será essa cópia
+do interpretador que será utilizado ao rodarmos nosso projeto.
+
+Um ambiente virtual é responsável por isolar o projeto, onde cada um trabalhará com suas próprias
+versões de interpretador e pacotes, sem interferir no interpretador Python global. Isso evita possíveis
+incompatibilidades e permitirá que opere
+sem problemas.
