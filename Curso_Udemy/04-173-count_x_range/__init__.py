@@ -16,3 +16,11 @@ for c in contador:
     if c == 100:
         break
     print(contador)
+
+# Ao contrário do método range, não podemos definir um fim para o método count,
+# somente um ínicio e um salto. Ex.:
+
+# Nesse contador, estaremos exibindo somente os números pares, iniciando a contagem em 0 e pulando a cada 2.
+contador = count(0, 2)
+# Já abaixo, teremos um range que irá começar no 0, pulando a cada dois, contando até o número 100.
+contagem_range = range(0, 2, 100)

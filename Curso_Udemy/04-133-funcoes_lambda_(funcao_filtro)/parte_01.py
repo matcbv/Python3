@@ -23,6 +23,6 @@ lista_para_filtro.sort(key=lambda item: item['nome'])
 print(lista_para_filtro)
 
 # A estrutura delas se trada da seguinte forma:
-# lambda (palavra-chave) (nome do(s) parâmetro(s): (return com as operações dos parâmetros)
+# lambda + argumento: expressão
 # As funções lambda são aconselhadas para uso ao lidar com chaves para ordenamento ou para
 # trabalharmos/retornar valores no interior de funções def.
