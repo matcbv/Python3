@@ -1,0 +1,27 @@
+pip é um script é uma ferramenta externa integrada com script em nosso ambiente virtual. Ele é
+responsável por adicionar e gerenciar pacotes externos contidos no repositório online pypi.org.
+Podemos instalar um pacote externo em nosso projeto através do comando:
+
+python -m pip install "nome_pacote" ou simplesmente pip install "nome_pacote"
+Obs.: A primeira opção é mais completa, podendo gerar menos erros.
+
+Podemos atualizar um pacote através do comando:
+
+pip install "nome_pacote" --upgrade
+
+Para desinstalarmos um pacote de nosso projeto podemos utilizar:
+
+pip uninstall "nome_pacote" -y (-y confirma que desejamos desinstalar o pacote)
+
+Para checarmos todos os pacotes que temos instalado em nosso projeto, utilizamos o comando:
+
+pip freeze
+
+Podemos instalar uma versão de nossa escolha para um pacote externo. Podemos checar as versões
+disponíveis através do comando:
+
+pip index versions "nome_pacote"
+
+Após isso, para baixarmos a versão desejada, basta utilizar o comando:
+
+pip install "nome_pacote"==x.x.x (x.x.x = número da versão)
