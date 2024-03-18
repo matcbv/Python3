@@ -25,3 +25,7 @@ pip index versions "nome_pacote"
 Após isso, para baixarmos a versão desejada, basta utilizar o comando:
 
 pip install "nome_pacote"==x.x.x (x.x.x = número da versão)
+
+Caso desejemos saber mais informações sobre um pacote externo, basta utilizar o comando:
+
+pip show "nome_pacote"

@@ -1,0 +1,13 @@
+JSON é um formato de dados (não uma linguagem de programação) responsável por salvar e enviar entre servidor
+e cliente. A linguagem JSON não aceita todos os objetos que o Python oferece. A seguir veremos todos os objetos
+que a linguagem JSON pode converter da linguagem Python:
+
+- Int / float
+- Strings
+- Dicionários
+- Tuplas
+- Listas
+- Boolean
+- Null
+
+Ao converter para JSON, os dicionários serão objetos, e as listar e tuplas serão arrays.

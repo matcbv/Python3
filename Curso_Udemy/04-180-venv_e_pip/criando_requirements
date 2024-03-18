@@ -1,0 +1,15 @@
+Através do pip, podemos criar um arquivo de texto com os requerimentos para rodar nosso projeto.
+Por padrão, damos o nome a ele de requirements. Para isso, utilizamos o comando:
+
+pip freeze > "nome_arquivo" (requirements)
+
+Para atualizarmos nosso requirements, basta rodarmos o mesmo código acima, informando o nome exato
+do arquivo criado.
+
+Para realizarmos a instalação dos pacotes contidos em requirements, utilizamos o seguinte comando:
+
+pip install -r "nome_arquivo"
+Obs.: -r indica que estamos lidando com um arquivo de requerimentos.
+
+Dessa forma, podemos possuir os mesmos pacotes em diferentes ambientes virtuais, porém com versões
+diferentes em cada um dos ambientes.
