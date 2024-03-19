@@ -45,9 +45,9 @@ caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos\\ban
 # Exemplo com algumas das funções citadas anteriormente:
 # Obs.: IMPORTANTE!!! Sempre utilize o UTF-8 através do argumento encondig, para que o arquivo seja aberto em
 # formato UTF-8, aceitado acentuações, etc.
-with open(caminho, 'w+', encoding='utf-8') as arquivo:
+with open(caminho, 'r+', encoding='utf-8') as arquivo:
     arquivo.write('Olá, mundo!\n')
-    arquivo.writelines(('Este ', 'e ', 'um ', 'iterável ', 'contendo ', 'strings '))
+    arquivo.writelines(('Este\n', 'é\n', 'um\n', 'iterável\n', 'contendo\n', 'strings\n'))
     arquivo.seek(0, 0)
     print(arquivo.read())
     arquivo.seek(0, 0)
