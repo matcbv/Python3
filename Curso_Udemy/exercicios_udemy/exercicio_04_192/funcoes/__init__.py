@@ -1,14 +1,7 @@
+import os
+
 path = "H:\\GitHub\\Python3\\Curso_Udemy\\exercicios_udemy\\exercicio_04_192\\banco_de_dados"
 historico_respostas = []
-
-
-def verifica_resposta(resp):
-    lista_resp = ['desfazer', 'refazer', 'excluir', 'listar', 'limpar']
-    if resp not in lista_resp:
-        historico_respostas.append(resp)
-        adicionar_dados(resp)
-    else:
-        chama_funcao(resp)
 
 
 def chama_funcao(resp):
@@ -21,12 +14,15 @@ def chama_funcao(resp):
             desfazer_dados()
         case 'excluir':
             excluir_dados()
+        case 'limpar':
+            limpar_tela()
 
 
 def adicionar_dados(dados):
     historico_respostas.append(dados)
     with open(path, 'a', encoding='utf-8') as arquivo:
         arquivo.write(f'{dados}\n')
+        print(dados, 'foi adicionado ao banco de dados.')
 
 
 def refazer_dados():
@@ -52,9 +48,12 @@ def desfazer_dados():
 
 
 def listar_dados():
-    with open(path, 'r', encoding='utf-8') as arquivo:
-        print()
-        print(arquivo.read())
+    if not historico_respostas:
+        print('O banco de dados está vazio.')
+    else:
+        with open(path, 'r', encoding='utf-8') as arquivo:
+            print()
+            print(arquivo.read())
 
 
 def excluir_dados():
@@ -72,3 +71,7 @@ def excluir_dados():
 
     with open(path, 'w', encoding='utf-8') as arquivo:
         arquivo.writelines(lista_dados)
+
+
+def limpar_tela():
+    os.system('cls')
