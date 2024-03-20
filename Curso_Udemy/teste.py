@@ -16,10 +16,5 @@ print(lista_de_tuplas)
 for e in lista_de_tuplas:
     print(e)
 
-
-def multiplica_10(num1, num2):
-    return num1 * num2
-
-
-nova_funcao = partial(multiplica_10, num2=10)
+nova_funcao = partial(lambda num1, num2: num1 * num2, num2=10)
 print(nova_funcao(2))
