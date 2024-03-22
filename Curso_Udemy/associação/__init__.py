@@ -9,7 +9,7 @@ class ClasseQualquer:
 
 
 instanciaQualquer = ClasseQualquer()
-# Ao atribuirmos uma classe (Associar()) a um atributo de uma instância (txt) de outra classe,
-# esse atributo recebe todos os métodos e atributos da classe associada:
+# Ao atribuirmos uma 05-198-classes (Associar()) a um atributo de uma instância (txt) de outra 05-198-classes,
+# esse atributo recebe todos os métodos e atributos da 05-198-classes associada:
 instanciaQualquer.txt = Associar()
 print(instanciaQualquer.txt.msg)

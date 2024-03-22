@@ -1,5 +1,5 @@
 # A função isinstance() é uma função embutido do Python responsável por verificar se um objeto pertence
-# a uma determinada classe. Ex.:
+# a uma determinada 05-198-classes. Ex.:
 
 lista = [1, 1.1, 'texto', {'chave': 'valor'}, (1, 'a'), [1, 2]]
 

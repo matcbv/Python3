@@ -1,4 +1,4 @@
-# Aqui veremos quais valores retornam False para cada tipo de classe em Python.
+# Aqui veremos quais valores retornam False para cada tipo de 05-198-classes em Python.
 lista = []  # Uma lista vazia retorna False.
 dicionario = {}  # Um dicionário vazio retorna False.
 conjunto = set()  # Um conjunto vazio retorna False.

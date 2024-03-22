@@ -1,6 +1,6 @@
 # Na composição, a relação entre as classes é ainda mais forte do que na agregação,
-# onde uma classe é composta por uma ou mais instâncias de outras classes,
-# e essas instâncias são geralmente criadas e gerenciadas internamente pela classe dominante.
+# onde uma 05-198-classes é composta por uma ou mais instâncias de outras classes,
+# e essas instâncias são geralmente criadas e gerenciadas internamente pela 05-198-classes dominante.
 # A composição implica uma relação de todo-parte
 # aonde as partes não existem independentemente do todo.
 class Funcionario:
@@ -43,8 +43,8 @@ empresa.contratar(funcionario3)
 # Listando os funcionários da empresa
 empresa.listar_funcionarios()
 
-# Neste exemplo, a classe Empresa é composta por uma lista de funcionários.
+# Neste exemplo, a 05-198-classes Empresa é composta por uma lista de funcionários.
 # A existência dos funcionários está diretamente ligada à existência da empresa.
 # Se a empresa deixar de existir, os funcionários associados a ela também deixarão de existir.
-# Isso demonstra a composição de classes, onde uma classe é composta por instâncias de outras classes,
-# e a existência das instâncias compostas está intrinsecamente ligada à existência da classe dominante.
+# Isso demonstra a composição de classes, onde uma 05-198-classes é composta por instâncias de outras classes,
+# e a existência das instâncias compostas está intrinsecamente ligada à existência da 05-198-classes dominante.
