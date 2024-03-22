@@ -1,4 +1,4 @@
-# Uma 05-198-classes se torna agregada a outra se a associação entre elas é vital para seu funcionamento.
+# Uma 05-198-classes_metodos_instancias_e_atributos se torna agregada a outra se a associação entre elas é vital para seu funcionamento.
 class VerifDivisor:
 
     def __init__(self):
@@ -32,5 +32,5 @@ divisao.dividir()
 
 # Nesse exemplo acima, as funções ‘Divisao’ e ‘VerifDivisao’ podem existir por si mesmas,
 # porém para serem completamente funcionais, precisam umas das outras.
-# Assim como a 05-198-classes ‘Divisao’ poderia receber um divisor inválido,
-# a 05-198-classes ‘VerifDivisao’ recebe o divisor a ser verificado com o auxílio da 05-198-classes ‘Divisao’.
+# Assim como a 05-198-classes_metodos_instancias_e_atributos ‘Divisao’ poderia receber um divisor inválido,
+# a 05-198-classes_metodos_instancias_e_atributos ‘VerifDivisao’ recebe o divisor a ser verificado com o auxílio da 05-198-classes_metodos_instancias_e_atributos ‘Divisao’.

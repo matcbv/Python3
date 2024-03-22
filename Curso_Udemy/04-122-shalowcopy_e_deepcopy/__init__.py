@@ -3,7 +3,7 @@
 # enquanto mutáveis (listas, dicionários, etc.) também serão associadas entre o dicionário e o objeto em questão.
 # Esse evento é chamado de shallow copy (cópia rasa).
 # Caso desejemos que todos os elementos do nosso dicionário sejam copiados,
-# devemos importar a 05-198-classes copy, e utilizar o método deepcopy(‘dicionario’).
+# devemos importar a 05-198-classes_metodos_instancias_e_atributos copy, e utilizar o método deepcopy(‘dicionario’).
 from copy import deepcopy
 
 lista01 = [1, 2, 3, {'Número final': 999}]

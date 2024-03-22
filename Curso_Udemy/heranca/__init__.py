@@ -1,7 +1,7 @@
-# Na herança de classes, uma 05-198-classes herda todos os métodos e atributos da outra.
-# A 05-198-classes herdeira é chamada de subclasse, enquanto a que fornece os métodos e atributos
+# Na herança de classes, uma 05-198-classes_metodos_instancias_e_atributos herda todos os métodos e atributos da outra.
+# A 05-198-classes_metodos_instancias_e_atributos herdeira é chamada de subclasse, enquanto a que fornece os métodos e atributos
 # é chamada de superclasse. É importante frisar que as subclasses podem possuir métodos e atributos próprios.
-# A superclasse será a 05-198-classes que possuir os objetos mais generalizados,
+# A superclasse será a 05-198-classes_metodos_instancias_e_atributos que possuir os objetos mais generalizados,
 # e nunca irá herdar nada das subclasses, somente prover.
 
 
@@ -32,6 +32,6 @@ trabalhador = Empregado('Lucas', 18)
 trabalhador.caminhar()
 trabalhador.trabalhar()
 
-# No exemplo acima, percebemos que a 05-198-classes ‘Aluno’ e ‘Empregado’
-# herdam os métodos e atributos da 05-198-classes ‘Pessoa’,
+# No exemplo acima, percebemos que a 05-198-classes_metodos_instancias_e_atributos ‘Aluno’ e ‘Empregado’
+# herdam os métodos e atributos da 05-198-classes_metodos_instancias_e_atributos ‘Pessoa’,
 # porém ainda possuem seus próprios métodos (‘estudar’ e ‘trabalhar’).
