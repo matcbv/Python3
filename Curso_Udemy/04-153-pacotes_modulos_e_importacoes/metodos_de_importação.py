@@ -1,5 +1,5 @@
 # Um módulo é um executável (.py), que pode conter definições de 05-198-classes_metodos_instancias_e_atributos, método, variáveis e um código executável.
-# Um pacote é basicamente um diretório que contém um módulo __init__.py, podendo conter também outros módulos.
+# Um pacote é basicamente um diretório que contém um módulo criando_classes_metodos_e_instancias.py, podendo conter também outros módulos.
 # Podemos importar módulos de classes de diferentes maneiras:
 # import "nome_da_classe": dessa maneira, importamos todos os métodos dessa 05-198-classes_metodos_instancias_e_atributos.
 # from "nome_da_classe" import "nome do método": desse modo, importamos somente um

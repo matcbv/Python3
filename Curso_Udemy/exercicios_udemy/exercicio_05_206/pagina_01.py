@@ -11,3 +11,7 @@ class ListaPessoas:
 pessoa = ListaPessoas('Matheus', 'Cerqueira', 21)
 dados_pessoa = pessoa.__dict__
 funcoes.converter_para_JSON(dados_pessoa)
+
+dados_revertidos = funcoes.reverter_JSON()
+print(dados_revertidos)
+
