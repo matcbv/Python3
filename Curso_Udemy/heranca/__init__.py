@@ -1,8 +1,8 @@
-# Na herança de classes, uma 05-198-classes_metodos_instancias_e_atributos herda todos os métodos e atributos da outra.
-# A 05-198-classes_metodos_instancias_e_atributos herdeira é chamada de subclasse, enquanto a que fornece os métodos e atributos
-# é chamada de superclasse. É importante frisar que as subclasses podem possuir métodos e atributos próprios.
-# A superclasse será a 05-198-classes_metodos_instancias_e_atributos que possuir os objetos mais generalizados,
-# e nunca irá herdar nada das subclasses, somente prover.
+# Na herança de classes, uma 05-198-classes_metodos_instancias_e_atributos herda todos os métodos e atributos da
+# outra. A 05-198-classes_metodos_instancias_e_atributos herdeira é chamada de subclasse, enquanto a que fornece os
+# métodos e atributos é chamada de superclasse. É importante frisar que as subclasses podem possuir métodos e
+# atributos próprios. A superclasse será a 05-198-classes_metodos_instancias_e_atributos que possuir os objetos mais
+# generalizados, e nunca irá herdar nada das subclasses, somente prover.
 
 
 class Pessoa:
