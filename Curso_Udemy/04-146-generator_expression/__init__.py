@@ -1,7 +1,7 @@
 from sys import getsizeof
 
 # Um generator é uma função capaz de pausar durante o decorrer da iteração.
-# Obs.: Todo generator é também um iterator, mas não o contrário.
+# Obs.: Um generator é também um iterator, mas não o contrário.
 
 # Estaremos demonstrando abaixo um exemplo do descrito acima:
 # Uma lista é armazenada por inteiro na memória, enquanto o gerador gera elemento por elemento.
