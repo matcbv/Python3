@@ -2,7 +2,7 @@
 # Isso permite uma chamada mais coesa da função, principalmente quando existem muitos parâmetros nela.
 # Caso seja necessário alterar o valor de algum dos parâmetros, basta alterarmos na função criada pelo
 # método partial.
-from _functools import partial
+from functools import partial
 
 
 def func_calc_juros(val_inicial, num_parcelas, juros_parcela, entrada):
