@@ -1,0 +1,17 @@
+A herança de classes é responsável por extender uma classe em outra(s). Quando uma classe herda outra,
+ela recebe todos os métodos e atributos da anterior.
+
+Chamamos a classe principal de:
+ - superclass;
+ - base class;
+ - parent class
+
+Chamamos as classes herdeiras de:
+ - subclass;
+ - child class;
+ - derived class
+
+As sub classes são do tipo sub classe, mas também são do tipo superclass, já que as subclasses são uma
+especificação das superclasses.
+
+As heranças são em sua maioria, são feitas para extensão de funcionalidades entre classes.
