@@ -35,12 +35,23 @@ print('-' * 30)
 class A:
     objeto_a = 'A'
 
+    # Quando criamos um método init na superclasse, ele também será herdado nas subclasses.
+    def __init__(self, atributo_a):
+        self.atributo_a = atributo_a
+
     def mensagem(self):
         print('Classe A')
 
 
 class B(A):
     objeto_b = 'B'
+
+    # Caso desejemos criar outro método __init__ específico para nossa subclasse sem que seja prevalecida pelo da
+    # nossa superclasse, devemos utilizar a função super para criar o atributo da superclasse.
+    def __init__(self, atributo_a, atributo_b):
+        # Aqui estaremos passando o argumento atributo_a para nosso método __init__ da superclasse A.
+        super().__init__(atributo_a)
+        self.atributo_b = atributo_b
 
     def mensagem(self):
         print('Classe B')
@@ -55,6 +66,7 @@ class C(B):
         super(B, self).mensagem()
 
 
-obj = C()
+obj = C('atb a', 'atb b')
 print(obj.objeto_a, obj.objeto_b, obj.objeto_c)
 obj.mensagem()
+print(obj.atributo_a, obj.atributo_b, sep='\n')
