@@ -18,7 +18,7 @@ def somar(inicio=0, fim=5):
 
 
 print(somar())
-print('-'*10)
+print('-' * 10)
 
 
 # Um exemplo que se encaixa muito bem no uso de funções recursivas é o cálculo fatorial. Ex.:
@@ -27,13 +27,11 @@ def fatorial(num):
         return 1
     else:
         return num * fatorial(num - 1)
+
+
 # No exemplo acima, retornamos a função fatorial subtraindo 1 do valor de num.
 # Quando num finalmente for 1, retornaremos 1 para o resultado da função anterior, que irá multiplicar
 # o resultado, retornando esse para o resultado da anterior e assim sucessivamente. Ex.:
-# fatorial(3) -> 3 * fatorial(2) -> 2 * fatorial(1) -> 1
-# fatorial(3) -> 3 * fatorial(2) -> 2 * 1
-# fatorial(3) -> 3 * 2
-# fatorial(3) = 6
-
+# fatorial(3) -> 3 * fatorial(2) -> 3 * 2 * fatorial(1) -> 3 * 2 * 1 -> 6
 
 print(fatorial(5))

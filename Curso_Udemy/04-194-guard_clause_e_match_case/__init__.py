@@ -2,7 +2,7 @@
 # Uma das opções para isso é utilizamos o método de Guard Clause.
 # Guard Clause é o nome do termo utilizado para a verificação de determinada condição, por uma declaração
 # condicional no início de uma função. Essa, verifica se determinadas condições são atendidas e, se não
-# forem, interrompe imediatamente a execução da função ou retorna um valor especial. Ex.:
+# forem, interrompe imediatamente a execução da função ou retorna um valor específico. Ex.:
 
 def numero_ou_nao(valor):
     if isinstance(valor, int):

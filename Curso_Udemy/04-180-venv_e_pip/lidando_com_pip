@@ -1,4 +1,4 @@
-pip é um script é uma ferramenta externa integrada com script em nosso ambiente virtual. Ele é
+pip é uma ferramenta externa integrada com script em nosso ambiente virtual. Ele é
 responsável por adicionar e gerenciar pacotes externos contidos no repositório online pypi.org.
 Podemos instalar um pacote externo em nosso projeto através do comando:
 

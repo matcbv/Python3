@@ -9,7 +9,7 @@ from itertools import groupby
 # Para utilizarmos o groupby, os elementos em nossa lista precisam estar ordenados sequencialmente.
 # Caso contrário, o groupby acabará criando grupos de mesmo valor.
 # Ex.: lista = ['a', 'a', 'b', 'b', 'c', 'a'], nesse caso o groupby criará dois grupos de valor a,
-# já que elementes de mesmo valor se encontram separados.
+# já que elementos de mesmo valor se encontram separados.
 lista = ['a', 'b', 'c', 'a', 'a', 'b', 'c', 'b', 'c', 'c']
 lista_organizada = groupby(sorted(lista))
 
@@ -25,6 +25,8 @@ alunos = [
 ]
 print('\n', '-'*60)
 
+# No caso abaixo, passamos uma função lambda como chave. Essa função será aplicada a cada
+# um dos elementos da lista.
 alunos_organizados = sorted(alunos, key=lambda lst: lst['turma'])
 grupos_turma = groupby(alunos_organizados, key=lambda lst: lst['turma'])
 for k, g in grupos_turma:

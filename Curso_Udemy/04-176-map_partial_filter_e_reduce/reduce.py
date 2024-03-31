@@ -23,5 +23,5 @@ print(soma_precos)
 print('-'*10)
 
 # Podemos simplificar o código acima utilizando uma função lambda:
-soma_precos = reduce(lambda acumulador,produto: acumulador + produto['Preço'], lista_produtos, 0)
+soma_precos = reduce(lambda acumulador, produto: acumulador + produto['Preço'], lista_produtos, 0)
 print(soma_precos)

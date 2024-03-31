@@ -5,7 +5,7 @@ O comando inicial é este:
 python -m venv "nome_ambiente_virtual"
 
 -m irá rodar nosso módulo venv, responsável por gerenciar
-ambientes virtual, como um script
+ambientes virtuais, como um script
 
 venv é a biblioteca padrão do Python responsável por criar e gerenciar ambientes virtuais.
 

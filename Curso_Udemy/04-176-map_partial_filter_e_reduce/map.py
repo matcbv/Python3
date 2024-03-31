@@ -16,8 +16,10 @@ def calc_preco(produto):
         return produto['Preço']
 
 
-# O método map irá entregar cada um dos elementos contidos na lista lista_produto para
+# A função map irá entregar cada um dos elementos contidos na lista lista_produto para
 # a função calc_preco.
+# Obs.: Também podemos passar mais de um iterável para o método map.
+# A estrutura da função é: map(função, *iteráveis)
 novos_precos = map(calc_preco, lista_produtos)
 for p in novos_precos:
     print(p)
