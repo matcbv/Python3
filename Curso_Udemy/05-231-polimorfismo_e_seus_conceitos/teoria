@@ -1,0 +1,13 @@
+Polimorfismo é o princípio que permite que classes derivadas de uma superclasse, tenham métodos iguais
+com diferentes comportamentos em cada uma delas. Esse método tem de ter a mesma assinatura para ser
+implementado.
+
+A assinatura de um método, como vimos anteriormente, se baseia no nome e quantidade de parâmetros dele.
+Todavia, existem uma consideração a se levantar. Essa, se trata de um dos princípios da linguagem
+orientada a objeto, o chamado Princípio da Substituição de Liskov.
+
+Esse princípio diz que: Objetos de uma superclasse devem ser substituíveis por objetos de uma subclasse
+sem que sua aplicação seja quebrada.
+
+Dessa forma, um mesmo método abstrato retornando diferentes tipos, pode acabar quebrando nosso código.
+Devido a isso, é interessante também mantermos nosso retorno como parte da assinatura do método.
