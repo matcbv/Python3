@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 
+# Foo é apenas um placeholder, podendo ser qualquer nome que nos for conveniente.
 class AbstractFoo(ABC):
     def __init__(self, name):
         # Neste exemplo, iremos passar o valor recebido para nosso setter que irá atribuí-lo
