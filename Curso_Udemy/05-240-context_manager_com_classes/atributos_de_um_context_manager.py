@@ -1,5 +1,6 @@
 class MyException(Exception):
-    pass
+    ...
+
 
 class MyContextManager:
     def __init__(self, path, open_mode):
@@ -27,7 +28,6 @@ class MyContextManager:
         # return True ---- COMENTADO PARA VERMOS O FUNCIONAMENTO DA EXCEÇÃO ----
         # Ao invés de retornarmos True, podemos levantar uma exceção para exibí-la da maneira que preferirmos
         raise MyException('Minha mensagem de erro')
-
 
 
 instancia = MyContextManager('banco_de_dados', 'w+')

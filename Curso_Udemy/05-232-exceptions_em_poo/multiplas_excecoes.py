@@ -19,12 +19,13 @@ try:
     # detectada. No caso acima, o ZeroDivisionError seria identificado primeiro, mas iremos
     # comentá-lo para demonstrarmos os elementos desse tópico.
 
-    # A palavra-chave as é responsável por armazenar a instância da exceção, que foi criada pela função levantar.
+    # A palavra-chave as é responsável por armazenar a instância da exceção que foi criada pela função levantar.
     # Neste caso, iremos chamá-la de error. Com tal objeto, podemos ver seu tipo (type(error)) ou convertê-lo
     # para uma string e exibí-lo na tela (str(error)).
 except (MyError, ZeroDivisionError) as error:
-    # Utilizar .args em uma exceção, irá retornar os argumentos que passamos para aquela exceção com o raise.
-    print(f'Ocorreram os erros: {error}\nExceção: {error.__class__.__name__}')
+    # Utilizar .args em uma exceção, irá retornar os argumentos que passamos para aquela exceção ao criarmos
+    # sua instância.
+    print(f'Ocorreram os erros: {error.args}\nExceção: {error.__class__.__name__}')
     # Utilizando raise dentro de nosso except, estaremos relançando nossa exceção por meio de outra.
     # Nesse exemplo, criamos outra exceção para demonstrar essa ação:
     excecao_02 = MyOtherError('Erro 04', 'Erro 05', 'Erro 06')
