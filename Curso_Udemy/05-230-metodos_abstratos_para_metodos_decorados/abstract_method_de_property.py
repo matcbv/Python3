@@ -20,7 +20,6 @@ class AbstractFoo(ABC):
 
 
 class Foo(AbstractFoo):
-
     def __init__(self, name):
         super().__init__(name)
 

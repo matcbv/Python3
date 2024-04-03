@@ -1,5 +1,5 @@
 class Coordenadas:
-    def __init__(self, x, y, z='Referêcia'):
+    def __init__(self, x, y, z='Referência'):
         self.x = x
         self.y = y
         self.z = z

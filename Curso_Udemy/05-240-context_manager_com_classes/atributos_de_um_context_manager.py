@@ -34,5 +34,6 @@ instancia = MyContextManager('banco_de_dados', 'w+')
 
 with instancia as arquivo:
     print(arquivo)
-    # Por mais que logo abaixo tenhamos um problema em nosso código, o erro não será gerado.
+    # Por mais que logo abaixo tenhamos um problema em nosso código, o erro não seria gerado
+    # caso o return True não estivesse comentado.
     arquivo.write('Estamos adicionado um texto ao nosso arquivo.', 'Outro valor qualquer')

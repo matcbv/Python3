@@ -36,3 +36,4 @@ class NossaClasse:
 
 obj = NossaClasse(11)
 print(obj.valor)
+print(obj.x)
