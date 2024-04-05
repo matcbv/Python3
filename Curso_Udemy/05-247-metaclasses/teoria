@@ -1,0 +1,41 @@
+Metaclasses são as tipagens das classes. As metaclasses se encontram acima da classe object.
+Por padrão, as classes herdam de maneira automática da classe object. Ex:
+
+class Foo(object):
+    pass
+
+Quando criamos uma instância de Foo, ela é do tipo Foo. Entretanto, de que tipo é a classe Foo?
+Com o código print(type(Foo)), podemos obter essa resposta.
+
+Analisando o resultado, vemos que a classe Foo é do tipo 'type'. type é uma metaclasse em Python,
+responsável por gerar nossas classes. Quando criamos uma classe da maneira habitual, como no exemplo acima,
+é o mesmo que:
+
+Foo = type('Foo', (object,), {})
+
+Com type, devemos passar como argumentos:
+ - O nome da classe
+ - Suas heranças em forma de tupla (Caso não informássemos, o object já seria herdado automaticamente)
+ - O __dict__ da classe em questão (Também não sendo obrigatório passá-lo por parâmetro).
+
+Com print(type(Foo)), veremos que o resultado é o mesmo
+
+Ao criar uma classe, as seguintes etapas são seguidas por padrão:
+__new__ da metaclass é chamado, criando a nova classe.
+__call__ da metaclass é chamado com seus argumentos e chama:
+  > __new__ da class com seus argumentos, criando a instância.
+  > __init__ da class com seus argumentos, inicializando a instância.
+__call__ da metaclass finaliza o processo de criação da classe.
+
+Os métodos que nossas metaclasses utilizam diretamente são:
+ > __new__(mcs, name, bases, dct), onde:
+
+ mcs - Referêmcia a própria metaclasse.
+ name - Nome da classe que estamos gerando.
+ bases - As heranças da nossa classe.
+ dict - O __dict__ da classe em questão.
+
+ > __call__(cls, *args, **kwargs), onde:
+
+ cls - Referência a nossa classe.
+ *args e **kwargs - Nosso argumentos nomeados e não nomeados recebidos por parâmetro.

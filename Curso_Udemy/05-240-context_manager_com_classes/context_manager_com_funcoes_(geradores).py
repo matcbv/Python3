@@ -19,7 +19,7 @@ def my_context_manager(path, open_mode):
     # Tratar ou não a exceção nesse caso é opcional.
     except Exception as e:
         print('Ocorreu um erro inesperado! Tente novamente. Erro:', e)
-    # Nosso código após o yield será tratado depois da execução do bloco with.
+    # Nosso código após o yield, será tratado depois da execução do bloco with.
     finally:
         print('Dando continuidade ao context manager')
         print('Fechando arquivo.')

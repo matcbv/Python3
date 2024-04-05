@@ -2,7 +2,7 @@ class CallMe:
     def __init__(self, phone_number):
         self.phone_number = phone_number
 
-    # Podemos fazer com que instâncias de nossa classe sejam chamáveis através do método especial
+    # Em classes, podemos fazer com que instâncias de nossa classe sejam chamáveis através do método especial
     # __call__. Através da função criada por ele, podemos realizar diversas ações, como receber
     # vários argumentos, retornar um objeto e modificar o próprio valor do atributo da nossa instância.
     def __call__(self, *args, **kwargs):

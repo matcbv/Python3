@@ -4,6 +4,8 @@
 # Função que irá retornar nosso objeto para o método especial __repr__:
 def my_repr(self):
     class_name = self.__class__.__name__
+    # O método especial __dict__ retorna um dicionário que contém os atributos de um objeto.
+    # As chaves serão os nomes dos atributos e o valor das chaves serão os respectivos valores desses atributos.
     clas_dict = self.__dict__
     class_repr = f'{class_name}: {clas_dict}'
     return class_repr

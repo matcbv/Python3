@@ -18,8 +18,8 @@ class MyContextManager:
 
     # O método __exit__ receberá a classe de exceção, a exceção e o traceback. Se ele retornar True,
     # a exceção no with será suprimida.
-    # O método __exit__ é chamado para finalização de processos envolvendo nossos arquivos e durante
-    # chamadas de exceção.
+    # O método __exit__ é chamado após o término do nosso bloco with para finalização de processos envolvendo
+    # nossos arquivos e durante chamadas de exceção.
     def __exit__(self, exc_type, exc_val, exc_tb):
         print('Fechando arquivo')
         self._file.close()
