@@ -8,7 +8,7 @@ class Classe:
     # Para criarmos um método (função atrelada a uma classe), devemos criar nossa função no escopo da classe em
     # questão.
 
-    # O _ _init_ _ é um método especial, também chamado de construtor, utilizado para a inicialização de uma instância.
+    # O __init__ é um método especial, também chamado de construtor, utilizado para a inicialização de uma instância.
     # Ele é iniciado instantaneamente assim que chamamos nossa classe. Com ele, definimos os atributos presentes nas
     # instâncias.
     def __init__(self, nome, sobrenome):
