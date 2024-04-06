@@ -19,7 +19,7 @@ class Meta(type):
         # Outro exemplo de uso para as metaclasses seria a verificação de métodos
         # implementados ou não. Abaixo, verificamos se nosso método exibir está presente no
         # dicionário da classe criada e se ele é chamável. Caso contrário, uma exceção será levantada.
-        if 'exibir' not in classe.__dict__ and not callable(classe.__dict__['falar']):
+        if 'exibir' not in classe.__dict__ and not callable(classe.__dict__['exibir']):
             raise NotImplementedError('Implemente o método falar')
         return classe
 
