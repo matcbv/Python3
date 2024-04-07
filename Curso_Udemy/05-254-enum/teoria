@@ -12,7 +12,7 @@ de nossas classes enum.
 
 Você poderá usar seu Enum com type annotations, isinstance e funcionalidades relacionadas a tipagem.
 
-Para obter os dados dos enum das seguintes maneiras:
+Para obter os dados de classes enum das seguintes maneiras:
 membro = Classe(valor), Classe['chave']
 chave = Classe.chave.name
 valor = Classe.chave.value

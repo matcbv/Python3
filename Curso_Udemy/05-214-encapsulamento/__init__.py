@@ -1,6 +1,6 @@
 # Quando falamos de encapsulamento em linguagens de programação, estamos nos referindo
 # ao uso de modificadores de acesso nos atributos e métodos de nossa classe. Eles podem
-#  ser dos tipos: public, protected e private.
+# ser dos tipos: public, protected e private.
 # Em Python, não temos os chamados modificadores, porém os utilizamos por convenção.
 
 # public (sem underline): Podemos acessar tal atributo ou método de qualquer local de nosso código.
