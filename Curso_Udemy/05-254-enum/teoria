@@ -1,0 +1,18 @@
+Enum (Enumerações)
+
+Enumerações, na programação, são usadas em ocasiões onde há determinado número de itens
+a serem escolhidos. Enums possuem membros e seus valores são constantes.
+
+Enums em Python:
+  - são um conjunto de nomes simbólicos (membros) ligados a valores únicos.
+  - podem ser iterados para retornarem seus membros sequencialmente na ordem em que foram definidos.
+
+enum.Enum é a superclasse para suas enumerações. Ela também pode ser usada diretamente para a criação
+de nossas classes enum.
+
+Você poderá usar seu Enum com type annotations, isinstance e funcionalidades relacionadas a tipagem.
+
+Para obter os dados dos enum das seguintes maneiras:
+membro = Classe(valor), Classe['chave']
+chave = Classe.chave.name
+valor = Classe.chave.value

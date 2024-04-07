@@ -12,13 +12,13 @@ class Meta(type):
             raise NotImplementedError('Implemente o método falar')
         return classe
 
-    # Quando chamamos __call__ em metaclasses, estamos tratando dos argumentos de nossa classe
+    # Quando chamamos __call__ em metaclasses, estamos tratando dos argumentos que nossa classe recebe
     # durante sua chamada, criando nossas instâncias e retornando-as. Ex.: instancia = ClasseQualquer('valor').
     def __call__(cls, *args, **kwargs):
         print('Criando nossa instância...')
         # super() estará se referindo a metaclasse pai de Meta, que é type.
         # Ao chamarmos __call__ de type, estaremos instânciando nossa classe.
-        # O método __call__ irá chamar __new__ e __init__, para criar e inicializar nossa classe,
+        # O método __call__ irá chamar __new__ e __init__, para instânciar nossa classe,
         # encerrando o processo após a execução dos dois métodos.
         instancia = super().__call__(cls)
         return instancia
