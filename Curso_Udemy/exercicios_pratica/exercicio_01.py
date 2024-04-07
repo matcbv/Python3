@@ -2,7 +2,7 @@ from abc import abstractmethod, ABC
 from functools import reduce
 
 
-# ------------------------------- CLASSES ABSTRATAS E MÉTOODS ABTRATOS -------------------------------
+# ------------------------------- CLASSES ABSTRATAS E MÉTODOS ABSTRATOS -------------------------------
 class ClasseAbstrata(ABC):
     def __init__(self, lista_valores):
         self.lista_valores = lista_valores
