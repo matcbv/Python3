@@ -31,3 +31,4 @@ def soma(x, y):
 
 
 resultado = soma(2, 2)
+print(resultado)

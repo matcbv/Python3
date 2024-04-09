@@ -33,20 +33,19 @@ time01 = Times('Flamengo')
 time02 = Times('Corinthians')
 
 # Quando chamamos a função nome_time, os seguintes passos são chamados:
-# time01.nome_time(), isso é equivalente a nome_time(self), logo nome_time(time01)
+# A função nome_time é passada por parâmetro para a função decoradora mostra_time
 
-# Como nome_time pertence a um decorador, logo: nome_time = mostra_time(nome_time),
-# portanto: mostra_time(nome_time)(time01).
+# A função mostra mostra_time retorna a função interna, logo, ao nos referirmos a nome_time,
+# a função interna será chamada.
 
-# Como mostra_time retorna uma função (interna), teremos: interna(time01). Logo, o parâmetro valor
-# receberá a instância time01.
+# Ao passarmos nossa instância por parâmetro, interna o receberá em seu parâmetro valor.
 
-# Em interna(time01), temos nosso objeto resultado. Ele receberá o resultado da função metodo.
-# metodo é a função nome_time que foi passada por parâmetro para a função decoradora.
-#
-# Por parâmetro, passaremos para metodo a instância time01 que foi passada para valor na função interna.
+# A função interna retornará o objeto resultado, cujo valor será o retorno de método,
+# recebendo o parâmetro valor proveniente da unção interna. metodo é a função nome_time
+# que foi passada por parâmetro para a função decoradora, e valor, a instância que passamos para interna.
 
-# Isso resultará na f string retornada por nome_time, que por fim, será exibido na tela.
+# Logo, interna retornára o objeto resultado, contendo a f string retornada por nome_time, que por fim,
+# será exibido na tela.
 
 time01.nome_time()
 time02.nome_time()
