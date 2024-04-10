@@ -20,13 +20,15 @@ class Meta(type):
         # Ao chamarmos __call__ de type, estaremos instânciando nossa classe.
         # O método __call__ irá chamar __new__ e __init__, para instânciar nossa classe,
         # encerrando o processo após a execução dos dois métodos.
-        instancia = super().__call__(cls)
+        instancia = super().__call__(*args, **kwargs)
         return instancia
 
 
 class ClasseQualquer(metaclass=Meta):
     def __new__(cls, *args, **kwargs):
         print('Iniciado o método __new__ chamados pelo __call__')
+        # Com já vimos anteriormente, super() irá chamar o método __new__
+        # da classe base object.
         instancia = super().__new__(cls)
         return instancia
 

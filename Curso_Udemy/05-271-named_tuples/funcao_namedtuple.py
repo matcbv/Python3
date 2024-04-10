@@ -24,6 +24,7 @@ print(dicionario_carro)
 
 tupla_carro = carro_02._fields
 print(tupla_carro)
+print()
 
 # Também podemos criar uma instância de nossa tupla nomeada por meio de um iterável.
 # Isso pode ser feito através da função _make.

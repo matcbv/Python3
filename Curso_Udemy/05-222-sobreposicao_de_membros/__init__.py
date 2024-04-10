@@ -9,7 +9,7 @@ class MinhaString(str):
     def upper(self):
         print('Método upper foi chamado.')
         # Com a função super, estaremos chamando a função upper da superclasse. A função super
-        # aceita dois parâmetros, sendo o primeiro, classe que irá servir de início para a
+        # aceita dois parâmetros, sendo o primeiro, a classe que irá servir de início para a
         # requisição do método, e o segundo será a instância atual da classe. Os valores
         # padrão são super(Casse_Atual, self).
         # Obs.: A classe atual é ignorada. A busca é feita a partir da classe especificada.

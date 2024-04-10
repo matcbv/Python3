@@ -16,6 +16,7 @@ pessoa = ClasseComDataclasses('Matheus', 'Cerqueira')
 print(pessoa.nome_completo)
 print('-' * 30)
 
+
 # Caso quisermos, podemos definir nosso __init__ normalmente em dataclasses, entretanto,
 # não poderemos mais utilizar o __post_init__.
 # Ex.:
