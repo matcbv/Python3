@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-import banco
 
 
 class Conta(ABC):
@@ -20,7 +19,7 @@ class Conta(ABC):
 
 
 class ContaPoupanca(Conta):
-    def __init__(self, agencia, numero_conta, saldo=0):
+    def __init__(self, agencia, numero_conta, saldo=1000):
         super().__init__(agencia, numero_conta, saldo)
 
     def sacar(self, valor_saque):
@@ -32,7 +31,7 @@ class ContaPoupanca(Conta):
 
 
 class ContaCorrente(Conta):
-    def __init__(self, agencia, numero_conta, saldo=0):
+    def __init__(self, agencia, numero_conta, saldo=1500):
         super().__init__(agencia, numero_conta, saldo)
 
     def sacar(self, valor_saque):
