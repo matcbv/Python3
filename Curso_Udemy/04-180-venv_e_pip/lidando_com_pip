@@ -7,7 +7,7 @@ Obs.: A primeira opção é mais completa, podendo gerar menos erros.
 
 Podemos atualizar um pacote através do comando:
 
-pip install "nome_pacote" --upgrade
+pip install --upgrade "nome_pacote"
 
 Para desinstalarmos um pacote de nosso projeto podemos utilizar:
 
