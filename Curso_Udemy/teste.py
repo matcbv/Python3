@@ -5,20 +5,20 @@ from dataclasses import dataclass
 
 Classe = namedtuple('Classe', ['Valor'], defaults=('Teste',))
 obj = Classe()
-print(obj.Valor)
+# print(obj.Valor)
 
 
-class Classe_02(NamedTuple):
+class Classe02(NamedTuple):
     valor: str = 'Teste_02'
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, order=True)
 class NossaDataClasse:
 
-    nome = 'nome'
+    nome = ['b', 'd', 'a', 'c']
     sobrenome = 'sobrenome'
 
 
-
-
-
+obj = NossaDataClasse()
+ordenado = sorted(obj.nome)
+print(ordenado)

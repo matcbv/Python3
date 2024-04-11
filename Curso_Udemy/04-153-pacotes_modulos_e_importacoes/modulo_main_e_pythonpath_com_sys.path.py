@@ -1,12 +1,12 @@
 # Com o método path, conseguimos ver todos os caminhos conhecidos pelo python.
-# Esses caminhos podem ter os módulos e pacotes contidos neles acessados pelo python e,
-# consequentemente, importados para uso. Tais módulos e pacotes são os contidos em mesmo pacote,
+# Esses caminhos tem os módulos e pacotes contidos neles acessados pelo python e,
+# consequentemente, podendo ser importados para uso. Tais módulos e pacotes são os contidos em mesmo pacote,
 # ou em subpacotes. Caminhos acima disso não são conhecidos por padrão.
 # Para importarmos um módulo externo a esses caminhos, devemos adicionar o caminho
 # em que ele está contido na lista sys.path ou diretamente na variável de ambiente PYTHONPATH.
 # Alterando a sys.path, estaremos adicionando o caminho somente para o programa em execução,
 # já alterando diretamente a variável PYTHONPATH, estaremos adicionando o caminho de forma geral.
-# Sempre que a lista sys.path é iniciado, consulta a variável de ambiente do Python PYTHONPATH.
+# Sempre que a lista sys.path é iniciada, consulta a variável de ambiente do Python PYTHONPATH.
 # Ex.: sys.path.append("caminho_do_pacote/módulo")
 import sys
 print(sys.path)
