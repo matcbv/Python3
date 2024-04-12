@@ -26,7 +26,7 @@ def my_context_manager(path, open_mode):
         arq.close()
 
 
-with my_context_manager('banco_de_dados.txt.txt.txt.txt.txt', 'w') as arquivo:
+with my_context_manager('banco_de_dados.txt', 'w') as arquivo:
     # Implementando um erro para que a exceção seja levantada:
     arquivo.write('Texto qualquer', 'Outro texto')
     print('FIM')
