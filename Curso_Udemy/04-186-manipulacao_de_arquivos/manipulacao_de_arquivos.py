@@ -10,7 +10,7 @@
 
 # readlines( ) - Lê todas as linhas do arquivo, colocando cada uma como um elemento numa lista.
 
-# write( ) - Escreve dados.txt no arquivo.
+# write( ) - Escreve dados no arquivo.
 
 # writelines(lista) - Escreve, dentro do arquivo, cada um dos elementos contidos em um iterável (menos dicionários)
 # passado por parâmetro.
@@ -26,7 +26,7 @@
 
 # tell( ) - Retorna à posição atual do cursor de leitura/escrita no arquivo.
 
-# flush( ) - Garante que os dados.txt contidos no buffer sejam gravados no disco, armazenando-os no arquivo.
+# flush( ) - Garante que os dados contidos no buffer sejam gravados no disco, armazenando-os no arquivo.
 
 # Também temos os modos de abertura para os arquivos. Cada um deles possui um papel e deve ser utilizado
 # em situações diferentes:

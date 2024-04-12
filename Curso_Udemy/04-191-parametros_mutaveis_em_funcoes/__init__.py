@@ -1,4 +1,4 @@
-# Ao utilizarmos parâmetros mutáveis em funções, podemos ter um problema na tratativa de nossos dados.txt.
+# Ao utilizarmos parâmetros mutáveis em funções, podemos ter um problema na tratativa de nossos dados.
 # Quando definimos um dos parâmetros de nossa função com um valor padrão sendo um elemento mutável
 # (iteráveis, em geral), esse elemento é criado e utilizado em todas as chamadas da função. Ex.:
 def adiciona_produtos(nome, lst=[]):
