@@ -2,7 +2,7 @@ def ficha(nome='?', gols=0):
     print(f'O jogador {nome} marcou {gols} gols.')
 
 
-#Programa principal
+# Programa principal
 jogador = input('Informe o nome do jogador: ')
 numGols = input('Informe o número de gols do jogador: ')
 if numGols.isnumeric():

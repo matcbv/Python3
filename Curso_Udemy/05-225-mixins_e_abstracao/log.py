@@ -3,7 +3,7 @@
 # permitindo diferentes comportamentos em cada uma das subclasses. Nesse caso, estamos abstraindo
 # a superclasse Log, tornando-a acessível por meio das subclasses LogFileMixin e LogPrintMixin.
 
-path = "H:\\GitHub\\Python3\\Curso_Udemy\\05-225-mixins_e_abstracao\\banco_de_dados"
+path = "/05-225-mixins_e_abstracao/banco_de_dados.txt.txt.txt.txt"
 
 
 class Log:

@@ -25,7 +25,7 @@ class MyContextManager:
         self._file.close()
 
 
-instancia = MyContextManager('banco_de_dados', 'w+')
+instancia = MyContextManager('banco_de_dados.txt', 'w+')
 with instancia as arquivo:
     print(arquivo)
     arquivo.write('Estamos adicionado um texto ao nosso arquivo.')

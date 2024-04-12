@@ -12,7 +12,7 @@ gerador = (num for num in range(100))
 print(getsizeof(lista))
 print(getsizeof(gerador))
 print('-' * 60)
-# Dessa forma, caso nosso iterável lide com dados muito extensos, talvez seja mais interessante
+# Dessa forma, caso nosso iterável lide com dados.txt muito extensos, talvez seja mais interessante
 # trabalharmos com os geradores.
 print(lista)
 for num in gerador:

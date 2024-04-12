@@ -10,7 +10,7 @@
 
 # readlines( ) - Lê todas as linhas do arquivo, colocando cada uma como um elemento numa lista.
 
-# write( ) - Escreve dados no arquivo.
+# write( ) - Escreve dados.txt no arquivo.
 
 # writelines(lista) - Escreve, dentro do arquivo, cada um dos elementos contidos em um iterável (menos dicionários)
 # passado por parâmetro.
@@ -26,7 +26,7 @@
 
 # tell( ) - Retorna à posição atual do cursor de leitura/escrita no arquivo.
 
-# flush( ) - Garante que os dados contidos no buffer sejam gravados no disco, armazenando-os no arquivo.
+# flush( ) - Garante que os dados.txt contidos no buffer sejam gravados no disco, armazenando-os no arquivo.
 
 # Também temos os modos de abertura para os arquivos. Cada um deles possui um papel e deve ser utilizado
 # em situações diferentes:
@@ -40,7 +40,7 @@
 # t (text) - Indica que o arquivo deve ser tratado como texto.
 # b (binary) - Indica que o arquivo deve ser tratado como binário.
 
-caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos\\banco_de_dados\\dados"
+caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos\\banco_de_dados.txt.txt.txt.txt.txt\\dados.txt"
 
 # Exemplo com algumas das funções citadas anteriormente:
 # Obs.: IMPORTANTE!!! Sempre utilize o UTF-8 através do argumento encondig, para que o arquivo seja aberto em

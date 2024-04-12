@@ -1,7 +1,7 @@
 import os
 
 caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos"
-arqProc = 'dados'
+arqProc = 'dados.txt'
 
 # Através do iterador for, utilizaremos o método walk. O método walk retorna três elementos, na respectiva ordem:
 # O diretório atual; os subdiretórios contidos no diretório atual; os arquivos contidos no diretório atual.

@@ -1,6 +1,6 @@
 import os
 
-path = "H:\\GitHub\\Python3\\Curso_Udemy\\exercicios_udemy\\exercicio_04_192\\banco_de_dados"
+path = "/exercicios_udemy/exercicio_04_192/banco_de_dados.txt.txt"
 historico_respostas = []
 
 
@@ -22,7 +22,7 @@ def adicionar_dados(dados):
     historico_respostas.append(dados)
     with open(path, 'a', encoding='utf-8') as arquivo:
         arquivo.write(f'{dados}\n')
-        print(dados, 'foi adicionado ao banco de dados.')
+        print(dados, 'foi adicionado ao banco de dados.txt.')
 
 
 def refazer_dados():
@@ -49,7 +49,7 @@ def desfazer_dados():
 
 def listar_dados():
     if not historico_respostas:
-        print('O banco de dados está vazio.')
+        print('O banco de dados.txt está vazio.')
     else:
         with open(path, 'r', encoding='utf-8') as arquivo:
             print()
@@ -62,12 +62,12 @@ def excluir_dados():
     with open(path, 'r', encoding='utf-8') as arquivo:
         lista_dados = arquivo.readlines()
         if not lista_dados:
-            print('O bando de dados está vazio.')
+            print('O bando de dados.txt está vazio.')
         else:
             try:
                 lista_dados.remove(dado)
             except ValueError:
-                print('Dado não encontrado no banco de dados.')
+                print('Dado não encontrado no banco de dados.txt.')
 
     with open(path, 'w', encoding='utf-8') as arquivo:
         arquivo.writelines(lista_dados)

@@ -30,8 +30,8 @@ print(chave_idade, idade)
 print('-'*30)
 
 # Ex. 4:
-# Criaremos um dicionário com mais alguns dados que queremos adicionar em nosso dicionário.
-# Para isso, utilizaremos os kwargs, junto do método update, passando os dados desempacotados do
+# Criaremos um dicionário com mais alguns dados.txt que queremos adicionar em nosso dicionário.
+# Para isso, utilizaremos os kwargs, junto do método update, passando os dados.txt desempacotados do
 # dicionário mais_dados.
 print(4)
 mais_dados = {'Peso': 55, 'Altura': 1.74}
@@ -47,13 +47,13 @@ print('-'*30)
 
 
 # Funções com Kwargs:
-# Na função abaixo, iremos receber e empacotar os dados de args e kwargs.
+# Na função abaixo, iremos receber e empacotar os dados.txt de args e kwargs.
 def mostrar_dados(*args, **kwargs):
     # Os args serão empacotados em um tuplas, já os kwargs em um dicionário.
     print('Dados não nomeados recebidos:', args)
     print('Dados nomeados recebidos:', kwargs)
 
 
-# Como vimos anteriormente nos args, ao lidarmos com argumentos nomeados, devemos enviar os dados
+# Como vimos anteriormente nos args, ao lidarmos com argumentos nomeados, devemos enviar os dados.txt
 # desempacotados.
 mostrar_dados(1, 2, 'texto', **dicionario_completo)

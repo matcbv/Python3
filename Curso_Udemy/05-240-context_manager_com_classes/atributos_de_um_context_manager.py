@@ -30,7 +30,7 @@ class MyContextManager:
         raise MyException('Minha mensagem de erro')
 
 
-instancia = MyContextManager('banco_de_dados', 'w+')
+instancia = MyContextManager('banco_de_dados.txt', 'w+')
 
 with instancia as arquivo:
     print(arquivo)

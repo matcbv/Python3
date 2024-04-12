@@ -1,5 +1,5 @@
 # Fará uma cópia do dicionário em questão, não associando as informações contidas nele.
-# Essa cópia irá enviar somente dados imutáveis para o objeto a ser atribuído,
+# Essa cópia irá enviar somente dados.txt imutáveis para o objeto a ser atribuído,
 # enquanto mutáveis (listas, dicionários, etc.) também serão associadas entre o dicionário e o objeto em questão.
 # Esse evento é chamado de shallow copy (cópia rasa).
 # Caso desejemos que todos os elementos do nosso dicionário sejam copiados,

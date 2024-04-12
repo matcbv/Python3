@@ -11,7 +11,7 @@ def voto(an):
         print(f'Com {idade} anos, o cidadão ainda não pode votar devido a idade insuficiente.')
 
 
-#Programa principal
+# Programa principal
 anoAtual = date.today().year
 anoNasc = int(input('Informe o ano de nascimento do cidadão: '))
 while not 1900 <= anoNasc <= anoAtual:

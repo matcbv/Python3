@@ -10,5 +10,5 @@ print(modulo_para_importar.__doc__)
 
 print()
 # help: Com a função help, podemos obter informações como: nome do módulo, suas funções,
-# seus dados e seu caminho.
+# seus dados.txt e seu caminho.
 help(modulo_para_importar)

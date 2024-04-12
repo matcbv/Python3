@@ -26,10 +26,10 @@ while True:
     bd.add_dados(input('Qual o nome do cliente: '), input('Qual a idade do cliente: '))
     print(bd.dados)
 
-    cont = input('Deseja adicionar mais dados?').lower()
+    cont = input('Deseja adicionar mais dados.txt?').lower()
     while cont != 'sim' and cont != 'não':
         print('Resposta inválida!')
-        cont = input('Deseja adicionar mais dados?').lower()
+        cont = input('Deseja adicionar mais dados.txt?').lower()
 
     if cont == 'não':
         break
@@ -45,10 +45,10 @@ while True:
     else:
         break
 
-show = input('Deseja que os dados cadastrados seja exibidos?').lower()
+show = input('Deseja que os dados.txt cadastrados seja exibidos?').lower()
 while cont != 'sim' and cont != 'não':
     print('Resposta inválida!')
-    show = input('Deseja que os dados cadastrados seja exibidos?').lower()
+    show = input('Deseja que os dados.txt cadastrados seja exibidos?').lower()
 
 if show == 'sim':
     bd.list_dados()

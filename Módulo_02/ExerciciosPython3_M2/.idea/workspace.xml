@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eaf6d214-ccdb-4ac3-a10e-447726ba1058" name="Changes" comment="" />
+    <list default="true" id="eaf6d214-ccdb-4ac3-a10e-447726ba1058" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Módulo_03/ExerciciosPython3_M3/exercicio_03-101.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Módulo_03/ExerciciosPython3_M3/exercicio_03-101.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Módulo_03/ExerciciosPython3_M3/exercicio_03-102.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Módulo_03/ExerciciosPython3_M3/exercicio_03-102.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Módulo_03/ExerciciosPython3_M3/exercicio_03-103.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Módulo_03/ExerciciosPython3_M3/exercicio_03-103.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "matcbv"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/matcbv/Python3.git",
+    "accountId": "ce6da84d-3f1b-46b5-8d4e-5eb0d54e7855"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2XC4DhFT78OiiZAyHSvCuhnMwg6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,9 +38,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true"
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "H:/GitHub/Python3/Módulo_02/ExerciciosPython3_M2"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

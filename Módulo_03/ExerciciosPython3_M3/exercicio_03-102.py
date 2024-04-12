@@ -11,7 +11,7 @@ def fatorial(num, show=False):
     print('O fatorial do número informado é:', resp)
 
 
-#Programa principal
+# Programa principal
 numInit = int(input('Informe o número a ser calculado o fatorial: '))
 cond = input('Deseja que o processo de calculo seja exibido? [S/N] ').upper()[0]
 while cond not in 'SN':

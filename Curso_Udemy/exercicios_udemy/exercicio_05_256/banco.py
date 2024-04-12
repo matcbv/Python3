@@ -36,4 +36,4 @@ class Banco:
             else:
                 contas.ContaPoupanca.sacar(conta_cliente, valor_saque)
         else:
-            print('Verifique os dados de sua conta e tente novamente.')
+            print('Verifique os dados.txt de sua conta e tente novamente.')
