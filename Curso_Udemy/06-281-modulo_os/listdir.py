@@ -11,6 +11,8 @@ for pasta in os.listdir(caminho):
     caminho_completo_pasta = os.path.join(caminho, pasta)
     print(pasta)
     if not os.path.isdir(caminho_completo_pasta):
+        # Com a palavra-chave continue, iremos dar continuidade em nossa iteração, pulando para
+        # o próximo objeto do iterável.
         continue
     for arquivo in os.listdir(caminho_completo_pasta):  # Também poderíamos iterar com: os.listdir(pasta).
         print('     ', arquivo)
