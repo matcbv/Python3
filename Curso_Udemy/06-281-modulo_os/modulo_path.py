@@ -9,6 +9,7 @@ from os import path
 # abspath - Retorna o caminho absoluto de um local
 # basename - Retorna o nome da base do caminho
 # dirname - Retorna o diretório de um arquivo.
+# expanduser - Retorna o caminho para nossa pasta de usuário.
 
 caminho = 'H:/GitHub/Python3/Curso_Udemy/06-281-modulo_os/modulo_path.py'
 
@@ -51,3 +52,9 @@ print()
 # Obtendo o nome do diretório do arquivo atual:
 diretorio = path.dirname(caminho)
 print('Nosso diretório é:', diretorio)
+
+# Através do método expanduser, do módulo path, conseguimos obter o caminho para nossa pasta
+# de usuário. Passando somente o til, irá obter o usuário sendo utilizado no momento.
+# Obs.: Podemos criar um caminho com um nome de usuário diferentes com ~nome_do_usuario.
+USER = path.expanduser('~')
+print(USER)
