@@ -2,10 +2,10 @@ import os
 # Através do módulo shutil, conseguimos arquivar e copiar arquivos e diretórios em nosso host.
 import shutil
 
-path_ = 'C:/Users/Suporte/Documents/pasta_para_copia'
+path_ = 'H:/Pasta_Para_Copia'
 # Iremos criar nosso novo caminho, contendo a pasta a ser criada:
 base_name = os.path.basename(path_)
-new_path = path_.replace('pasta_para_copia', 'pasta_nova')
+new_path = path_.replace('Pasta_Para_Copia', 'Pasta_Nova')
 # Para criarmos um diretório, utilizaremos o método makedir do módulo os:
 os.makedirs(new_path,  exist_ok=True)
 # Através parâmetro exist_ok, conseguimos definir se será ou não levantada

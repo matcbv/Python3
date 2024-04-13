@@ -5,6 +5,7 @@ import enum
 # Podemos criar nossa classe do tipo enum de duas maneiras. Utilizando a classe Enum diretamente:
 # Direcoes = enum.Enum('Direcoes', ['ESQUERDA', 'DIREITA'])
 
+# Ou herdando da classe Enum:
 class Direcoes(enum.Enum):
     # Substituindo os valores por enum.auto(), eles são preenchidos automaticamente seguindo uma
     # ordem crescente começando pelo 1.
@@ -19,6 +20,7 @@ print(Direcoes(1), Direcoes(2))
 print(Direcoes['ESQUERDA'], Direcoes['DIREITA'])
 # Através do acesso direto a esses membros
 print(Direcoes.ESQUERDA, Direcoes.DIREITA)
+print()
 
 # Para obtermos somente a chave de um membro, devemos utilizar a palavra-chave value ao final:
 # Obs.: Iremos utilizar somente um dos três métodos acima para os exemplos restantes, porém ambos
