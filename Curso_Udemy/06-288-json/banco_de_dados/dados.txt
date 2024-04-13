@@ -1,0 +1,7 @@
+Olá, mundo!
+Este
+é
+um
+iterável
+contendo
+strings

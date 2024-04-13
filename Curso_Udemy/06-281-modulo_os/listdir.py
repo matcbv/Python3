@@ -7,7 +7,8 @@ print(os.listdir(caminho))
 
 # Abaixo, iremos iterar tal lista:
 for pasta in os.listdir(caminho):
-    # Iremos utilizar o método join para
+    # Iremos utilizar o método join para obtermos o caminho completo até a pasta, para então,
+    # termos acesso a ela.
     caminho_completo_pasta = os.path.join(caminho, pasta)
     print(pasta)
     if not os.path.isdir(caminho_completo_pasta):

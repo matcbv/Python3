@@ -40,12 +40,18 @@ print('O destino é um diretório?', path.isdir(caminho))
 print('O destino é um arquivo?', path.isfile(caminho))
 print()
 
-# Obtendo o caminho absoluto e base de um determinado local:
+# Obtendo o caminho absoluto de um determinado diretório ou arquivo. Devemos passar o nome de tal
+# item por parâmetro:
 # Obs.: Passando um ponto (.) como parâmetro para o método abspath, ele retorna o caminho absoluto
 # do arquivo atual.
 absoluto = path.abspath('.')
+# Passando o atributo especial file, é retornado o caminho absoluto contendo o arquivo atual.
+# Obs.: __file__ sempre irá conter o caminho do arquivo atual em que estamos trabalhando.
+absoluto_com_atual = path.abspath(__file__)
+# Obtendo o base name de um determinado caminho:
 base = path.basename(caminho)
 print(f'Caminho absoluto: {absoluto}\n'
+      f'Caminho absoluto com o arquivo atual: {absoluto_com_atual}\n'
       f'Local base: {base}')
 print()
 
