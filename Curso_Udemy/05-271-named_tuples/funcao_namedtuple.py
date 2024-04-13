@@ -1,10 +1,10 @@
-# Para utilizarmos nossas tuples nomeadas, devemos utilizar o pacote
+# Para utilizarmos nossas tuplas nomeadas, devemos utilizar o pacote
 # collection e a função namedtuple.
 from collections import namedtuple
 
 # Através da função namedtuple, criaremos uma classe chamada Carros, com os atributos
 # Modelo e Motor. Também podemos definir valores padrão para nossos atributos através
-# da propriedade default:
+# da propriedade defaults:
 Carros = namedtuple('Carros', ['Modelo', 'Motor'],
                     defaults=['Polo', '1.0'])
 # Abaixo criaremos uma instância de nossa Classe, onde podemos ter acesso a cada um
