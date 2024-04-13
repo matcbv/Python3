@@ -57,4 +57,4 @@ with open(caminho, 'w+', encoding='utf-8') as arquivo:
     print(arquivo.read())
     arquivo.seek(0, 0)
     # Ao convertermos nosso arquivo JSON em um objeto Python, os dados se tornam um dicionário:
-    #print(json.load(arquivo))
+    # print(json.load(arquivo))
