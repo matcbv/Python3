@@ -12,6 +12,10 @@ Ler algo no arquivo - pathlib.Path.read_text()
 
 Criar um arquivo ou atualizar sua timestamp: pathlib.Path.touch()
 
+Remover um arquivo - pathlib.Path.unlink()
+
+Remover um diretório vazio - pathlib.Path.rmdir()
+
 Obter o caminho absoluto - pathlib.Path.absolute()
 
 Verificar a existência de um caminho - pathlib.Path.exists()
@@ -26,22 +30,18 @@ Separar o nome do arquivo do caminho do diretório - pathlib.Path.name
 
 Separar o diretório do nome do arquivo - pathlib.Path.parent
 
+Obter a extensão do arquivo - pathlib.Path.suffix
+
+Separa as extensões do nome do arquivo, retornando-as em uma lista - pathlib.Path.suffixes
+
+Obter o nome do arquivo sem a extensão - pathlib.Path.stem
+
 Dividir o caminho em partes - pathlib.Path.parts
 
 Obter o diretório de trabalho atual - pathlib.Path.cwd()
 
-Obter o nome do arquivo sem a extensão - pathlib.Path.stem
-
-Obter a extensão do arquivo - pathlib.Path.suffix
-
 Verificar se o caminho é absoluto - pathlib.Path.is_absolute()
-
-Separar extensão do nome do arquivo - pathlib.Path.suffixes
 
 Obter o tamanho de um arquivo - pathlib.Path.stat().st_size
 
 Listar arquivos em um diretório - pathlib.Path.iterdir()
-
-Remover um arquivo - pathlib.Path.unlink()
-
-Remover um diretório vazio - pathlib.Path.rmdir()

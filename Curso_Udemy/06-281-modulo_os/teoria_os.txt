@@ -10,3 +10,7 @@ remove/unlink - Remove um arquivo contido em um diretório.
 rmdir - Remove um diretório caso esse esteja vazio.
 mkdir - Cria um novo diretório com o nome especificado.
 chdir - Move um diretório para o caminho especificado.
+rename - Renomeia um arquivo ou diretório.
+
+Obs.: Caso informemos caminhos relativos para tais métodos, eles usarão, por padrão, o caminho
+absoluto do diretório em que está atuando.

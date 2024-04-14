@@ -1,5 +1,4 @@
 import os
-# Através do módulo shutil, conseguimos arquivar e copiar arquivos e diretórios em nosso host.
 import shutil
 
 path_ = 'H:/GitHub/Python3/Curso_Udemy/06-281-modulo_os/pasta_para_exemplo_02'

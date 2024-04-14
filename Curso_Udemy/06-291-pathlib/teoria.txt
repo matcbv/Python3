@@ -1,0 +1,47 @@
+O módulo pathlib é utilizado para trabalharmos com caminhos, pastas e arquivos, de forma que
+nosso código seja interoperante com diferentes sistemas operacionais, como Windows, Linux e Mac.
+Por meio desse módulo, evitamos o chamado hard coding, mantendo nosso código autônomo.
+
+O módulo pathllib possui muitos métodos com mesma função dos do módulo path, porém muitas vezes,
+com diferença em sua nomeclatura. Abaixo haverá uma lista com os mais utilizados, e pode conhecer
+mais sobre eles nos outros módulos contidos nessa mesma pasta.
+
+Escrever algo no arquivo - pathlib.Path.write_text()
+
+Ler algo no arquivo - pathlib.Path.read_text()
+
+Criar um arquivo ou atualizar sua timestamp: pathlib.Path.touch()
+
+Remover um arquivo - pathlib.Path.unlink()
+
+Remover um diretório vazio - pathlib.Path.rmdir()
+
+Obter o caminho absoluto - pathlib.Path.absolute()
+
+Verificar a existência de um caminho - pathlib.Path.exists()
+
+Verificar se é um diretório - pathlib.Path.is_dir()
+
+Verificar se é um arquivo - pathlib.Path.is_file()
+
+Unir caminhos - pathlib.Path.joinpath()
+
+Separar o nome do arquivo do caminho do diretório - pathlib.Path.name
+
+Separar o diretório do nome do arquivo - pathlib.Path.parent
+
+Obter a extensão do arquivo - pathlib.Path.suffix
+
+Separa as extensões do nome do arquivo, retornando-as em uma lista - pathlib.Path.suffixes
+
+Obter o nome do arquivo sem a extensão - pathlib.Path.stem
+
+Dividir o caminho em partes - pathlib.Path.parts
+
+Obter o diretório de trabalho atual - pathlib.Path.cwd()
+
+Verificar se o caminho é absoluto - pathlib.Path.is_absolute()
+
+Obter o tamanho de um arquivo - pathlib.Path.stat().st_size
+
+Listar arquivos em um diretório - pathlib.Path.iterdir()

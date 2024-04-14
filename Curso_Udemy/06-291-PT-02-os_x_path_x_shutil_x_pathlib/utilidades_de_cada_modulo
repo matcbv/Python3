@@ -1,0 +1,43 @@
+-------------------------------- os --------------------------------
+
+O módulo os fornece uma interface para interagir com o sistema operacional subjacente, criando, manipulando
+e excluindo diretórios e arquivos, além de acessar variáveis de ambiente e executar comandos do sistema.
+É útil sempre que você precisar realizar operações de baixo nível relacionadas ao sistema operacional,
+como manipulação de arquivos, navegação em diretórios, obtenção de informações do sistema, etc.
+
+-------------------------------- shutil --------------------------------
+
+O módulo shutil fornece operações de alto nível para manipulação de arquivos e diretórios.
+Ele contém funções para copiar, mover, renomear e excluir arquivos e diretórios.
+É útil quando você precisa realizar operações de manipulação de arquivos e diretórios em um nível mais abstrato,
+sem se preocupar com detalhes de implementação.
+
+-------------------------------- os.path --------------------------------
+
+o módulo os.path fornece funções para manipular caminhos de arquivos e diretórios de forma portátil entre diferentes
+sistemas operacionais. Ele inclui funções para verificar a existência de arquivos, obter informações sobre caminhos,
+manipular extensões de arquivo, entre outras operações. É útil quando você precisa lidar com caminhos de arquivos e
+diretórios de forma que funcione corretamente em diferentes sistemas operacionais.
+
+-------------------------------- pathlib --------------------------------
+
+O módulo pathlib fornece uma interface orientada a objetos para manipulação de caminhos de arquivos e diretórios.
+Ele permite que você trabalhe com caminhos usando objetos Path, que oferecem métodos convenientes para manipular
+caminhos de forma mais legível e expressiva. É útil quando você prefere uma abordagem mais orientada a objetos
+para manipulação de caminhos de arquivos e diretórios, especialmente em situações em que a clareza e a legibilidade
+do código são importantes.
+
+-------------------------------- Qual utilizar? --------------------------------
+
+Use os para operações de baixo nível, como criação e exclusão de arquivos, captura de variáveis de
+ambiente, interação com comandos do sistema operacional.
+
+Use shutil manipulação de arquivos e diretórios. Com ele, podemos copiar, renomear e também
+excluir arquivos.
+
+Use os.path para manipulação de caminhos de arquivos e diretórios.
+
+O módulo pathlib é mais recente, e nos fornece uma abordagem mais orientada a objetos, focando na interoperabilidade
+para diferentes sistemas operacionais. Nele, possuímos uma junção entre os módulos acima, onde podemos manipular
+arquivos e diretórios, trabalhar com caminhos e realizar a leitura e escrita em arquivos de forma básica.
+--------------------------------------------------------------------------------

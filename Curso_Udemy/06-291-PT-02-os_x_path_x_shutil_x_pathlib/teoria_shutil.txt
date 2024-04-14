@@ -1,0 +1,17 @@
+O módulo shutil fornece operações de alto nível para manipulação de arquivos e diretórios.
+Ele contém funções para copiar, mover, renomear e excluir arquivos e diretórios.
+
+shutil.copy: copia um arquivo de origem para um destino.
+
+shutil.copyfile: copia o conteúdo do arquivo de origem para um de destino.
+Caso o destino possua conteúdo, esse será substituído.
+
+shutil.copytree(dirs_exist_ok=False): Copia um diretório e seu conteúdo (incluindo subdiretórios)
+recursivamente de uma origem para um destino.
+Obs.: COm dirs_exist_ok, podmos interromper o levantamento de exceções caso o destino já exista.
+Basta definir seu valor como True.
+
+shutil.move: move o arquivo ou diretório de origem src para o destino dst. Se dst for um diretório, ele será movido para dentro desse diretório.
+
+shutil.rmtree: remove um diretório e seu conteúdo de forma recursiva.
+Obs.: Podemos ignorar erros durante a exclusão com ignore_errors definido como True.

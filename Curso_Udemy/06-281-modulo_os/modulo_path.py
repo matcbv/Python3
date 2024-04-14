@@ -1,16 +1,4 @@
 from os import path
-# Alguns dos métodos mais utilizados do módulo path são:
-# splitext - Gera uma tupla contendo o nome do arquivo e sua respectiva extensão, como primeiro e segundo valor.
-# split - Divide um caminho de arquivo em duas partes: o diretório pai e o nome do arquivo.
-# join - Unifica diferentes partes de caminhos de diretório em um só caminho.
-# exists - Verifica se o caminho existe na máquina.
-# isdir - Verifica se o caminho é referente a um diretório.
-# isfile - Verifica se o caminho é referente a um arquivo.
-# abspath - Retorna o caminho absoluto de um local.
-# isabs - Verifica se determinado caminho é absoluto.
-# basename - Retorna o nome da base do caminho.
-# dirname - Retorna o diretório de um arquivo.
-# expanduser - Retorna o caminho para nossa pasta de usuário.
 
 caminho = 'H:/GitHub/Python3/Curso_Udemy/06-281-modulo_os/modulo_path.py'
 
