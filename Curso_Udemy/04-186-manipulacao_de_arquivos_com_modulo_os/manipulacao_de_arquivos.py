@@ -40,7 +40,7 @@
 # t (text) - Indica que o arquivo deve ser tratado como texto.
 # b (binary) - Indica que o arquivo deve ser tratado como binário.
 
-caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos\\banco_de_dados\\dados.txt"
+caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos_com_modulo_os\\banco_de_dados\\dados.txt"
 
 # Exemplo com algumas das funções citadas anteriormente:
 # Obs.: IMPORTANTE!!! Sempre utilize o UTF-8 através do argumento encondig, para que o arquivo seja aberto em

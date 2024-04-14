@@ -1,7 +1,7 @@
 # Para convertemos um objeto para JSON, podemos utilizar o módulo json, pertencente a biblioteca padrão do Python.
 import json
 
-caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos\\banco_de_dados\\dados_JSON.txt"
+caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos_com_modulo_os\\banco_de_dados\\dados_JSON.txt"
 
 dados_alunos = {'Pessoa01': {'Nome': 'Matheus', 'Idade': 21, 'Notas': [10, 8, 9]},
                 'Pessoa02': {'Nome': 'Lucas', 'Idade': 32, 'Notas': [9, 7, 7]}}

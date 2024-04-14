@@ -2,7 +2,7 @@
 from os import path
 # Estaremos trabalhando com o diretório atual para o aprendizado.
 # Obs.: Em Python, o caminho deve ser informado separando os diretórios por barras duplas.
-caminho_completo = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos\\submodulo_path.py"
+caminho_completo = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos_com_modulo_os\\submodulo_path.py"
 
 arq_atual = "submodulo_path.py"
 # No módulo os, existem métodos responsáveis para manipular arquivos e diretórios.

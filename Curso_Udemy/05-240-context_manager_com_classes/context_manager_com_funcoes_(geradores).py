@@ -15,11 +15,13 @@ def my_context_manager(path, open_mode):
         # Através do decorador contextmanager, nossa função passa a ser tratada como um gerador.
         # Ele realiza a tratativa de nossa função, utilizando os métodos especiais
         # __enter__ e __exit__ internamente, facilitando o uso do context manager.
+        # O yield, em context generators, é responsável por marcar um ponto de interrupção
+        # entre o início e o fim do bloco with. Ele também pode retornar um objeto nessa situação.
+        # Nosso código após o yield, será tratado depois da execução do bloco with.
         yield arq
     # Tratar ou não a exceção nesse caso é opcional.
     except Exception as e:
         print('Ocorreu um erro inesperado! Tente novamente. Erro:', e)
-    # Nosso código após o yield, será tratado depois da execução do bloco with.
     finally:
         print('Dando continuidade ao context manager')
         print('Fechando arquivo.')
@@ -28,5 +30,5 @@ def my_context_manager(path, open_mode):
 
 with my_context_manager('banco_de_dados.txt', 'w') as arquivo:
     # Implementando um erro para que a exceção seja levantada:
-    arquivo.write('Texto qualquer', 'Outro texto')
+    arquivo.write('Texto qualquer')
     print('FIM')

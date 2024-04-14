@@ -6,8 +6,9 @@ from os import path
 # exists - Verifica se o caminho existe na máquina.
 # isdir - Verifica se o caminho é referente a um diretório.
 # isfile - Verifica se o caminho é referente a um arquivo.
-# abspath - Retorna o caminho absoluto de um local
-# basename - Retorna o nome da base do caminho
+# abspath - Retorna o caminho absoluto de um local.
+# isabs - Verifica se determinado caminho é absoluto.
+# basename - Retorna o nome da base do caminho.
 # dirname - Retorna o diretório de um arquivo.
 # expanduser - Retorna o caminho para nossa pasta de usuário.
 
@@ -40,12 +41,12 @@ print('O destino é um diretório?', path.isdir(caminho))
 print('O destino é um arquivo?', path.isfile(caminho))
 print()
 
-# Obtendo o caminho absoluto de um determinado diretório ou arquivo. Devemos passar o nome de tal
-# item por parâmetro:
+# Obtendo o caminho absoluto (caminho completo) de um determinado diretório ou arquivo.
+# Devemos passar o nome de tal item por parâmetro:
 # Obs.: Passando um ponto (.) como parâmetro para o método abspath, ele retorna o caminho absoluto
-# do arquivo atual.
+# do diretório atual.
 absoluto = path.abspath('.')
-# Passando o atributo especial file, é retornado o caminho absoluto contendo o arquivo atual.
+# Passando o atributo especial file, é retornado o caminho absoluto do arquivo atual.
 # Obs.: __file__ sempre irá conter o caminho do arquivo atual em que estamos trabalhando.
 absoluto_com_atual = path.abspath(__file__)
 # Obtendo o base name de um determinado caminho:
@@ -62,5 +63,5 @@ print('Nosso diretório é:', diretorio)
 # Através do método expanduser, do módulo path, conseguimos obter o caminho para nossa pasta
 # de usuário. Passando somente o til, irá obter o usuário sendo utilizado no momento.
 # Obs.: Podemos criar um caminho com um nome de usuário diferentes com ~nome_do_usuario.
-USER = path.expanduser('~')
-print(USER)
+user = path.expanduser('~')
+print(user)

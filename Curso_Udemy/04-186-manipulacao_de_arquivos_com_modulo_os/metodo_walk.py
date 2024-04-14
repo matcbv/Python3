@@ -1,6 +1,6 @@
 import os
 
-caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos"
+caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos_com_modulo_os"
 arqProc = 'dados.txt'
 
 # Através do iterador for, utilizaremos o método walk. O método walk retorna três elementos, na respectiva ordem:
