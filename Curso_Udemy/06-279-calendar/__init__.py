@@ -8,6 +8,8 @@ print('-'*90)
 
 # Podemos descobrir o índice do dia da semana e o último dia do mês, através do comando monthrange:
 indice_semana, ultimo_dia_mes = calendar.monthrange(2024, 12)
+print(indice_semana, ultimo_dia_mes)
+print('-'*90)
 # O índice dos dias da semana começam em 0, representando segunda, e vão até 6, representando domingo.
 print(list(enumerate(calendar.day_name)))
 print('-'*90)
@@ -16,9 +18,10 @@ print('-'*90)
 # índice da semana obtido.
 # Através do comando weekday, descobrimos o índice da semana que determinado dia possui.
 print(calendar.day_name[calendar.weekday(2024, 12, 5)])
+print('-'*90)
 
 # Podemos também, obter o calendário de um mês em específico com a função monthcalendar.
-# Tal função irá retornar uma lista contendo os dias do mês, organizados em listas que represetam
+# Tal função irá retornar uma lista contendo os dias do mês, organizados em listas que representam
 # as semanas daquele mês.
 # Obs.: Os dias com valor 0 não pertencem à aquele mês.
 calendario_mes = calendar.monthcalendar(2024, 12)

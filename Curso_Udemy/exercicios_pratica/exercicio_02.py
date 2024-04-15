@@ -112,7 +112,7 @@ obj = ValoresPares(lista_pares)
 result = obj.soma_valores()
 obj()
 
-cg = ContextGenerator('banco_de_dados.txt', 'w')
+cg = ContextGenerator('exercicio_01/banco_de_dados.txt', 'w')
 
 with cg as arquivo:
     arquivo.write('Valor qualquer')
