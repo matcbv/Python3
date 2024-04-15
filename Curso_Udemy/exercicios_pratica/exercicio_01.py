@@ -19,19 +19,22 @@ class Opcoes(Enum):
 
 
 contador = count()
-caminho = Path().absolute() / 'banco_de_dados'
+caminho = Path().absolute() / 'banco_de_dados.txt'
+
 
 @contextmanager
 def gerador_de_contexto(modo_abertura):
-    print('Abrindo arquivo...')
+    print('Enviando dados...')
     sleep(2)
     try:
-        arquivo = open(caminho, modo_abertura)
+        arquivo = open(caminho, modo_abertura, encoding='utf-8')
         yield arquivo
+        print('Dados salvos com sucesso!')
     except FileNotFoundError:
         print('Arquivo não encontrado! Tente criá-lo novamente.')
     else:
-        print('Fechando arquivo...')
+        print('Finalizando processo...')
+        sleep(2)
         arquivo.close()
 
 
@@ -44,8 +47,8 @@ def gerar_arquivo(nome_arquivo: str):
 
 def obter_horario():
     hora = datetime.today()
-    hora_formatada = datetime.strftime(hora, '%d-%m-%Y %h:%m:%s')
-    return f'Adicionado em {hora_formatada}'
+    hora_formatada = datetime.strftime(hora, '%d-%m-%Y %H:%H:%S')
+    return f'Enviado em {hora_formatada}'
 
 
 class ClasseQueGrava:
@@ -67,7 +70,7 @@ class Email(ClasseQueGrava):
     def gravar_msg(self):
         hora = obter_horario()
         with gerador_de_contexto('a') as arquivo:
-            arquivo.write(f'{self.msg} - {hora}')
+            arquivo.write(f'Email - {self.destinatario} - {self.msg} - {hora}\n')
 
 
 class SMS(ClasseQueGrava):
@@ -98,19 +101,21 @@ if enviar_msg == 'n':
 print(f'1 - {Opcoes.opc01.value}\n'
       f'2 - {Opcoes.opc02.value}\n'
       f'3 - {Opcoes.opc03.value}\n')
-tipo_msg = input('Escolha uma das opções acima: ')
-
+tipo_msg = int(input('Escolha uma das opções acima: '))
 match tipo_msg:
     case 1:
         remetente_ = input('Qual o seu email? ')
         destinatario_ = input('Qual o email do destinatário? ')
         assunto_ = input('Qual o assunto do email? ')
         msg_ = input('Mensagem do email: ')
-        ligar = Email(msg_, assunto_, remetente_, destinatario_)
+        meio_contato = Email(msg_, assunto_, remetente_, destinatario_)
+        meio_contato.gravar_msg()
     case 2:
         numero_ = int(input('Para qual número deseja ligar? '))
         msg_ = input('Mensagem do SMS: ')
-        ligar = SMS(msg_, numero_)
+        meio_contato = SMS(msg_, numero_)
+        meio_contato.gravar_msg()
     case 3:
         numero_ = int(input('Para qual número deseja ligar? '))
-        ligar = Ligacao(numero_)
+        meio_contato = Ligacao(numero_)
+        meio_contato.gravar_msg()
