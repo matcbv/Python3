@@ -5,7 +5,7 @@ data_02 = str(datetime(2024, 4, 10, 22, 50))
 formato = '%Y-%m-%d %H:%M:%S'
 data_formato_padrao = datetime.strptime(data_01, formato)
 formato_brasileiro = '%d-%m-%Y'
-# Podemos chamar nosso datetime de duas maneiras, chamando-o através da classe datetime:
+# Podemos chamar nosso método strftime de duas maneiras, chamando-o através da classe datetime:
 # datetime.strftime('data', 'formato')
 # Ou chamando-o através da nossa instância, passando somente o formato dessa vez:
 # instancia.srtftime('formato').

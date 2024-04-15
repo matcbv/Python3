@@ -18,6 +18,7 @@ class Meta(type):
         print('Criando nossa instância...')
         # super() estará se referindo a metaclasse pai de Meta, que é type.
         # Ao chamarmos __call__ de type, estaremos instânciando nossa classe.
+        # Iremos passar os valores recebidos na chamada, e a classe a ser instanciada é passada implicitamente.
         # O método __call__ irá chamar __new__ e __init__, para instânciar nossa classe,
         # encerrando o processo após a execução dos dois métodos.
         instancia = super().__call__(*args, **kwargs)

@@ -1,122 +1,95 @@
-from abc import abstractmethod, ABC
-from functools import reduce
+from abc import ABC, abstractmethod
+from contextlib import contextmanager
+from functools import reduce, partial
+from itertools import groupby, count
+from enum import Enum
+from dataclasses import dataclass
+from pathlib import Path
+from os import path
+from datetime import datetime
+from calendar import Calendar
+from time import sleep
 
 
-# ------------------------------- CLASSES ABSTRATAS E MÉTODOS ABSTRATOS -------------------------------
-class ClasseAbstrata(ABC):
-    def __init__(self, lista_valores):
-        self.lista_valores = lista_valores
-        resp = checar_valores(self.lista_valores)
-        if resp in 'impar':
-            print('Os valores passados não são todos pares! Informe novos valores')
-            self.lista_valores = []
+class Opcoes(Enum):
+    opc01: str = 'Email'
+    opc02: str = 'SMS'
+    opc03: str = 'Ligação'
+
+
+contador = count()
+
+
+@contextmanager
+def gerador_de_contexto(caminho, modo_abertura):
+    print('Abrindo arquivo...')
+    sleep(2)
+    try:
+        arquivo = open(caminho, modo_abertura)
+        yield arquivo
+    except FileNotFoundError:
+        print('Arquivo não encontrado! Tente criá-lo novamente.')
+    else:
+        print('Fechando arquivo...')
+        arquivo.close()
+
+
+def gerar_arquivo(nome_arquivo: str):
+    nome_dir = Path().absolute() / nome_arquivo
+    nome_dir.touch(exist_ok=True)
+    print('Arquivo gerado!')
+    return nome_dir
+
+
+def obter_horario():
+    hora = datetime.today()
+    hora_formatada = datetime.strftime(hora, '%d-%m-%Y %h:%m:%s')
+    return f'Adicionado em {hora_formatada}'
+
+
+class ClasseQueGrava:
+    def __init__(self, msg, nome_arquivo):
+        self.msg = msg
+        self.nome_arquivo = nome_arquivo
 
     @abstractmethod
-    def soma_valores(self): ...
+    def gravar_msg(self): ...
 
 
-class ValoresPares(ClasseAbstrata):
-    def __init__(self, lista_valores, valor_base=0):
-        super().__init__(lista_valores)
-        self.valor_base = valor_base
+class Email(ClasseQueGrava):
+    def __init__(self, msg: str, caminho: str, assunto: str, remetente: str, destinatario: str):
+        super().__init__(msg, caminho)
+        self.assunto = assunto
+        self.remetente = remetente
+        self.destinatario = destinatario
 
-    def soma_valores(self):
-        self.valor_base = reduce(lambda cont, num: cont + num, self.lista_valores, 0)
-        return self.valor_base
-
-    def __call__(self):
-        print(f'{self.__class__.__name__} - {self.__dict__}')
-
-
-class ValoresImpares(ClasseAbstrata):
-    def __init__(self, lista_valores, valor_base=0):
-        super().__init__(lista_valores)
-        self.valor_base = valor_base
-
-    def soma_valores(self):
-        self.valor_base = reduce(lambda cont, num: cont + num, self.lista_valores, 0)
-        return self.valor_base
-
-    def __call__(self):
-        print(f'{self.__class__.__name__} - {self.__dict__}')
+    def gravar_msg(self):
+        caminho_arquivo = gerar_arquivo(self.nome_arquivo)
+        hora = obter_horario()
+        with gerador_de_contexto(caminho_arquivo, 'a') as arquivo:
+            arquivo.write(f'{self.msg} - {hora}')
 
 
-def checar_valores(valores):
-    cont = 0
-    for num in valores:
-        num = int(num)
-        if num % 2 == 0:
-            cont += 1
-    if cont == len(valores):
-        return 'par'
-    elif cont == 0:
-        return 'impar'
-    return 'impar e par'
+class SMS(ClasseQueGrava):
+    def __init__(self, msg: str, caminho: str, numero: int):
+        super().__init__(msg, caminho)
+        self.numero = numero
+
+    def gravar_msg(self):
+        caminho_arquivo = gerar_arquivo(self.nome_arquivo)
+        hora = obter_horario()
+        with gerador_de_contexto(caminho_arquivo, 'a') as arquivo:
+            arquivo.write(f'{self.numero} - {self.msg} - {hora}')
 
 
-# ------------------------------- CONTEXT GENERATORS -------------------------------
-class ContextGenerator:
-    def __init__(self, path, opening_mode):
-        self.path = path
-        self.opening_mode = opening_mode
-        self.arquivo = None
+class Ligacao(ClasseQueGrava):
+    def __init__(self, msg: str, caminho: str, numero: int):
+        super().__init__(msg, caminho)
+        self.numero = numero
 
-    def __enter__(self):
-        print('Abrindo arquivo...')
-        self.arquivo = open(self.path, self.opening_mode)
-        return self.arquivo
+    def gravar_msg(self):
+        caminho_arquivo = gerar_arquivo(self.nome_arquivo)
+        hora = obter_horario()
+        with gerador_de_contexto(caminho_arquivo, 'a') as arquivo:
+            arquivo.write(f'{self.numero} - {self.msg} - {hora}')
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        print('Fechando arquivo...')
-        self.arquivo.close()
-        if exc_type:
-            print('Ocorreu um erro do tipo:', exc_type)
-            print('O motivo do erro foi:', exc_val)
-            return True
-
-
-# ------------------------------- __new__ e __init__ -------------------------------
-
-class CriandoInstancias:
-    def __new__(cls, *args, **kwargs):
-        print('Passei por aqui...')
-        instancia = super().__new__(cls)
-        return instancia
-
-    def __init__(self, valor):
-        self._valor = valor
-
-
-# ------------------------------- METACLASSES -------------------------------
-class NossaMetaclasse(type):
-    def __new__(mcs, name, base, dct):
-        classe = super().__new__(mcs, name, base, dct)
-        return classe
-
-    def __call__(cls, *args, **kwargs):
-        instancia = super().__call__(cls)
-        return instancia
-
-
-class NossaClasse(metaclass=NossaMetaclasse):
-    def __new__(cls, *args, **kwargs):
-        print('Passei por aqui...')
-        instancia = super().__new__(cls)
-        return instancia
-
-    def __init__(self, valor):
-        self.valor = valor
-
-
-lista_pares = input('Informe três valores pares separando-os por espaço: ').split()
-obj = ValoresPares(lista_pares)
-result = obj.soma_valores()
-obj()
-
-cg = ContextGenerator('banco_de_dados.txt', 'w')
-
-with cg as arquivo:
-    arquivo.write('Valor qualquer')
-
-outro_obj = CriandoInstancias('Texto aleatório')
-print(outro_obj.valor)
