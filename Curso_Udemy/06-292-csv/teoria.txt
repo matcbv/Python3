@@ -1,0 +1,25 @@
+CSV (Comma Separated Values - Valores separados por vírgulas)
+
+O CSV É um formato de arquivo que armazena dados em forma de tabela, onde cada
+linha representa uma linha da tabela e as colunas são separadas por vírgulas.
+Ele é amplamente utilizado para transferir dados entre sistemas de diferentes plataformas,
+como, por exemplo, de Excel, para Google Sheets, ou para importar ou exportar dados de
+planilha para uma base de dados.
+Um arquivo CSV possui a extensão ".csv" e pode ser aberto em um editor de texto ou
+em uma planilha eletrônica.
+
+Exemplo de um arquivo CSV:
+
+Nome,Idade,Endereço
+Matheus,21,"Rua do Quincão, 277 - Centro"
+Lucas,20,"Rua Washingtom Luiz, 200 - Cidade Nova"
+
+A primeira linha do arquivo define os nomes das colunas, já as linhas seguintes,
+possuem os valores que cada célula contém nas linhas da tabela.
+
+Regras básicas do CSV:
+
+1 - Separe os valores das colunas com um delimitador único (vírgula [,] por padrão)
+2 - Cada registro deve estar em uma linha
+3 - Não deixar linhas ou espaços sobrando
+4 - Use o caractere de escape (aspas duplas ["]) quando o delimitador aparecer no valor.
