@@ -1,15 +1,12 @@
 from datetime import datetime
 
-data_01 = str(datetime(2024, 4, 10, 22, 50))
-data_02 = str(datetime(2024, 4, 10, 22, 50))
-formato = '%Y-%m-%d %H:%M:%S'
-data_formato_padrao = datetime.strptime(data_01, formato)
+data_formato_padrao = datetime(2024, 4, 10, 22, 50)
 formato_brasileiro = '%d-%m-%Y'
 # Podemos chamar nosso método strftime de duas maneiras, chamando-o através da classe datetime:
-# datetime.strftime('data', 'formato')
+# Obs.: Neste caso, devemos passar nosso objeto do tipo datetime, junto de uma string contendo a formatação.
+# datetime.strftime(obj_datetime, 'formato')
 # Ou chamando-o através da nossa instância, passando somente o formato dessa vez:
 # instancia.srtftime('formato').
-# Obs.: Os parâmetros devem ser do tipo string.
 data_formato_brasil = data_formato_padrao.strftime(formato_brasileiro)
 print(data_formato_brasil)
 

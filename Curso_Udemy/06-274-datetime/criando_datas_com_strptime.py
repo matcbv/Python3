@@ -27,3 +27,10 @@ str_com_data = '2024/04/10 - 22:50:00'
 formatacao_para_data = '%Y/%m/%d - %H:%M:%S'
 data_formatada = datetime.strptime(str_com_data, formatacao_para_data)
 print(data_formatada)
+
+# Resumindo:
+
+# datetime cria um objeto do tipo datetime a partir da data e hora atual
+# ou especificando um, ou mais valores por parâmetro.
+# strptime cria um objeto do tipo datetime a partir de uma string com formato
+# de data, junto de uma string de formatação.
