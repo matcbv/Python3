@@ -22,8 +22,8 @@ substitute_dict = dict(
     empresa='Cerqueiras')
 
 
-with open(path, 'r+') as file:
-    file_text = ' '.join(file.readlines())
-    print(file_text)
-    template = string.Template(file_text)
-    template.substitute()
+with open(path, 'r', encoding='utf-8') as file:
+    text_file = file.read()
+    template = string.Template(text_file)
+    text_file = template.substitute(substitute_dict)
+    print(text_file)
