@@ -1,0 +1,23 @@
+python-dotenv é uma biblioteca Python que permite que você utilize de arquivos de configuração
+para armazenar e acessar as suas variáveis de ambiente de forma mais fácil e segura em seus projetos.
+
+As variáveis de ambiente podem variar dependendo do ambiente em que o seu código está sendo executado,
+como o ambiente de produção ou o ambiente de desenvolvimento.
+
+Para utilizar o python-dotenv, temos que instalá-lo através da ferramenta pip. Ex.:
+pip install python-dotenv
+
+Para fazermos uso desse pacote, devemos criar um arquivo de extensão .env (com nome .env por convenção),
+para armazenarmos nossas variáveis de ambiente.
+
+O python-dotenv funciona lendo o arquivo .env e adicionando as variáveis de ambiente contidas nele,
+ao ambiente do sistema operacional, de forma que elas fiquem disponíveis para seu código usando a função os.getenv().
+
+Isso é útil, por exemplo, para não expormos senhas ou outras informações confidenciais em nosso código, ou em
+repositórios compartilhados, pois o arquivo .env pode ser adicionado ao .gitignore para não ser incluído em commits.
+Obs.: Caso você seu código necessite da implementação de variáveis de ambiente, crie um .env-example para exemplificar
+as variáveis e os valores a serem adicionados.
+
+Além disso, o python-dotenv também permite que você use um arquivo .env para armazenar valores de configuração
+específicos de cada ambiente, o que pode ser útil quando você estiver trabalhando em um projeto com diferentes
+ambientes de desenvolvimento, teste e produção.
