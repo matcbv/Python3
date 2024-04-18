@@ -12,4 +12,5 @@ if hasattr(var, metodo):
     print(getattr(var, metodo))
 
 # Podemos estar verificando todos os atributos para aquele objeto com o dir.
+print()
 print(dir(var))

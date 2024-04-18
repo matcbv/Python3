@@ -40,12 +40,15 @@ with open(email_path, 'r', encoding='utf-8') as email:
     template = Template(texto_arquivo)
     texto_email = template.substitute(datas)
 
-# Convertendo nosso objeto para ser do tipo MIMEMultipart:
+# Criando nosso objeto do tipo MIMEMultipart:
 mime_multipart = MIMEMultipart()
 mime_multipart['from'] = remetente
 mime_multipart['to'] = destinatario
 mime_multipart['subject'] = 'Email Teste'
 
+# Criando e adicionado texto em nosso email:
+# Ao utilizarmos nosso construtor MIMEText, devemos passar o texto que queremos adicionar.
+# Esse, deve ser em formato de string. Também podemos passar o subtipo
 # O Sub-tipo também poderia ser plain, caso o arquivo contivesse apenas texto simples.
 corpo_email = MIMEText(texto_email, 'html', 'utf-8')
 mime_multipart.attach(corpo_email)
