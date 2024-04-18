@@ -11,3 +11,14 @@ class SetGetItem:
     def __setitem__(self, index, value):
         self.value02[index] = value
 
+
+values = SetGetItem()
+print('Valor 1:', values.value01,
+      '\nValor 2:', values.value02,)
+
+# Utilizando nosso método __getitem__:
+print(values[1])
+
+# Utilizando nosso método __setitem__:
+values[2] = 'z'
+print(values.value02)
