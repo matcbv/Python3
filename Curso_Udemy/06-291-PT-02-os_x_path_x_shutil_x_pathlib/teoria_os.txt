@@ -1,5 +1,3 @@
-MAIS A FRENTE HÁ UMA SEÇÃO MAIS COMPLETA SOBRE O MÓDULO OS (06-281).
-
 O módulo 'os' fornece funcionalidade que nos permitem interagir com o sistema operacional.
 Tal módulo possui um submódulo chamado path, que contém funções para trabalhar com caminhos
 de arquivos, além da função listdir, pode ser usada para listar os arquivos em um diretório.

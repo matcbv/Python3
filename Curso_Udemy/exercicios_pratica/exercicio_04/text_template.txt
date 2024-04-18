@@ -1,0 +1,8 @@
+Prezado $client,
+
+Estou entrando em contato por meio desse email para resolvermos a questão pendente de ontem.
+Fico no aguardo de um retorno para darmos continuidade. Todos a documentação necessária
+está anexada logo abaixo.
+
+Atenciosamente,
+$name

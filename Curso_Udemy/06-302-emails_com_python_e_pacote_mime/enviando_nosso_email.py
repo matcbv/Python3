@@ -57,10 +57,10 @@ mime_multipart.attach(corpo_email)
 # O parâmetro timeout determina quanto tempo o cliente SMTP aguardará para se conectar ao servidor SMTP
 # antes de desistir e lançar uma exceção de timeout.
 with smtplib.SMTP(smtp_server, smtp_port, timeout=10) as server:
-    # Iniciando a comunicação com o servidor SMTP:
-    server.ehlo()
     # Iniciando a comunicação segura através do protocolo TLS:
     server.starttls()
+    # Iniciando a comunicação com o servidor SMTP:
+    server.ehlo()
     # Logando no servidor SMTP:
     server.login(smtp_user, smtp_password)
     # Enviando nossa mensagem:
