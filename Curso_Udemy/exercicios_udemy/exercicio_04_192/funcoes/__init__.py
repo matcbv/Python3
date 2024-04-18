@@ -1,6 +1,6 @@
 import os
 
-path = "/exercicios_udemy/exercicio_04_192/banco_de_dados.txt"
+path = "/exercicios_udemy/exercicio_04_192/text_model.txt"
 historico_respostas = []
 
 

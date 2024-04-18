@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime
 
 locale.setlocale(locale.LC_ALL, '')
-path = Path().absolute() / 'banco_de_dados.txt'
+path = Path().absolute() / 'text_model.txt'
 
 
 def conversion_to_brl(valor):
