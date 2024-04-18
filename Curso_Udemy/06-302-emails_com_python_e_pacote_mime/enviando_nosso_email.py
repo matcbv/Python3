@@ -47,15 +47,15 @@ mime_multipart['to'] = destinatario
 mime_multipart['subject'] = 'Email Teste'
 
 # Criando e adicionado texto em nosso email:
-# Ao utilizarmos nosso construtor MIMEText, devemos passar o texto que queremos adicionar.
-# Esse, deve ser em formato de string. Também podemos passar o subtipo
-# O Sub-tipo também poderia ser plain, caso o arquivo contivesse apenas texto simples.
 corpo_email = MIMEText(texto_email, 'html', 'utf-8')
 mime_multipart.attach(corpo_email)
 
-# Enviando nosso email através do context generator with:
-# Iremos inicializar nosso gerador de contextos através da classe SMTP, passando a ela,
-# a servidor SMTP, junto de sua porta de acesso.
+# Com o construtor with, estaremos criando um contexto de gerenciamento de recursos para o objeto smtplib.SMTP
+# Junto a instância da nossa classe SMTP, devemos passar o servidor SMTP, junto de sua porta de acesso.
+# O construtor with é recomendado sempre ao trabalharmos com abertura e fechamento de arquivos e
+# protocolos de rede e banco de dados, pois ele garante um encerramento correto de todas as operações.
+# O parâmetro timeout determina quanto tempo o cliente SMTP aguardará para se conectar ao servidor SMTP
+# antes de desistir e lançar uma exceção de timeout.
 with smtplib.SMTP(smtp_server, smtp_port, timeout=10) as server:
     # Iniciando a comunicação com o servidor SMTP:
     server.ehlo()

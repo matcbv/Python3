@@ -37,5 +37,8 @@ email['Subject'] = 'Este é um email de teste'
 
 print(email.as_string())
 
+# Ao utilizarmos nosso construtor MIMEText, devemos passar o texto que queremos adicionar.
+# Esse, deve ser em formato de string. Também podemos passar um subtipo, esse, pode ter o
+# valor plain, caso o arquivo contivesse apenas texto simples.
 corpo_email = MIMEText('Mensagem de teste.', 'html', 'utf-8')
 email.attach(corpo_email)
