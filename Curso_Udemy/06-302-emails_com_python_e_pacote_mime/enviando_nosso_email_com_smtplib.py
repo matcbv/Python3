@@ -59,10 +59,12 @@ mime_multipart.attach(corpo_email)
 with smtplib.SMTP(smtp_server, smtp_port, timeout=10) as server:
     # Iniciando a comunicação segura através do protocolo TLS:
     server.starttls()
-    # Iniciando a comunicação com o servidor SMTP:
+    # O método ehlo é responsável por identificar o cliente (remetente) para o servidor SMTP e iniciar
+    # uma sessão de comunicação. Caso nenhum nome seja passado, a biblioteca smtplib utilizará o nome
+    # do localhost, que no nosso caso, é o nome da nossa máquina.
     server.ehlo()
-    # Logando no servidor SMTP:
+    # Logando no servidor SMTP passando o usuário e senha para a ele:
     server.login(smtp_user, smtp_password)
-    # Enviando nossa mensagem:
+    # Enviando nossa mensagem através do método send_message:
     server.send_message(mime_multipart)
     print('E-mail enviado com  sucesso!')
