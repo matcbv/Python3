@@ -4,7 +4,7 @@ from pathlib import Path
 dir_path = Path().absolute()
 dir_path = dir_path / 'pasta_para_filtragem'
 # O método glob é responsável por determinar quais arquivos/diretórios serão selecionados em nossa busca.
-# Podemos utilizá-lo de duas formas: com o módulo glob ou com a class Path do módulo pathlib.
+# Podemos utilizá-lo de duas formas: com o módulo glob ou com a classe Path do módulo pathlib.
 # No módulo glob, temos três funções que podemos utilizar:
 
 # glob.glob - Retorna uma lista com todos os arquivos/diretórios encontrados pelo padrão informado.
@@ -13,7 +13,7 @@ dir_path = dir_path / 'pasta_para_filtragem'
 # glob.glob0 - Tem a mesma função de glob.glob, porém caso nada seja encontrado, a exceção glob.GlobError
 # é levantada.
 
-# glob.glob1 - Busca por arquivos e diretório contidos no diretório passado a ele,
+# glob.glob1 - Busca por arquivos e diretórios contidos no diretório passado a ele,
 # sem entrar em subdiretórios.
 
 # Elementos importantes na filtragem com o glob:
@@ -28,15 +28,16 @@ dir_path = dir_path / 'pasta_para_filtragem'
 # Aqui iremos buscar todos os arquivos com o formato passado por parâmetro.
 # Podemos notar que o arquivo arquivo004.txt não foi adicionado a lista,
 # pois não bate com o padrão informado.
-model_files = dir_path.glob('arquivo??.txt')
+model_files = dir_path.glob('arquivo_??.txt')
 for file in model_files:
     print(file)
+print()
 
 # Através do módulo glob:
 # Utilizado o método glob do módulo glob, o formato deve ser: globX.glob('str_do_caminho'), sendo X, 0 ou 1.
 # Aqui iremos buscar todos os arquivos do formato txt.
 txt_path = str(dir_path / '*.txt')
-# Passaremos uma string contento o caminho, junto do padrão para o método glob.
+# Passaremos uma string contendo o caminho, junto do padrão para o método glob.
 # No caso abaixo, poderíamos só passar o padrão desejado ('*.txt'), já que, por padrão,
 # o método glob realiza a busca no diretório atual.
 model_files_txt = glob.glob(txt_path)

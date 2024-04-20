@@ -13,7 +13,7 @@ for root, directories, files in os.walk(path):
     if files:
         for file in files:
             file_path = os.path.join(root, file)
-            # Para obtermos o tamanho de nossos arquivos em bits, podemoS utilizar
+            # Para obtermos o tamanho de nossos arquivos em bits, podemos utilizar
             # dois métodos. O método stat, do módulo os, ou o método getsize, do
             # módulo path.
             # Com o método stat:

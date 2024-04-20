@@ -11,8 +11,12 @@ Escrever algo no arquivo - pathlib.Path.write_text()
 Ler algo no arquivo - pathlib.Path.read_text()
 
 Criar um arquivo ou atualizar sua timestamp: pathlib.Path.touch()
+Obs.: Com o parâmetro exist_ok, definimos se uma exceção será ou não levantada caso
+o arquivo a ser criado já existir. Isso pode ser feito através dos valores True ou False.
 
 Remover um arquivo - pathlib.Path.unlink()
+Obs.: Com o parâmetro missing_ok, definimos se uma exceção será ou não levantada caso
+o arquivo a ser excluído não existir. Isso pode ser feito através dos valores True ou False.
 
 Remover um diretório vazio - pathlib.Path.rmdir()
 

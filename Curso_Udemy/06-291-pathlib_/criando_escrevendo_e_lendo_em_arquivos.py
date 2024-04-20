@@ -20,7 +20,7 @@ print(caminho_para_novo_arquivo.read_text(encoding='utf-8'))
 
 # Apagando o arquivo criado acima:
 caminho_para_novo_arquivo.unlink()
-# Obs.: Caso queira ver o arquivo sendo criado e seu conteúdo, basta comentar essa linda e executar o código.
+# Obs.: Caso queira ver o arquivo sendo criado e seu conteúdo, basta comentar essa linha e executar o código.
 
 # Podemos também criar diretórios, assim com vimos anteriormente no módulo os:
 caminho_para_novo_diretorio = caminho_diretorio_atual / 'pasta_para_exemplo'

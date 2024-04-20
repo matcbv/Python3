@@ -50,7 +50,7 @@ mime_multipart['subject'] = 'Email Teste'
 corpo_email = MIMEText(texto_email, 'html', 'utf-8')
 mime_multipart.attach(corpo_email)
 
-# Com o construtor with, estaremos criando um contexto de gerenciamento de recursos para o objeto smtplib.SMTP
+# Com o construtor with, estaremos criando um contexto de gerenciamento de recursos para o objeto de smtplib.SMTP
 # Junto a instância da nossa classe SMTP, devemos passar o servidor SMTP, junto de sua porta de acesso.
 # O construtor with é recomendado sempre ao trabalharmos com abertura e fechamento de arquivos e
 # protocolos de rede e banco de dados, pois ele garante um encerramento correto de todas as operações.

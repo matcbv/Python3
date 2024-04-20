@@ -30,7 +30,8 @@ print(type(email))
 
 # Internamente, esse método converte as chaves e valores fornecidos em chamadas para os métodos
 # add_header() ou replace_header() da classe MIMEMultipart.
-# Dependendo se o cabeçalho já existe ou não, o método apropriado será chamado para adicionar um novo cabeçalho ou substituir um cabeçalho existente.
+# Dependendo se o cabeçalho já existe ou não, o método apropriado será chamado para
+# adicionar um novo cabeçalho ou substituir um cabeçalho existente.
 email['From'] = 'matheuscbv23@gmail.com'
 email['To'] = 'matheuscbv2332@gmail.com'
 email['Subject'] = 'Este é um email de teste'

@@ -1,5 +1,6 @@
 # Podemos trabalhar com caminhos utilizando a classe Path:
 import pathlib
+import shutil
 from pathlib import Path
 
 # Ao instanciarmos a classe Path sem passar nenhum valor por parâmetro, será criado um objeto que
