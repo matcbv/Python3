@@ -1,0 +1,13 @@
+O ArgumentParser é responsável por gerenciar a análisar argumentos da linha de comando em programas Python.
+Ele faz parte da biblioteca padrão argparse, que fornece uma maneira conveniente de lidar com argumentos
+passados para um programa Python quando ele é chamado a partir da linha de comando.
+
+Ele analisa os argumentos da linha de comando e os converte em um objeto fácil de usar em Python,
+permitindo definir argumentos esperados, suas opções, ajuda, entre outras coisas.
+
+Abaixo, estarão listadas as principais funções do ArgumentParser:
+- Definir os argumentos que o programa pode aceitar.
+- Especificar se os argumentos são opcionais ou obrigatórios.
+- Configurar mensagens de ajuda automáticas para cada argumento.
+- Gerenciar os valores passados para os argumentos.
+- Validar os argumentos e fornecer mensagens de erro apropriadas.
