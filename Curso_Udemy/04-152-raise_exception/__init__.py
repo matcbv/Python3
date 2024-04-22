@@ -2,7 +2,7 @@
 # passando também uma mensagem personalizada para esse erro. Ex.:
 # raise ValueError('Valor não aceito!')
 
-# Podemos retornar exceções através de funções também:
+# Podemos retornar exceções por meio de funções também:
 def diferente_de_zero(n):
     if n == 0:
         raise ZeroDivisionError('Não é possível dividir um valor por zero.')

@@ -24,3 +24,4 @@ print(pessoa_01)
 # Com a função fields, conseguimos ver todas as configurações aplicadas para aquele atributo
 # em específico:
 print(fields(pessoa_01))
+print(pessoa_01.enderecos)

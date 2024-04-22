@@ -1,0 +1,8 @@
+O módulo bs4 é responsável pela análise e extração de dados de documentos HTML e XML.
+Com o BeautifulSoup, você pode facilmente percorrer a estrutura complexa de uma página da web
+e extrair informações específicas, como links, parágrafos, listas, etc.
+
+Quando você analisa um documento HTML com BeautifulSoup,
+as tags HTML são representadas por objetos da classe Tag fornecidos pela biblioteca BeautifulSoup.
+Por meio desses objetos, podemos manipular e acessar seus atributos e conteúdo usando
+métodos e atributos Python.

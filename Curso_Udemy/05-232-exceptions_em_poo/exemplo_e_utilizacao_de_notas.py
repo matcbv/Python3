@@ -8,6 +8,7 @@ def levantar_excecao(msg):
     excecao.add_note('Podemos criar notas para nossa exceção!')
     raise excecao
 
+
 try:
     numero_01 = 'texto'
     numero_02 = 3
