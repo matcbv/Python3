@@ -74,8 +74,8 @@ class ContextGenerator:
             print('O motivo do erro foi:', exc_val)
             return True
 
-# ------------------------------- __new__ e __init__ -------------------------------
 
+# ------------------------------- __new__ e __init__ -------------------------------
 class CriandoInstancias:
     def __new__(cls, *args, **kwargs):
         print('Passei por aqui...')
@@ -119,5 +119,3 @@ with cg as arquivo:
 
 outro_obj = CriandoInstancias('Texto aleatório')
 print(outro_obj.valor)
-
-

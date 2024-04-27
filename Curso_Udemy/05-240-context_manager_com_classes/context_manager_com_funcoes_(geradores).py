@@ -29,6 +29,5 @@ def my_context_manager(path, open_mode):
 
 
 with my_context_manager('text_model.txt', 'w') as arquivo:
-    # Implementando um erro para que a exceção seja levantada:
     arquivo.write('Texto qualquer')
     print('FIM')

@@ -11,7 +11,6 @@ import zipfile
 from contextlib import contextmanager
 from copy import deepcopy
 
-
 banco_de_dados = Path().absolute() / 'banco_de_dados_bissextos.txt'
 
 
@@ -41,12 +40,12 @@ class AnoBissexto(type):
 
     def __call__(cls, *args, **kwargs):
         instancia = super().__call__(*args, **kwargs)
+        if e_bissexto(instancia.ano):
+            instancia.bissexto = True
+            instancia.dias = 366
         for a in range(instancia.ano + 1):
             if e_bissexto(a):
                 instancia.lista_anos_bissextos.append(f'\n{a}')
-            if a == len(instancia.lista_anos_bissextos):
-                instancia.bissexto = True
-                instancia.dias = 366
         return instancia
 
 
@@ -66,8 +65,10 @@ class Ano(metaclass=AnoBissexto):
         return cal_mes
 
     def obter_dia_bissexto(self):
-        dia_semana = calendar.day_name[calendar.weekday(self.ano, 2, 29)]
-        return dia_semana
+        if self.bissexto:
+            dia_semana = calendar.day_name[calendar.weekday(self.ano, 2, 29)]
+            return dia_semana
+        print('O ano não é bissexto.')
 
 
 @contextmanager
@@ -88,7 +89,6 @@ resp_ = verifica_resp(input('Deseja obter a data atual? [S/N] ').lower()[0])
 if resp_:
     print(datetime.today().date())
     print()
-
 
 obj_ano = Ano(2024)
 

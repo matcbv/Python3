@@ -1,4 +1,3 @@
-import calendar
 from itertools import groupby
 from functools import reduce, partial
 

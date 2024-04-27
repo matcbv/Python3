@@ -15,7 +15,7 @@ def funcao_exemplo(a, b, /, c):
 
 # No exemplo acima, os elementos a e b devem ser posicionais, mas c pode ser nomeado normalmente.
 
-def funcao_exemplo_02(a, b, *c):
+def funcao_exemplo_02(a, b, *, c):
     print(a, b, c)
 
 
