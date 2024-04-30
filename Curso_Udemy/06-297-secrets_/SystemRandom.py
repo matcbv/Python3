@@ -7,7 +7,6 @@
 from secrets import SystemRandom
 # Junto da propriedade string, podemos criar senhas aleatórias. Veremos como abaixo dos primeiros exemplos:
 import string as s
-import secrets
 
 random_ = SystemRandom()
 

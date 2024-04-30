@@ -18,7 +18,7 @@ except ZeroDivisionError:
 print('-'*60)
 
 # Podemos tratar várias exceções com vários excepts ou tratar mais de uma exceção em um único except.
-# Ainda podemos nos referênciar a maior 05-198-classes_metodos_instancias_e_atributos de exceções existente no Python, para generalizarmos a
+# Ainda podemos nos referênciar a maior classe de exceções existente no Python (Exception), para generalizarmos a
 # nossa tratativa de erros. Veja no exemplo abaixo:
 dividendo = 18
 divisor = None
