@@ -11,7 +11,7 @@ parser.add_argument(
     '-s', '--show',
     # O parâmetro help indica a mensagem a ser exibida ao utilizarmos o comando de ajuda (-h, --help)
     help='Mostra "Olá mundo" na tela por padrão',
-    # O parâmetro help explicita o tipo de argumento esperado pelo argumento.
+    # O parâmetro type explicita o tipo de argumento esperado pelo argumento.
     # Obs.: Por padrão, o valor definido é do tipo list.
     # type=str,
     # O parâmetro metavar é uma forma de fornecer uma mensagem informativa na mensagem
@@ -26,7 +26,7 @@ parser.add_argument(
     # nargs é responsável por definir o número de argumentos que nosso argumento aceitará.
     # Podemos passar um número inteiro, ou valores especiais, como:
     # '?': aceita zero ou um valor. Isso significa que o argumento pode ser omitido ou pode ter um valor associado.
-    # '*': aceita zero ou um, ou mais valores. O argumento pode ser omitido completamente ou pode ter um ou mais
+    # '*': aceita zero ou um, ou mais valores. O argumento pode ser omitido completamente ou pode ter um, ou mais
     # valores associados.
     # '+': aceita um ou mais valores. Isso significa que o argumento deve ter pelo menos um valor associado,
     # mas pode ter mais.

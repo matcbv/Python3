@@ -31,7 +31,7 @@ dados_alunos_json = '''
 
 # A seguir, veremos alguns dos métodos provenientes do módulo json:
 
-# dumps(objeto) - Converte um objeto em uma string JSON.
+# dumps(objeto) - Converte um objeto Python em uma string JSON.
 # dump(objeto, arquivo) - Escreve um objeto Python em formato JSON em um arquivo.
 # loads(string_json) - Converte uma string JSON para um objeto Python.
 # load(arquivo) - Lê um arquivo JSON e converte para um objeto Python.
@@ -50,7 +50,7 @@ print()
 
 with open(caminho, 'w+', encoding='utf-8') as arquivo:
     # Podemos utilizar o argumento indent, para indentarmos nossos dados em JSON. Ao passarmos o valor True,
-    # informarmo que queremos indentar nosso JSON sem espaçamentos. Podemos também passar um
+    # informamos que queremos indentar nosso JSON com espaçamentos. Podemos também passar um
     # número inteiro como valor, indicando quantos espaços queremos em nossa indentação.
     # Convertendo um objeto Pyhton em JSON e adicionando-o em um arquivo JSON:
     json.dump(dados_alunos, arquivo, indent=True)

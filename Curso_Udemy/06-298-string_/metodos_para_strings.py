@@ -16,7 +16,7 @@ print(string.ascii_lowercase)
 print()
 
 # ascii_uppercase - Retorna somente as letras maiúsculas da sequência ascii.
-print(string.ascii_lowercase)
+print(string.ascii_uppercase)
 print()
 
 # punctuation - Retorna um conjunto de pontuações.

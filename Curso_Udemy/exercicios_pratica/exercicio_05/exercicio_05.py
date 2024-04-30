@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from datetime import datetime
 import calendar
+from contextlib import contextmanager
 from pathlib import Path
 from string import Template
 from enum import Enum
@@ -8,7 +9,6 @@ from dataclasses import dataclass
 from itertools import count, groupby
 from functools import reduce, partial
 import zipfile
-from contextlib import contextmanager
 from copy import deepcopy
 
 banco_de_dados = Path().absolute() / 'banco_de_dados_bissextos.txt'
