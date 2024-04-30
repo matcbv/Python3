@@ -4,19 +4,34 @@ from abc import ABC, abstractmethod
 from contextlib import contextmanager
 import json
 from string import Template
+from dotenv import load_dotenv
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import os
 
+load_dotenv()
 
 log_template = '$user logged at system $time'
 
-class GetData(ABC):
-    def __init__(self, user, password, data):
-        self.data = data
-        self.log_template = log_template
-        self.user = user
+
+def get_user_information():
+    db_user = os.getenv('DB_USER')
+    db_password = os.getenv('DB_PASSWORD')
+    return db_user, db_password
+
+
+def get_date():
+    current_date = datetime.now()
+    current_date = current_date.strftime('%d/%m/%y %H:%M:%S')
+    return current_date
+
+
+class User:
+    def __init__(self, user, password):
+        self.user = password
         self.password = password
 
 
-    @abstractmethod
+class Email:
     def send_log(self):
-        my_template = Template(log_template)
-        my_template.substitute(user=)
+        pass
