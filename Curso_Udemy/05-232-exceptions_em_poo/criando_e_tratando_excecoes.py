@@ -16,7 +16,7 @@ def levantar():
 
 # Para realizarmos a tratativa de nosso erro, podemos utilizar o try e except:
 try:
-    # Como levantar levanta um erro, sempre entraremos no except.
+    # Como levantar() levanta um erro, sempre entraremos no except.
     levantar()
 # Armazenaremos nossa mensagem de erro em um objeto e então o exibiremos na tela. Dessa forma,
 # somente a mensagem será enviada.
