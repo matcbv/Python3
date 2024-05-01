@@ -11,6 +11,7 @@ from smtplib import SMTP
 import os
 from dataclasses import dataclass
 from secrets import SystemRandom
+from enum import Enum
 
 load_dotenv()
 log_template = '$type sent by $user at $date\n'
@@ -26,14 +27,19 @@ class OpenFileError(Exception):
     ...
 
 
+class Options(Enum):
+    email = 1
+    sms = 2
+
+
 @contextmanager
 def log_context_generator(path, open_mode):
     file = None
     try:
         file = open(path, open_mode, encoding='utf-8')
         yield file
-    except OpenFileError:
-        print('Um erro ocorreu ao abrir o banco de dados.')
+    except Exception:
+        raise OpenFileError('Um erro ocorreu ao abrir o banco de dados.')
     else:
         print('Log registrado com sucesso.')
     finally:
@@ -75,6 +81,7 @@ class User:
     user: str = None
     password: str = None
     email: str = None
+    phone_number: int = None
 
     def __post_init__(self):
         self.user, self.password, self.email = get_user_information()
@@ -119,12 +126,45 @@ class Email(Log):
                 SMTP.login(smtp, self.user.user, self.user.password)
                 SMTP.send_message(smtp, self._get_email())
                 SMTP.close(smtp)
-        except OpenFileError:
-            print('Não foi possível realizar o envio do email. Tente novamente.')
+        except Exception:
+            raise OpenFileError('Não foi possível realizar o envio do email. Tente novamente.')
         else:
             print('Email enviado com sucesso!')
             self.do_log()
 
 
-email = Email()
-email.send_email()
+class SMS(Log):
+    def __init__(self):
+        super().__init__()
+        self.user = User()
+
+    def do_log(self):
+        my_log_template = string.Template(log_template)
+        my_log_template = my_log_template.substitute(type='SMS', user=self.user.phone_number, date=self.date)
+        with log_context_generator(db_path, 'a') as file:
+            file.write(my_log_template)
+
+    def send_sms(self):
+        verification()
+        if 10 < len(str(self.user.phone_number)) <= 12:
+            sms_msg = input('Informe a seguir, a mensagem de texto a ser enviada: ')
+            print('Notificação enviada!')
+        else:
+            print('Número inválido! Tente novamente mais tarde')
+
+
+answer_ = int(input('Deseja enviar a mensagem via Email [1] ou SMS [2]? '))
+
+if answer_ == Options.email.value:
+    email = Email()
+    email.send_email()
+elif answer_ == Options.sms.value:
+    sms = SMS()
+    phone_number = int(input('Informe seu número de contato: '))
+    while not isinstance(phone_number, int):
+        print('Número inválido!')
+        phone_number = int(input('Informe seu número de contato: '))
+    sms.user.phone_number = phone_number
+    sms.send_sms()
+else:
+    print('Opção inválida!')
