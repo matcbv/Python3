@@ -14,7 +14,7 @@ gen = generator()
 # print(next(gen))
 # print(next(gen))
 # print('-'*60)
-# Também podemos realizar as chamadas por uma estrutura de um iterador:
+# Também podemos realizar as chamadas por uma estrutura de repetição:
 for n in gen:
     print(n)
 # Obs.: Lembrando que independente do escopo que estiver, a chamada irá continuar da última pausa

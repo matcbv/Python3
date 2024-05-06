@@ -18,7 +18,7 @@ log_template = '$type sent by $user at $date\n'
 db_path = Path().absolute() / 'db_logs.txt'
 text_template_path = Path().absolute() / 'text_template.html'
 
-# DADOS PARA O SERVIDOR SMTP
+# SMTP DATAS
 server_port = 587
 server = 'smtp.gmail.com'
 
@@ -46,6 +46,7 @@ def log_context_generator(path, open_mode):
         file.close()
 
 
+# USER DATAS
 def get_user_information():
     db_user = os.getenv('EMAIL')
     db_password = os.getenv('EMAIL_PASSWORD')
@@ -149,6 +150,7 @@ class SMS(Log):
         if 10 < len(str(self.user.phone_number)) <= 12:
             sms_msg = input('Informe a seguir, a mensagem de texto a ser enviada: ')
             print('Notificação enviada!')
+            self.do_log()
         else:
             print('Número inválido! Tente novamente mais tarde')
 
