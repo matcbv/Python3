@@ -13,7 +13,7 @@ locale.setlocale(locale.LC_ALL, '')
 # Com a função getlocale(), conseguimos ver qual linguagem e codificação estão sendo utilizada no módulo.
 print(locale.getlocale())
 
-# Caso quisessemos utilizar a codificação UTF-8, teríamos que passar algo como:
+# Caso quiséssemos utilizar a codificação UTF-8, teríamos que passar algo como:
 # locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
 
 # Como podemos ver abaixo, nosso calendário está em português.
