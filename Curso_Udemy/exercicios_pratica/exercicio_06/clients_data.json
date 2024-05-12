@@ -5,6 +5,22 @@
   "age": 22,
   "username": "matcbv",
   "email": "matheuscbv2332@gmail.com",
-  "password": "ym2se5o7"
+  "password": "23042302adm"
+ },
+ "1": {
+  "name": "lucas",
+  "lastname": "tavares",
+  "age": 28,
+  "username": "teste",
+  "password": "12345678abc",
+  "email": "matheuscbv23@gmail.com"
+ },
+ "2": {
+  "name": "josé",
+  "lastname": "Silva",
+  "age": 45,
+  "username": "luca",
+  "password": "12345678a",
+  "email": "matheuscbv23@gmail.com"
  }
 }

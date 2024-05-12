@@ -12,21 +12,21 @@ from time import sleep
 
 load_dotenv()
 
-# CAMINHO PARA O BANCO DE DADOS
+# DATABASE PATH
 db_path = Path().absolute() / 'clients_data.json'
 
-# CAMINHO PARA A TEMPLATE DO EMAIL
+# EMAIL TEMPLATE PATH
 email_template = Path().absolute() / 'email_template.html'
 
-# VARIÁVEIS DE AMBIENTE
+# ENVIRONMENT VARIABLES
 main_email_password = os.getenv('EMAIL_PASSWORD')
 main_email = os.getenv('EMAIL')
 host_name = 'localhost'
 
-
-# DADOS DO SERVIDOR DE EMAIL
+# EMAIL SERVER DATA
 server_domain = 'smtp.gmail.com'
 server_port = 587
+
 
 @contextmanager
 def my_context_generator(path, opening_mode):
@@ -43,7 +43,7 @@ def my_context_generator(path, opening_mode):
 def get_next_id():
     with my_context_generator(db_path, 'r') as db:
         data = json.load(db)
-        return str(len(data))
+        return str(len(data)-1)
 
 
 def import_data():
@@ -52,42 +52,85 @@ def import_data():
     return data
 
 
+def get_random_code():
+    password = ''.join(random.SystemRandom().choices(''.join([string.digits, string.ascii_letters]), k=8))
+    return password
+
+
+def password_template():
+    password = input('Informe uma senha com:\n'
+                     '- Ao menos oito caracteres\n'
+                     '- Ao menos um número decimal\n'
+                     '- Ao menos uma letra\n'
+                     'Senha: ')
+    return password
+
+
+def verify_password(password):
+    has_digit = False
+    has_alpha = False
+    if len(password) < 8:
+        return False
+    for digit in password:
+        if digit.isdigit():
+            has_digit = True
+        if digit.isalpha():
+            has_alpha = True
+        if has_digit and has_alpha:
+            return True
+    return False
+
+
+def check_username(data, received_username):
+    username_array = []
+    for client in data.values():
+        username_array.append(client['username'])
+    if received_username in username_array:
+        return True
+    return False
+
+
+def check_password(data, received_username, received_password):
+    client_array = []
+    for client in data.values():
+        client_array.append([client['username'], client['password']])
+    for client in client_array:
+        if client[0] == received_username and client[1] == received_password:
+            return True
+    return False
+
+
 class Client:
-    def __init__(self, name, lastname, age, username, email):
+    def __init__(self, name, lastname, age, username, password, email):
         self._id = get_next_id()
         self._name = name
         self._lastname = lastname
-        self._username = username
         self._age = age
+        self._username = username
+        self.__password = password
         self._email = email
-        self.__password = self.__get_password()
-        self.client_keys = ['name', 'lastname', 'age', 'username', 'password']
+        self.client_keys = ['name', 'lastname', 'age', 'username', 'password', 'email']
+        self.add_new_client()
 
-    @staticmethod
-    def __get_password():
-        password = ''.join(random.SystemRandom().choices(''.join([string.digits, string.ascii_letters]), k=8))
-        return password
+    __verification_code = None
 
     def add_new_client(self):
         if Path.exists(db_path):
             data = import_data()
-            username_array = []
-            for client in data.values():
-                username_array.append(client['username'])
-            username = self._username
-            if username in username_array:
+            checked_username = check_username(data, self._username)
+            if checked_username:
                 return print('\033[92mCliente já cadastrado!\033[0m')
             client_data = {
                 'name': self._name,
                 'lastname': self._lastname,
                 'age': self._age,
                 'username': self._username,
+                'password': self.__password,
                 'email': self._email,
-                'password': self.__password
             }
             data[self._id] = client_data
             with my_context_generator(db_path, 'w') as db:
-                json.dump(data, db, indent=True, ensure_ascii=False, )
+                json.dump(data, db, indent=True, ensure_ascii=False)
         else:
             print('\033[91mUm erro inesperado ocorreu!\033[0m\n'
                   '\033[92mPossível solução\033[0m: Verifique o caminho para o banco de dados.')
@@ -98,32 +141,34 @@ class Client:
         return data[self._id]
 
     @client_data.setter
-    def client_data(self, value):
+    def client_data(self, key):
         data = import_data()
-        [key, value] = self.get_data_info()
-        if key and value:
+        value = self.get_data_info(key)
+        if value:
+            print(self._id)
+            print(data[self._id][key])
             data[self._id][key] = value
         with my_context_generator(db_path, 'w') as db:
-            json.dump(data, db, indent=True, ensure_ascii=False, )
+            json.dump(data, db, indent=True, ensure_ascii=False)
 
-    def get_data_info(self):
-        key = input('De qual chave deseja alterar o valor: ').lower()
+    def get_data_info(self, key):
         value = None
         if key not in self.client_keys:
-            raise KeyError('Chave inválida! Tente novamente.')
+            return False
         if key == 'age':
             value = int(input('Qual será o novo valor? ').lower())
         elif key == 'password':
             self.send_verification_email()
             code = input('Informe o código obtido através do email: ')
-            if code == self.__password:
-                new_password = input('Informe sua nova senha com, no mínimo, 8 caracteres: ')
-                while len(new_password) < 8:
-                    print('\033[91mSenha inválida!\033[0m')
-                    new_password = input('Informe sua nova senha com, no mínimo, 8 caracteres: ')
+            if code == self.__verification_code:
+                new_password = password_template()
+                while not verify_password(new_password):
+                    new_password = password_template()
+                    verify_password(new_password)
+                return new_password
         else:
             value = input('Qual será o novo valor? ').lower()
-        return key, value
+        return value
 
     def get_mime(self):
         mime = MIMEMultipart()
@@ -134,9 +179,10 @@ class Client:
         with my_context_generator(email_template, 'r') as email:
             text = email.read()
             template = string.Template(text)
+            self.__verification_code = get_random_code()
             template = template.substitute(addressee=f'{self._name} {self._lastname}',
-                                           password=self.__password,
-                                           remitter='Equipe MathMat')
+                                           password=self.__verification_code,
+                                           remitter='Equipe Etc')
             mime_txt = MIMEText(template, _subtype='html', _charset='utf-8')
         mime.attach(mime_txt)
         return mime
@@ -153,10 +199,10 @@ class Client:
             except Exception as e:
                 print(e)
             print('Email enviado!')
-            confirmation = input('Confirma o recebimento do email? [S/N]').lower()[0]
+            confirmation = input('Confirma o recebimento do email? [S/N] ').lower()[0]
             while confirmation not in 'sn':
                 print('Resposta inválida!')
-                confirmation = input('Confirma o recebimento do email? [S/N]').lower()[0]
+                confirmation = input('Confirma o recebimento do email? [S/N] ').lower()[0]
             if confirmation == 'n':
                 print('Estaremos reenviando o email nos próximos 30 segundos.')
                 sleep(10)
@@ -164,6 +210,45 @@ class Client:
             return
 
 
-sign_up = input('Deseja realizar login [1] ou criar uma nova conta [2]? ')
-client01 = Client('Matheus', 'Cerqueira', 22, 'matcbv', 'matheuscbv23@gmail.com')
-client01.add_new_client()
+test_client = Client('Lucas', 'Silva', 25, 'luca',
+                     '12345678a', 'matheuscbv23@gmail.com')
+
+while True:
+    try:
+        sign_up = int(input('Deseja realizar login [1] ou criar uma nova conta [2]? '))
+        print()
+    except ValueError:
+        print()
+        print('\033[91mOpção inválida!\033[0m\n')
+    else:
+        if sign_up == 1 or sign_up == 2:
+            break
+        print('\033[91mOpção inválida!\033[0m\n')
+
+if sign_up == 1:
+    login_username = input('Nome de usuário: ')
+    login_password = input('Senha: ')
+    data_ = import_data()
+    checked_username_ = check_username(data_, login_username)
+    checked_password_ = check_password(data_, login_username, login_password)
+    if checked_username_ and checked_password_:
+        print()
+        print(f'\033[92mSeja bem-bindo, {login_username}!\033[0m')
+    else:
+        print()
+        print('\033[91mCredenciais inválidas!\033[0m')
+else:
+    name_ = input('Informe seu primeiro nome: ')
+    lastname_ = input('Informe seu sobrenome: ')
+    age_ = int(input('Informe sua idade: '))
+    username_ = input('Escolha um nome de usuário: ')
+    password_ = password_template()
+    while not verify_password(password_):
+        print('\033[91mSenha inválida!\033[0m')
+        print()
+        password_ = password_template()
+        verify_password(password_)
+    email_ = input('Informe seu endereço de email: ')
+    client_ = Client(name_, lastname_, age_, username_, password_, email_)
+
+test_client.client_data = 'name'
