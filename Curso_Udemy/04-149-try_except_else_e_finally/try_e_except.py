@@ -30,8 +30,17 @@ try:
     print(f'O resultado é: {result}')
 except ZeroDivisionError:
     print('Não é possível realizar uma divisão por 0.')
-except (TypeError, ValueError):
-    print('É necessário que valores para o dividendo e o divisor sejam definidos.')
+    # A palavra-chave as é utilizada para associar o resultado de uma expressão a um nome.
+except TypeError as e:  # Aqui, estamos definindo o nome da variável que a instância da exceção será armazenada.
+    # Tal instância pode possuir valores como:
+    # - args: uma tupla contendo os argumentos passados para a exceção. Em muitos casos, a mensagem de erro está
+    # contida neste atributo.
+    # - strerror: uma representação de string do erro.
+    # - errno: se a exceção estiver relacionada a operações de E/S (entrada/saída), esse atributo pode conter
+    # o número de erro associado à falha.
+    # - filename: exceções específicas, como FileNotFoundError e FileExistsError, contém o atributo filename,
+    # que carrega o nome do arquivo que não pôde ser encontrado.
+    print(e.args)
 except Exception:
     print('Erro desconhecido! Revise os valores informados e tente novamente.')
 
@@ -44,6 +53,7 @@ try:
     sleep(1)
     result = dividendo/divisor
     print(f'O resultado é: {result}')
-except ZeroDivisionError as error:  # Aqui, definimos o nome da variável que iremos armazenas a instância.
+except ZeroDivisionError as error:
     print('Não é possível realizar uma divisão por 0.')
+    # A instância possui valores
     print('Erro:', error)
