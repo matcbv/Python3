@@ -43,7 +43,7 @@ def my_context_generator(path, opening_mode):
 def get_next_id():
     with my_context_generator(db_path, 'r') as db:
         data = json.load(db)
-        return str(len(data))
+        return str(len(data)+1)
 
 
 def import_data():

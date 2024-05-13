@@ -2,9 +2,17 @@
  "1": {
   "name": "Matheus",
   "lastname": "Cerqueira",
-  "age": "22",
-  "email": "matheuscbv23@gmil.com",
+  "age": 38,
+  "email": "matheuscbv23@gmail.com",
   "username": "matcbv",
-  "password": "admin123"
+  "password": "12345678abc"
+ },
+ "2": {
+  "name": "Matheus",
+  "lastname": "Cerqueira",
+  "age": 28,
+  "email": "matheuscbv23@gmail.com",
+  "username": "teste",
+  "password": "abcde12345"
  }
 }
