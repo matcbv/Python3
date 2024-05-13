@@ -43,7 +43,7 @@ def my_context_generator(path, opening_mode):
 def get_next_id():
     with my_context_generator(db_path, 'r') as db:
         data = json.load(db)
-        return str(len(data)-1)
+        return str(len(data))
 
 
 def import_data():
@@ -58,11 +58,11 @@ def get_random_code():
 
 
 def password_template():
-    password = input('Informe uma senha com:\n'
+    password = input('\nInforme uma senha com:\n'
                      '- Ao menos oito caracteres\n'
                      '- Ao menos um número decimal\n'
                      '- Ao menos uma letra\n'
-                     'Senha: ')
+                     '\nSenha: ')
     return password
 
 
@@ -101,17 +101,17 @@ def check_password(data, received_username, received_password):
 
 
 class Client:
-    def __init__(self, name, lastname, age, username, password, email):
+    def __init__(self, name, lastname, age, email, username, password):
         self._id = get_next_id()
         self._name = name
         self._lastname = lastname
         self._age = age
+        self._email = email
         self._username = username
         self.__password = password
-        self._email = email
-        self.client_keys = ['name', 'lastname', 'age', 'username', 'password', 'email']
         self.add_new_client()
 
+    client_keys = ['name', 'lastname', 'age', 'username', 'password', 'email']
     __verification_code = None
 
     def add_new_client(self):
@@ -119,14 +119,15 @@ class Client:
             data = import_data()
             checked_username = check_username(data, self._username)
             if checked_username:
-                return print('\033[92mCliente já cadastrado!\033[0m')
+                print('\n\033[92mCliente já cadastrado!\033[0m')
+                return False
             client_data = {
                 'name': self._name,
                 'lastname': self._lastname,
                 'age': self._age,
-                'username': self._username,
-                'password': self.__password,
                 'email': self._email,
+                'username': self._username,
+                'password': self.__password
             }
             data[self._id] = client_data
             with my_context_generator(db_path, 'w') as db:
@@ -145,8 +146,6 @@ class Client:
         data = import_data()
         value = self.get_data_info(key)
         if value:
-            print(self._id)
-            print(data[self._id][key])
             data[self._id][key] = value
         with my_context_generator(db_path, 'w') as db:
             json.dump(data, db, indent=True, ensure_ascii=False)
@@ -201,7 +200,7 @@ class Client:
             print('Email enviado!')
             confirmation = input('Confirma o recebimento do email? [S/N] ').lower()[0]
             while confirmation not in 'sn':
-                print('Resposta inválida!')
+                print('\n\033[91mResposta inválida!\033[0m\n')
                 confirmation = input('Confirma o recebimento do email? [S/N] ').lower()[0]
             if confirmation == 'n':
                 print('Estaremos reenviando o email nos próximos 30 segundos.')
@@ -210,45 +209,41 @@ class Client:
             return
 
 
-test_client = Client('Lucas', 'Silva', 25, 'luca',
-                     '12345678a', 'matheuscbv23@gmail.com')
-
 while True:
     try:
         sign_up = int(input('Deseja realizar login [1] ou criar uma nova conta [2]? '))
-        print()
     except ValueError:
-        print()
-        print('\033[91mOpção inválida!\033[0m\n')
+        print('\n\033[91mOpção inválida!\033[0m\n')
     else:
         if sign_up == 1 or sign_up == 2:
             break
         print('\033[91mOpção inválida!\033[0m\n')
 
+client_ = None
+
 if sign_up == 1:
-    login_username = input('Nome de usuário: ')
+    login_username = input('\nNome de usuário: ')
     login_password = input('Senha: ')
     data_ = import_data()
     checked_username_ = check_username(data_, login_username)
     checked_password_ = check_password(data_, login_username, login_password)
     if checked_username_ and checked_password_:
-        print()
-        print(f'\033[92mSeja bem-bindo, {login_username}!\033[0m')
+        print(f'\n\033[92mSeja bem-bindo, {login_username}!\033[0m')
     else:
-        print()
-        print('\033[91mCredenciais inválidas!\033[0m')
+        print('\n\033[91mCredenciais inválidas!\033[0m\n')
 else:
-    name_ = input('Informe seu primeiro nome: ')
-    lastname_ = input('Informe seu sobrenome: ')
-    age_ = int(input('Informe sua idade: '))
-    username_ = input('Escolha um nome de usuário: ')
+    name_ = input('\nInforme seu primeiro nome: ').strip().title()
+    lastname_ = input('Informe seu sobrenome: ').strip().title()
+    age_ = input('Informe sua idade: ').strip()
+    email_ = input('Informe seu endereço de email: ').strip()
+    username_ = input('Escolha um nome de usuário: ').strip()
     password_ = password_template()
     while not verify_password(password_):
-        print('\033[91mSenha inválida!\033[0m')
-        print()
+        print('\033[91mSenha inválida!\033[0m\n')
         password_ = password_template()
         verify_password(password_)
-    email_ = input('Informe seu endereço de email: ')
-    client_ = Client(name_, lastname_, age_, username_, password_, email_)
-
-test_client.client_data = 'name'
+    if name_ and lastname_ and age_.isdigit() and email_ and username_ and password_:
+        client_ = Client(name_, lastname_, int(age_), email_, username_, password_)
+        print('\n\033[92mCliente cadastrado com sucesso!\033[0m')
+    else:
+        print('\n\033[91mDados inválidos! Tente novamente.\033[0m')
