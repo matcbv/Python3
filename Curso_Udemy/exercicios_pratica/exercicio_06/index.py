@@ -40,10 +40,35 @@ def my_context_generator(path, opening_mode):
         file.close() if file else None
 
 
+def options_template():
+    option = input('\nEscolha uma das opções abaixo:\n'
+                   '1 - Editar dados da conta\n'
+                   '2 - Excluir conta\n'
+                   '3 - Sair\n'
+                   '\nResposta: ')
+    return option
+
+
+def password_template():
+    password = input('\nInforme uma senha com:\n'
+                     '- Ao menos oito caracteres\n'
+                     '- Ao menos um número decimal\n'
+                     '- Ao menos uma letra\n'
+                     '\nSenha: ')
+    return password
+
+
 def get_next_id():
     with my_context_generator(db_path, 'r') as db:
         data = json.load(db)
         return str(len(data)+1)
+
+
+def get_client_id(data, username):
+    for client in data.items():
+        if client[1]['username'] == username:
+            return client[0]
+    return False
 
 
 def import_data():
@@ -54,15 +79,6 @@ def import_data():
 
 def get_random_code():
     password = ''.join(random.SystemRandom().choices(''.join([string.digits, string.ascii_letters]), k=8))
-    return password
-
-
-def password_template():
-    password = input('\nInforme uma senha com:\n'
-                     '- Ao menos oito caracteres\n'
-                     '- Ao menos um número decimal\n'
-                     '- Ao menos uma letra\n'
-                     '\nSenha: ')
     return password
 
 
@@ -136,38 +152,25 @@ class Client:
             print('\033[91mUm erro inesperado ocorreu!\033[0m\n'
                   '\033[92mPossível solução\033[0m: Verifique o caminho para o banco de dados.')
 
-    @property
-    def client_data(self):
+    @staticmethod
+    def get_client_data(client_id):
         data = import_data()
-        return data[self._id]
+        return data[client_id]
 
-    @client_data.setter
-    def client_data(self, key):
-        data = import_data()
-        value = self.get_data_info(key)
-        if value:
-            data[self._id][key] = value
-        with my_context_generator(db_path, 'w') as db:
-            json.dump(data, db, indent=True, ensure_ascii=False)
-
-    def get_data_info(self, key):
-        value = None
-        if key not in self.client_keys:
-            return False
+    @classmethod
+    def set_client_data(cls, data, client_id, key):
         if key == 'age':
-            value = int(input('Qual será o novo valor? ').lower())
+            value = int(input('Qual será o novo valor? '))
         elif key == 'password':
-            self.send_verification_email()
+            cls.send_verification_email()
             code = input('Informe o código obtido através do email: ')
-            if code == self.__verification_code:
+            if code == Client.__verification_code:
                 new_password = password_template()
                 while not verify_password(new_password):
                     new_password = password_template()
                     verify_password(new_password)
-                return new_password
         else:
-            value = input('Qual será o novo valor? ').lower()
-        return value
+            value = input('Qual será o novo valor? ').strip().title()
 
     def get_mime(self):
         mime = MIMEMultipart()
@@ -178,16 +181,17 @@ class Client:
         with my_context_generator(email_template, 'r') as email:
             text = email.read()
             template = string.Template(text)
-            self.__verification_code = get_random_code()
+            Client.__verification_code = get_random_code()
             template = template.substitute(addressee=f'{self._name} {self._lastname}',
-                                           password=self.__verification_code,
+                                           password=Client.__verification_code,
                                            remitter='Equipe Etc')
             mime_txt = MIMEText(template, _subtype='html', _charset='utf-8')
         mime.attach(mime_txt)
         return mime
 
-    def send_verification_email(self):
-        msg_ = self.get_mime()
+    @classmethod
+    def send_verification_email(cls, mime):
+        msg_ = mime
         with SMTP(host=server_domain, port=server_port, local_hostname=host_name, timeout=15) as server:
             try:
                 server.ehlo()
@@ -205,7 +209,7 @@ class Client:
             if confirmation == 'n':
                 print('Estaremos reenviando o email nos próximos 30 segundos.')
                 sleep(10)
-                self.send_verification_email()
+                cls.send_verification_email(msg_)
             return
 
 
@@ -228,7 +232,23 @@ if sign_up == 1:
     checked_username_ = check_username(data_, login_username)
     checked_password_ = check_password(data_, login_username, login_password)
     if checked_username_ and checked_password_:
-        print(f'\n\033[92mSeja bem-bindo, {login_username}!\033[0m')
+        print(f'\n\033[92mSeja bem-vindo, {login_username}!\033[0m')
+        chosen_option = options_template()
+        while chosen_option not in '123':
+            print('\n\033[Opção inválida!\033[0m\n')
+            chosen_option = options_template()
+        chosen_option = int(chosen_option)
+        match chosen_option:
+            case 1:
+                chosen_key = input('\nEscolha uma das chaves abaixo para ser alterada:')
+                if chosen_key not in Client.client_keys:
+                    print(print('\n\033[Opção inválida!\033[0m\n'))
+                client_id_ = get_client_id(data_, login_username)
+                Client.set_client_data(data_, client_id_, chosen_key)
+            case 2:
+                pass
+            case 3:
+                pass
     else:
         print('\n\033[91mCredenciais inválidas!\033[0m\n')
 else:
