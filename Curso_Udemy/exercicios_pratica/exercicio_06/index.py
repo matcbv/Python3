@@ -74,8 +74,8 @@ def key_template():
     print('Digite uma das chaves abaixo para ser alterada:')
     for i in range(0, 6):
         print(f'\033[93m{Client.client_keys[i]}', end=', ') if i < 5 else print(f'{Client.client_keys[i]}', end='.\n')
-    chosen_key = input('\n\033[0mChave: ')
-    return chosen_key
+    chosen_key_ = input('\n\033[0mChave: ')
+    return chosen_key_
 
 
 def get_next_id():
