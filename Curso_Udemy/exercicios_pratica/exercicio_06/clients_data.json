@@ -14,5 +14,13 @@
   "email": "lucas.souza@gmail.com",
   "username": "luquinhas",
   "password": "135790abc"
+ },
+ "3": {
+  "name": "Guilherme",
+  "lastname": "Brasil",
+  "age": 29,
+  "email": "tenbrasil13@gmail.com",
+  "username": "brasilgui",
+  "password": "1234brasil"
  }
 }
