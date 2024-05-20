@@ -9,11 +9,15 @@ from smtplib import SMTP
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from time import sleep
+from datetime import datetime
 
 load_dotenv()
 
 # DATABASE PATH
 db_path = Path().absolute() / 'clients_data.json'
+
+# LOG FILE PATH
+log_path = Path().absolute() / 'logs.txt'
 
 # EMAIL TEMPLATE PATH
 email_template = Path().absolute() / 'email_template.html'
@@ -142,6 +146,18 @@ def check_password(data, received_username, received_password):
     return False
 
 
+def get_current_time():
+    current_time = datetime.now()
+    formated_time = current_time.strftime('%H:%M-%S %d/%m/%y')
+    return formated_time
+
+
+def add_log(msg):
+    current_time = get_current_time()
+    with my_context_generator(log_path, 'a') as log_file:
+        log_file.write(f'{msg}, {current_time}\n')
+
+
 # CLASS TO CREATE EMAILS
 class Email:
     def __init__(self, email, name, lastname):
@@ -223,6 +239,7 @@ class Client:
             data[self._id] = client_data
             with my_context_generator(db_path, 'w') as db:
                 json.dump(data, db, indent=True, ensure_ascii=False)
+            add_log(f'Usuário {self.username} criado com sucesso')
         else:
             print('\033[91mUm erro inesperado ocorreu!\033[0m\n'
                   '\033[92mPossível solução\033[0m: Verifique o caminho para o banco de dados.')
@@ -252,6 +269,7 @@ class Client:
             db_data[client_id_] = data_client_
             with my_context_generator(db_path, 'w') as database_:
                 json.dump(db_data, database_, indent=True, ensure_ascii=False)
+            add_log(f'Usuário {data_client_["username"]} alterou sua chave {key_} para {value_}')
             return True
         else:
             print('\033[91mNovo valor inválido! Tente novamente.\033[0m')
@@ -260,25 +278,35 @@ class Client:
 
 while True:
     try:
-        sign_up = int(input('Deseja realizar login \033[93m[1]\033[0m ou criar uma nova conta \033[93m[2]\033[0m? '))
+        print('Realizar login \033[93m[1]\033[0m\n'
+              'Criar nova conta \033[93m[2]\033[0m\n'
+              'Recuperar senha \033[93m[3]\033[0m\n')
+        sign_up = int(input('Escolha uma das opções acima: '))
     except ValueError:
         print('\n\033[91mOpção inválida!\033[0m\n')
     else:
-        if sign_up == 1 or sign_up == 2:
+        if sign_up == 1 or sign_up == 2 or sign_up == 3:
             break
         print('\033[91mOpção inválida!\033[0m\n')
 
 
 if sign_up == 1:
+    db_data_ = import_data()
     login_username = input('\nNome de usuário: ')
     login_password = input('Senha: ')
-    db_data_ = import_data()
     checked_username_ = check_username(db_data_, login_username)
     checked_password_ = check_password(db_data_, login_username, login_password)
-    if checked_username_ and checked_password_:
-        print(f'\n\033[92mSeja bem-vindo, {login_username}!\033[0m')
+    while not checked_username_ and not checked_password_:
+        print('\n\033[91mCredenciais inválidas!\033[0m')
+        login_username = input('\nNome de usuário: ')
+        login_password = input('Senha: ')
+        checked_username_ = check_username(db_data_, login_username)
+        checked_password_ = check_password(db_data_, login_username, login_password)
+    print(f'\n\033[92mSeja bem-vindo, {login_username}!\033[0m')
+    add_log(f'Usuário {login_username} logado com sucesso')
+    while True:
         chosen_option = options_template()
-        while chosen_option not in '123':
+        while chosen_option not in '1234':
             print('\n\033[91mOpção inválida!\033[0m\n')
             chosen_option = options_template()
         print()
@@ -303,10 +331,9 @@ if sign_up == 1:
                 with my_context_generator(db_path, 'w') as database:
                     json.dump(db_data_, database, indent=True, ensure_ascii=False)
             case 4:
-                print('Programa encerrado!')
-    else:
-        print('\n\033[91mCredenciais inválidas!\033[0m\n')
-else:
+                print('\033[93mPrograma encerrado!\033[0m')
+                break
+elif sign_up == 2:
     name_ = input('\nInforme seu primeiro nome: ').strip().title()
     lastname_ = input('Informe seu sobrenome: ').strip().title()
     age_ = input('Informe sua idade: ').strip()
@@ -322,3 +349,17 @@ else:
         print('\n\033[92mCliente cadastrado com sucesso!\033[0m')
     else:
         print('\n\033[91mDados inválidos! Tente novamente.\033[0m')
+elif sign_up == 3:
+    db_data_ = import_data()
+    login_username = input('\nNome de usuário: ')
+    checked_username_ = check_username(db_data_, login_username)
+    while not checked_username_:
+        login_username = input('\nNome de usuário: ')
+        checked_username_ = check_username(db_data_, login_username)
+    data_client = get_client_data(db_data_, login_username)
+    recoveryEmail = Email(data_client['email'], data_client['name'], data_client['lastname'])
+    recoveryMime = recoveryEmail.get_mime()
+    recoveryEmail.send_verification_email(recoveryMime)
+    recoveryCode = input('Informe o código obtido através do email: ').strip()
+    if recoveryCode == recoveryEmail.verification_code:
+        print('\nSua senha é:', data_client['password'])
