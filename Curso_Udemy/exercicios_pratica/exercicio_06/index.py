@@ -219,7 +219,7 @@ class Client:
         self._password = password
         self.add_new_client()
 
-    client_keys = ['name', 'lastname', 'age', 'username', 'password', 'email']
+    client_keys = ['name', 'lastname', 'age', 'email', 'username', 'password']
 
     def add_new_client(self):
         if Path.exists(db_path):
