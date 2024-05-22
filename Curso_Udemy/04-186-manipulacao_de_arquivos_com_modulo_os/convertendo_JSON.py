@@ -1,7 +1,7 @@
 # Para convertemos um objeto para JSON, podemos utilizar o módulo json, pertencente a biblioteca padrão do Python.
 import json
 
-caminho = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos_com_modulo_os\\banco_de_dados\\dados_JSON.txt"
+path = "H:\\GitHub\\Python3\\Curso_Udemy\\04-186-manipulacao_de_arquivos_com_modulo_os\\banco_de_dados\\dados_JSON.json"
 
 dados_alunos = {'Pessoa01': {'Nome': 'Matheus', 'Idade': 21, 'Notas': [10, 8, 9]},
                 'Pessoa02': {'Nome': 'Lucas', 'Idade': 32, 'Notas': [9, 7, 7]}}
@@ -13,7 +13,7 @@ dados_alunos = {'Pessoa01': {'Nome': 'Matheus', 'Idade': 21, 'Notas': [10, 8, 9]
 # loads(string_json) - Converte uma string JSON para um objeto Python.
 # load(arquivo) - Lê um arquivo JSON e converte para um objeto Python.
 
-with open(caminho, 'w+', encoding='utf-8') as arquivo:
+with open(path, 'w+', encoding='utf-8') as arquivo:
     # Podemos utilizar o argumento indent, para indentarmos nossos dados em JSON. Ao passarmos o valor True,
     # informarmo que queremos indentar nosso JSON sem espaçamentos. Podemos também passar um
     # número inteiro como valor, indicando quantos espaços queremos em nossa indentação.
