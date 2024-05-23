@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding:0
+        }
+
+        body, html{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        p{
+            font-family: 'Arial';
+            font-size: 1.2em;
+        }
+
+        #password{
+            color: darkred;
+            font-size: 1.4em;
+        }
+    </style>
+    <title>Email</title>
+</head>
+<body>
+    <div>
+        <p style="white-space:pre-line">
+            Olá! $addressee,
+
+            Para alterar sua senha, informe o código abaixo em nossa página:
+
+            <strong id="password">$content</strong>
+
+
+            Caso não tenha solicitado esse email, entre em contato conosco.
+
+            Atenciosamente,
+            $remitter
+        </p>
+    </div>
+</body>
+</html>
