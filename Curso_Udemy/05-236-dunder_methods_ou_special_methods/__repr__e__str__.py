@@ -15,10 +15,10 @@ class Coordenadas:
         # adicionadas em sua formatação.
 
     # Com o método especial __str__, definiremos o que será retornado quando nosso objeto for requisitado
-    # em formato de string. Por padrão, o método __str__ é utilizado sempre que definido. Caso contrário, é feito um
-    # fallback, direcionando a execução para o método __repr__, caso tenha sido definido.
-    # Obs.: fallback é uma abordagem proativa para lidar com possíveis falhas ou problemas, garantindo que haja uma
-    # solução alternativa ou plano de contingência disponível.
+    # em formato de string. Por padrão, o método __str__ é utilizado sempre que definido. Caso contrário,
+    # é feito um fallback, direcionando a execução para o método __repr__, caso tenha sido definido.
+    # Obs.: fallback é uma abordagem proativa para lidar com possíveis falhas ou problemas,
+    # garantindo que haja uma solução alternativa ou plano de contingência disponível.
     def __str__(self):
         return f'(x={self.x}, y={self.y})'
 

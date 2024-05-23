@@ -14,7 +14,7 @@ class Foo:
 obj = Foo('Matheus')
 # Ao utilizarmos __dict__ em nossa instância, será retornado um par chave e valor como vimos anteriormente.
 print(obj.__dict__)
-# Ja em nossa classe, vemos um dicionários contente diversos elementos de nossa classe.
+# Ja em nossa classe, vemos um dicionários contendo diversos elementos de nossa classe.
 print('-'*60)
 print(Foo.__dict__)
 

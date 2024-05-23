@@ -7,7 +7,9 @@ print(data_hora_atual)
 
 # Podemos passar uma timezone diferente para nossa função now. Para isso utilizaremos
 # os pacotes externos chamados pytz e types-pytz. pytz adiciona diferentes timezones,
-# enquando types-pytz adiciona as tipagens de pytz para serem reconhecidas pelo Python.
+# enquanto types-pytz adiciona as tipagens de pytz para serem reconhecidas pelo Python.
+
+# Obs.: types-putz é baixado via terminal pelo pip.
 
 data_hora_tokyo = datetime.now(timezone('Asia/Tokyo'))
 print(data_hora_tokyo)

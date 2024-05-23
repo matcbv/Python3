@@ -1,6 +1,6 @@
 # Todas as ações realizas pelo Python, são feitas por métodos especiais. Esses, são built-in
 # methods. Ou seja, métodos embutidos do Python.
-# Obs.: Não é possível criarmos métodos com dunders (underlines duplos: __).
+# Obs.: não é possível criarmos métodos com dunders (underlines duplos: __).
 
 # Abaixo veremos alguns dos métodos especiais mais comuns:
 # __lt__(self,other) - self < other

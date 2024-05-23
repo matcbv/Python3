@@ -93,7 +93,7 @@ class NossaMetaclasse(type):
         return classe
 
     def __call__(cls, *args, **kwargs):
-        instancia = super().__call__(cls)
+        instancia = super().__call__(*args, **kwargs)
         return instancia
 
 

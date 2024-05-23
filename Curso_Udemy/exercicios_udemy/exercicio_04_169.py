@@ -23,7 +23,7 @@ print('-'*90)
 # A lista final receberá o seguinte resultado: [(1, 'a'), (2, 'b'), (3, 'c')]
 print(list(zip(cidades, estados)))
 # O método zip, por padrão, utiliza a menor lista como referência para gerar as tuplas.
-# Caso quisermos utilizar a maior entre as listas, devemos utilizar o módulo itertools, importando a função zip_longest.
+# Caso quisermos utilizar a maior entre as listas, devemos utilizar o módulo itertools, importando a classe zip_longest.
 print(list(zip_longest(cidades, estados, fillvalue='SEM CIDADE')))
 # No caso de utilizarmos a com maior índice, devemos utilizar a palavra-chave fillvalue. Através dela, iremos indicar
 # o que será preenchido caso o índice da lista menor não tenha nenhum valor.

@@ -22,7 +22,7 @@ print(Direcoes['ESQUERDA'], Direcoes['DIREITA'])
 print(Direcoes.ESQUERDA, Direcoes.DIREITA)
 print()
 
-# Para obtermos somente a chave de um membro, devemos utilizar a palavra-chave value ao final:
+# Para obtermos somente o valor de um membro, devemos utilizar a palavra-chave value ao final:
 # Obs.: Iremos utilizar somente um dos três métodos acima para os exemplos restantes, porém ambos
 # os três iriam funcionar da mesma maneira.
 print(Direcoes.ESQUERDA.value)

@@ -3,7 +3,7 @@ Esse conceito é chamado de Duck Typing. Nele, o Python não releva a tipagem, e
 existe ou não em seu objeto para que ele funcione de maneira correta.
 
 Temos um trocadilho relacionado ao Duck Typing: Quando um pássaro caminha como um pato, nada como um
-pato e grasna como um pato, aquele pássaro é chamado de pato.
+pato e grasna como um pato, aquele pássaro é considerado um pato.
 
 Para criarmos um context manager, os métodos __enter__ e __exit__ devem ser implementados.
 O método __exit__ receberá a classe de exceção, a exceção e o traceback. Se ele retornar True,

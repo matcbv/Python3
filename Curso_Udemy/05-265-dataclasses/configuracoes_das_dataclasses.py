@@ -6,7 +6,7 @@ from dataclasses import dataclass
 # suas instâncias. Só poderemos utilizar os valores que instanciamos na criação da instância.
 # order: Realiza a ordenação de nossas instâncias. Por padrão, utiliza sempre o primeiro
 # atributo contido nas instâncias para ordená-las. Caso quisermos ordenar por outro valor,
-# devemos atribuir False a função order.
+# devemos atribuir False e utilizar a função order.
 # Obs.: ordem e frozen vem como False por padrão.
 @dataclass(frozen=True, order=True)
 class Pessoa:
