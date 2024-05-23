@@ -2,10 +2,23 @@ from abc import ABC, abstractmethod
 from random import SystemRandom
 import string
 from pathlib import Path
-import email_module
+import json
 
 # LOGS PATH:
-logs_path = 'transitions_log.txt'
+logs_path = Path().absolute().parent / "database/transitions_logs.txt"
+
+# DATABASE PATH:
+db_path = Path().absolute().parent / "database/clients_data.json"
+
+
+def check_db():
+    with open(db_path, 'r+') as database:
+        data = database.read()
+        if data == '':
+            database.write('{}')
+
+
+check_db()
 
 
 def check_cpf(cpf, multiplier=10, i=0):
@@ -43,12 +56,22 @@ def get_new_password():
     return new_password
 
 
-def transitions_logs():
-    pass
+def transitions_logs(date):
+    with open(logs_path, 'r') as database:
+        data_list = database.readlines()
+        extract_list = filter(lambda data: data if date in data else None, data_list)
+        return extract_list
+
+
+def get_client_data(number_account):
+    with open(db_path, 'r') as database:
+        data_obj = json.load(database)
+
 
 
 class Client:
     def __int__(self, name, lastname, age, cpf, address, salary):
+        self.id = get_next_id()
         self.name = name
         self.lastname = lastname
         self.age = age
@@ -109,9 +132,16 @@ class SavingsAccount(BankAccount):
 
 
 class CashMachine:
-    def __int__(self, account):
-        self.account = account
+    def __int__(self, number_account, password):
+        self.number_account = number_account
+        self.passord = password
+        self.account = None
+        self.get_account(number_account, password)
 
     @property
     def extract(self):
-        return
+        with open(logs_path, 'r'):
+            return
+
+    def get_account(self, number_account, password):
+        pass

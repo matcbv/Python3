@@ -15,7 +15,7 @@ env = {'main_email': os.getenv('EMAIL'), 'main_email_password': os.getenv('EMAIL
 esd = {'server': 'smtp.gmail.com', 'port': 587}
 
 # EMAIL TEMPLATE PATH
-email_template = Path().absolute() / 'email_template.html'
+email_template = Path().absolute() / "/public/email_template.html"
 
 
 class Email:
