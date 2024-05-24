@@ -4,22 +4,16 @@ obj = {
         'Sobrenome': 'Cerqueira'
     },
     '2': {
-        'Nome': 'Matheus',
-        'Sobrenome': 'Cerqueira'
+        'Nome': 'Lucas',
+        'Sobrenome': 'Moura'
     },
     '3': {
-        'Nome': 'Matheus',
-        'Sobrenome': 'Cerqueira'
+        'Nome': 'Daniel',
+        'Sobrenome': 'Silva'
     }
 }
 
-num_list = [1, 2, 3, 4, 5, 6, 7, 8]
+for d in obj:
+    print(type(d))
 
-client_data = filter(lambda num: num if num % 2 == 0 else None, num_list)
-for n in client_data:
-    print(n, len(client_data))
-
-for data in obj:
-    print(data)
-
-# obj02 = filter(lambda data: data)
+# result = filter((lambda k, v: obj.items())
