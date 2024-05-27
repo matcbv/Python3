@@ -7,13 +7,13 @@ Obs.: A primeira opção é mais completa, podendo gerar menos erros.
 
 Podemos atualizar um pacote através do comando:
 
-pip install --upgrade "nome_pacote"
+pip install --upgrade (ou -U) "nome_pacote"
 
 Para desinstalarmos um pacote de nosso projeto podemos utilizar:
 
 pip uninstall "nome_pacote" -y (-y confirma que desejamos desinstalar o pacote)
 
-Para checarmos todos os pacotes que temos instalado em nosso projeto, utilizamos o comando:
+Para checarmos todos os pacotes que temos instalados em nosso projeto, utilizamos o comando:
 
 pip freeze
 

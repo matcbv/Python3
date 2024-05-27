@@ -32,6 +32,6 @@ except (MyError, ZeroDivisionError) as error:
     # Com a palavra-chave from, indicamos que a exceção que estamos levantando, é proveniente de outra
     # exceção. Isso será indicado em nosso terminal quando a exceção for levantada.
     raise excecao_02 from error
-    # Obs.: Podemos utilizar somente a palvra-chave raise, para relançar a exceção que está sendo tratada no momento.
+    # Obs.: Podemos utilizar somente a palavra-chave raise, para relançar a exceção que está sendo tratada no momento.
     # Relançar uma função pode ser útil quando desejamos adicionar mais informações ou contexto a uma
     # determinada exceção.

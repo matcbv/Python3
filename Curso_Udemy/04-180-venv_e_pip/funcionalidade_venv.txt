@@ -10,5 +10,4 @@ do interpretador que será utilizado ao rodarmos nosso projeto.
 
 Um ambiente virtual é responsável por isolar o projeto, onde cada um trabalhará com suas próprias
 versões de interpretador e pacotes, sem interferir no interpretador Python global. Isso evita possíveis
-incompatibilidades e permitirá que opere
-sem problemas.
+incompatibilidades e permitirá que opere sem problemas.
