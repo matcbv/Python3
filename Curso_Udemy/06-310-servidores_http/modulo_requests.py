@@ -10,8 +10,7 @@ import requests
 
 # Iremos armazenas a URI para quem nossa requisição será destinada:
 url = 'http://127.0.0.1:8080'
-# Abaixo, criaremos iremos realizar nossa requisição, obtendo uma
-# resposta em retorno:
+# Abaixo, iremos realizar nossa requisição, obtendo uma resposta em retorno:
 response = requests.get(url)
 # A partir dessa resposta, podemos obter informações como:
 print('Resposta do servidor:', response)
@@ -21,4 +20,3 @@ print('Cabeçalho da resposta:', response.headers)
 print()
 # O corpo da resposta, contendo o conteúdo requisitado:
 print('Corpo da resposta:', response.text)
-

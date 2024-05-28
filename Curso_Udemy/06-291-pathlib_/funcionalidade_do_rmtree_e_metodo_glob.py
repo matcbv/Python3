@@ -1,24 +1,14 @@
 import glob
 from pathlib import Path
 
-dir_path = Path().absolute()
-dir_path = dir_path / 'pasta_para_filtragem'
+dir_path = Path().absolute() / 'pasta_para_filtragem'
 # O método glob é responsável por determinar quais arquivos/diretórios serão selecionados em nossa busca.
 # Podemos utilizá-lo de duas formas: com o módulo glob ou com a classe Path do módulo pathlib.
-# No módulo glob, temos três funções que podemos utilizar:
-
-# glob.glob - Retorna uma lista com todos os arquivos/diretórios encontrados pelo padrão informado.
-# Caso nenhum arquivo seja encontrado, uma lista vazia é retornado.
-
-# glob.glob0 - Tem a mesma função de glob.glob, porém caso nada seja encontrado, a exceção glob.GlobError
-# é levantada.
-
-# glob.glob1 - Busca por arquivos e diretórios contidos no diretório passado a ele,
-# sem entrar em subdiretórios.
 
 # Elementos importantes na filtragem com o glob:
 # / - Significa diretórios.
-# * - Significa todos.
+# * - Padrão de correspondência para todos.
+# ** - Padrão de correspondência para recursão.
 # ? - Simboliza um caractere único.
 
 # Abaixo veremos exemplos com o método glob:
@@ -28,13 +18,21 @@ dir_path = dir_path / 'pasta_para_filtragem'
 # Aqui iremos buscar todos os arquivos com o formato passado por parâmetro.
 # Podemos notar que o arquivo arquivo004.txt não foi adicionado a lista,
 # pois não bate com o padrão informado.
+print('\nEncontrando asrquivos .txt pela classe Path:')
 model_files = dir_path.glob('arquivo_??.txt')
 for file in model_files:
     print(file)
 print()
 
 # Através do módulo glob:
-# Utilizado o método glob do módulo glob, o formato deve ser: globX.glob('str_do_caminho'), sendo X, 0 ou 1.
+
+# O método glob do módulo glob possui duas propriedades. Essas são recursive e include_hidden:
+
+# recursive - Permite uma busca recursiva, trabalhando em conjunto com o padrão **.
+# include-hidden - Permite que o método glob identifique arquivos ocultos.
+
+print('\nEncontrando asrquivos .txt pelo módulo glob:')
+# Utilizado o método glob do módulo glob, o formato deve ser: glob.glob('str_do_caminho').
 # Aqui iremos buscar todos os arquivos do formato txt.
 txt_path = str(dir_path / '*.txt')
 # Passaremos uma string contendo o caminho, junto do padrão para o método glob.
@@ -42,6 +40,14 @@ txt_path = str(dir_path / '*.txt')
 # o método glob realiza a busca no diretório atual.
 model_files_txt = glob.glob(txt_path)
 for file in model_files_txt:
+    print(file)
+
+# Neste último exemplo, estaremos realizando uma busca recursiva:
+print('\nEncontrando arquivos .txt de forma recursiva pelo módulo glob:')
+another_txt_path = Path().absolute() / 'pasta_para_recursao'
+txt_path = str(another_txt_path / '**/*.txt')
+another_model_files_txt = glob.glob(txt_path, recursive=True)
+for file in another_model_files_txt:
     print(file)
 
 

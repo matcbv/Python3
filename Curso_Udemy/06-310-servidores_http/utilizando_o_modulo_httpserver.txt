@@ -10,5 +10,5 @@ Após isso, podemos ir até nosso navegador e pesquisar por:
 1ª opção: localhost:porta_de_comunicacao
 2ª opção: 127.0.0.1:porta_de_comunicacao
 
-Ao realizarmos tis procedimentos, nosso terminal irá apresentar todas as solicitações,
+Ao realizarmos tais procedimentos, nosso terminal irá apresentar todas as solicitações,
 informando algumas informações do cabeçalho http utilizado.

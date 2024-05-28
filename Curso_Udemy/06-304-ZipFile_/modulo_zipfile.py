@@ -32,7 +32,7 @@ with ZipFile(zipped_dir_path, 'w') as zip_:
             # função write, ele é usado para especificar o nome que você deseja atribuir
             # ao arquivo dentro do arquivo zip. Quando você especifica o arcname, ele
             # adiciona apenas o nome do arquivo dentro do zip, sem incluir o caminho completo.
-            zip_.write(Path.joinpath(dir_path, file), file)
+            zip_.write(Path.joinpath(dir_path, file), arcname=file)
 
 # Para extrairmos nosso arquivo compactado, iremos utilizar o método extractall, passando
 # um caminho de destino por parâmetro:
