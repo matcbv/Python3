@@ -2,15 +2,21 @@
 # hasattr(obj, atributo) - Responsável por verificar se o objeto possui um atributo em específico.
 # getattr(obj, atributo) - Responsável por executar um atributo contido num objeto.
 
-var = 'texto'
-metodo = 'upper'
+class MyClass:
+    def __init__(self):
+        self.name = 'Matheus'
+        self.lastname = 'Cerqueira'
+
+
+me = MyClass()
 
 # Abaixo, estaremos verificando se o atributo passado por parâmetro existe com o hasattr.
 # Caso exista, estaremos executando-o através do getattr.
-if hasattr(var, metodo):
-    print(f'O atributo {metodo} existe.')
-    print(getattr(var, metodo))
+# Obs.: Os atributos passados para hasattr e getattr devem ser em formato de string.
+if hasattr(me, 'name'):
+    print(f'O atributo marca existe.')
+    print(getattr(me, 'name'))
 
 # Podemos estar verificando todos os atributos para aquele objeto com o dir.
 print()
-print(dir(var))
+print(dir(me))
