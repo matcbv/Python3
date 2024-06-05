@@ -27,13 +27,17 @@ for produto in produtos:
         novos_produtos.append({'nome': produto['nome'], 'preco': produto['preco']})
 print(novos_produtos)
 print('-'*90)
+
 # Ficaria da seguinte maneira por meio de um list comprehension:
 novos_produtos = [{**produto, 'preco': produto['preco'] * 1.05} if (produto['preco']) > 10 else {**produto}
                   for produto in produtos]
 print(novos_produtos)
 print('-'*90)
+
 # No exemplo acima, utilizando o kwargs para desempacotarmos nosso dicionário. Caso desejemos que
 # um dos valores sejam alterados, devemos informar a chave com o respectivo novo valor.
+
+# ------- Filtramento de dados em list comprehension -------
 
 # Podemos também utilizar filtros para adicionar ou não elemento em nossa nova sequência.
 # Nesse caso, devemos utilizar o if após nosso for. Digamos que queremos que a condição acima seja feita

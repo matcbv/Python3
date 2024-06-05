@@ -10,9 +10,9 @@ def multiplicar(multiplicador, *numeros):
 
 
 # Também podemos passar diversos argumentos para uma função lambda.
-num1 = 2
-num2 = 3
-print(somar(num1, num2))
+number1 = 2
+number2 = 3
+print(somar(number1, number2))
 print(lambda num1, num2: num1 + num2)
 
 # A Seguir temos outro exemplo com um parâmetro de empacotamento:

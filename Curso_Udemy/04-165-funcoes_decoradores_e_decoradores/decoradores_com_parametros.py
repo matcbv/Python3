@@ -5,10 +5,9 @@
 def funcao_recebe_parametro(valor):  # Responsável por retornar decoradores
     def funcao_decoradora(funcao):  # Responsável por retornar funções
         def closure():
+            print('Valor da função usada como decorador:', valor)
             print('Execução da closure que irá executar a função decorada.')
-            resultado = funcao()
-            print('Final da execução da closure e retorno do resultado retornado pela função decorada')
-            return resultado
+            return funcao()
         return closure
     return funcao_decoradora
 
@@ -27,6 +26,4 @@ def funcao_decorada():
     return 'Eu sou a função decorada e estou sendo executada...'
 
 
-executa = funcao_decorada
-# Por último, iremos chamar nosso closure, que irá nos exibir o resultado.
-print(executa())
+print(funcao_decorada())
