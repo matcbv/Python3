@@ -9,7 +9,7 @@ class Coordenadas:
     # muito utilizado para auxiliar outros desenvolvedores ao trabalharem com o código.
     def __repr__(self):
         class_name = self.__class__.__name__
-        # É aconselhado utilizarmos f strings com a especificação para o tipo __repr__.
+        # É aconselhado utilizarmos f strings com a especificação para o tipo __repr__ (!r).
         return f'{class_name}(x={self.x!r}, y={self.y!r}, z={self.z!r})'
         # Como podemos ver, notamos diferença no parâmetro z. Como ele é do tipo string, aspas foram
         # adicionadas em sua formatação.
@@ -31,3 +31,4 @@ print(repr(coordenada_01))
 # Segunda opção:
 print(f'{coordenada_01!r}')
 # No caso acima, !s significa __string__ e !r __repr__.
+# Em ambos os casos estamos chamando nosso método __repr__.

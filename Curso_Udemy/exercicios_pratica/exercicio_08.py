@@ -2,6 +2,9 @@ from functools import reduce, partial
 from itertools import count, groupby, permutations, combinations
 from random import randint
 from contextlib import contextmanager
+from datetime import datetime
+import calendar
+
 
 file_path = 'database.txt'
 
@@ -95,5 +98,14 @@ def get_random_number():
 
 get_random_number()
 
-for dict in people_dict for person in dict
+
+current_date = datetime.now().strftime('%H:%M:%S - %d/%m/%y')
+print(current_date)
+
+current_month = calendar.monthcalendar(2024, 6)
+current_year = calendar.calendar(2024)
+current_week = calendar.monthrange(2024, 5)
+
+new_person_dict = [{**people_dict, person['name']: 'Lucas'} if person['name'] == 'Matheus' else {**people_dict}
+                   for person in people_dict]
 

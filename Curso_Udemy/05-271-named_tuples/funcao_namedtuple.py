@@ -5,6 +5,7 @@ from collections import namedtuple
 # Através da função namedtuple, criaremos uma classe chamada Carros, com os atributos
 # Modelo e Motor. Também podemos definir valores padrão para nossos atributos através
 # da propriedade defaults:
+# Obs.: Só conseguimos criar um typename por namedtuple.
 Carros = namedtuple('Carros', ['Modelo', 'Motor'],
                     defaults=['Polo', '1.0'])
 # Abaixo criaremos uma instância de nossa Classe, onde podemos ter acesso a cada um
@@ -17,8 +18,8 @@ carro_02 = Carros('Mustang', 'V8')
 print(carro_02)
 print()
 
-# Integradas a função namedtuple, temos nossas funções asdict e astuple. Entretanto,
-# as funções contidas em namedtupla são antecedidas com um underline (_):
+# Integradas a função namedtuple, temos a função asdict. Entretanto, com as namedtuples,
+# a utilizaremos antecedida por underline.
 dicionario_carro = carro_02._asdict()
 print(dicionario_carro)
 
