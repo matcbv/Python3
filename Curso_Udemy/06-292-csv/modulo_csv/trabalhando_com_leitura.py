@@ -2,7 +2,7 @@
 import csv
 from pathlib import Path
 
-csv_path = Path().absolute().parent / 'banco_de_dados.csv'
+csv_path = Path().absolute().parent / 'banco_de_dados_interno.csv'
 
 with open(csv_path, 'r', encoding='utf-8') as file:
     # Através do método reader, obtemos um iterador que gera listas, cada uma representando uma das linhas

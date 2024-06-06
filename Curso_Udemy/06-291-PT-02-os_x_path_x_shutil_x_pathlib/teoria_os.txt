@@ -1,8 +1,9 @@
 O módulo 'os' fornece funcionalidade que nos permitem interagir com o sistema operacional.
 Tal módulo possui um submódulo chamado path, que contém funções para trabalhar com caminhos
-de arquivos, além da função listdir, pode ser usada para listar os arquivos em um diretório.
+de arquivos, além da função listdir, que pode ser usada para listar os arquivos em um diretório.
 
 Abaixo, veremos alguns dos métodos mais conhecidos do módulo os:
+
 getcwd - Informa o diretório atual sendo tratado na estrutura de repetição.
 remove/unlink - Remove um arquivo contido em um diretório.
 rmdir - Remove um diretório caso esse esteja vazio.

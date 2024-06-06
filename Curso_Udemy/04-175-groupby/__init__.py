@@ -20,8 +20,8 @@ for k, g in lista_organizada:
 
 alunos = [
     {'nome': 'matheus', 'turma': 'A'}, {'nome': 'claudio', 'turma': 'C'},
-    {'nome': 'leonardo', 'turma': 'B'}, {'nome': 'thaisa', 'turma': 'B'},
-    {'nome': 'camila', 'turma': 'C'}, {'nome': 'lucas', 'turma': 'A'}
+    {'nome': 'leonardo', 'turma': 'B'}, {'nome': 'thais', 'turma': 'A'},
+    {'nome': 'camila', 'turma': 'B'}, {'nome': 'lucas', 'turma': 'C'}
 ]
 print('\n', '-'*60)
 

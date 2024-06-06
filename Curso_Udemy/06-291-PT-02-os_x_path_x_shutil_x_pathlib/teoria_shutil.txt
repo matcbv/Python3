@@ -11,7 +11,8 @@ recursivamente de uma origem para um destino.
 Obs.: COm dirs_exist_ok, podemos interromper o levantamento de exceções caso o destino já exista.
 Basta definir seu valor como True.
 
-shutil.move: move o arquivo ou diretório de origem src para o destino dst. Se dst for um diretório, ele será movido para dentro desse diretório.
+shutil.move: move o arquivo ou diretório de origem src para o destino dst. Se dst for um diretório,
+ele será movido para dentro desse diretório.
 
 shutil.rmtree: remove um diretório e seu conteúdo de forma recursiva.
 Obs.: Podemos ignorar erros durante a exclusão com ignore_errors definido como True.

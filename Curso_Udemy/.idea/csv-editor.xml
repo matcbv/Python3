@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\06-292-csv\banco_de_dados_interno.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\06-292-csv\modulo_csv\banco_de_dados.csv">
           <value>
             <Attribute>

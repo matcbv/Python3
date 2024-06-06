@@ -1,16 +1,16 @@
 from pathlib import Path
 import csv
 
-csv_path = Path().absolute().parent / 'banco_de_dados.csv'
+csv_path = Path().absolute() / 'banco_de_dados_interno.csv'
 
 csv_list_dict = [
-    {'Nome': 'Matheus', 'Sobrenome': 'Cerqueira', 'Idade': '23', 'Endereço': 'Rua do Quincão, 277 - Centro'},
+    {'Nome': 'Matheus', 'Sobrenome': 'Cerqueira', 'Idade': '22', 'Endereço': 'Rua do Quincão, 277 - Centro'},
     {'Nome': 'Lucas', 'Sobrenome': 'Silva', 'Idade': '18', 'Endereço': 'Rua Nelson Viana, 30 - Centro'},
     {'Nome': 'Daniel', 'Sobrenome': 'Lima', 'Idade': ' 34', 'Endereço': 'Avenida Circular Ocidental, 344 - Nova Niterói'}
 ]
 
 csv_list = [
-    ['Matheus', 'Cerqueira', 23, 'Rua do Quincão, 277 - Centro'],
+    ['Matheus', 'Cerqueira', 22, 'Rua do Quincão, 277 - Centro'],
     ['Lucas', 'Silva', 18, 'Rua Nelson Viana, 30 - Centro'],
     ['Daniel', 'Lima', 34, 'Avenida Circular Ocidental, 344 - Nova Niterói']
 ]

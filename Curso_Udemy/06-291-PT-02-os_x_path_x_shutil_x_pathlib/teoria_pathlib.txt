@@ -2,7 +2,7 @@ O módulo pathlib é utilizado para trabalharmos com caminhos, pastas e arquivos
 nosso código seja interoperante com diferentes sistemas operacionais, como Windows, Linux e Mac.
 Por meio desse módulo, evitamos o chamado hard coding, mantendo nosso código autônomo.
 
-O módulo pathllib possui muitos métodos com mesma função dos do módulo path, porém muitas vezes,
+O módulo pathlib possui muitos métodos com mesma função dos do módulo path, porém, muitas vezes,
 com diferença em sua nomeclatura. Abaixo haverá uma lista com os mais utilizados, e pode conhecer
 mais sobre eles nos outros módulos contidos nessa mesma pasta.
 

@@ -9,7 +9,7 @@ load_dotenv()
 # Através do método getenv do módulo os, conseguimos obter o valor de nossas variáveis de ambiente:
 print(os.getenv('DB_PASSWORD'))
 
-# Podemos checar todas as nossas variáveis de ambiente através do método envirom:
+# Podemos checar todas as nossas variáveis de ambiente através do método environ:
 variaveis_de_ambiente = os.environ
 print(variaveis_de_ambiente)
 for k, v in variaveis_de_ambiente.items():
