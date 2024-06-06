@@ -19,8 +19,3 @@ class SecClass:
     def __init__(self, job):
         self.job = job
         self.person = MainClass('Lucas', 'Silva')
-
-
-class ThirdClass:
-    def __init__(self):
-        self.
