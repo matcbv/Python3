@@ -1,5 +1,6 @@
-import client_module
-import db_module
+from modules import client_module
+from modules import db_module
+from modules import messages_module
 from abc import ABC, abstractmethod
 from random import SystemRandom
 import string
@@ -75,7 +76,7 @@ class BankAccount(ABC):
 
 
 class CurrentAccount(BankAccount):
-    def __int__(self, account_number, agency_number, retired, balance, overdraft):
+    def __init__(self, account_number, agency_number, retired, balance, overdraft):
         super().__init__(account_number, agency_number, retired, balance)
         self.overdraft = overdraft
 
@@ -86,7 +87,7 @@ class CurrentAccount(BankAccount):
                 print('Saldo indisponível para saque.')
                 active_overdraft = input('Deseja acionar seu cheque especial? [S/N] ').lower()
                 answer_validator(active_overdraft)
-                if not active_overdraft:
+                while not active_overdraft:
                     active_overdraft = input('Deseja acionar seu cheque especial? [S/N] ').lower()
                     answer_validator(active_overdraft)
                 if active_overdraft == 's':
@@ -119,19 +120,24 @@ class SavingsAccount(BankAccount):
 
 
 class CashMachine:
-    def __int__(self, account_number, password):
+    def __init__(self, account_number, password):
         self.account_number = account_number
         self.password = password
         self.account = client_module.get_client_data(account_number)
+        self.current_account = False
 
     @property
     def extract(self):
         client_extract = db_module.get_transaction_logs(self.account_number)
         return client_extract
 
+    def get_account_type(self):
+        for data in self.account.values():
+            if data == 'overdraft':
+                self.current_account = True
+
     def banking(self):
-        operation = input('Qual operação bancária deseja realizar?\n'
-                          'Saque [1] ou Depósito [2]')
+        operation = input(messages_module.banking_message())
         while operation not in '12':
-            operation = input('Qual operação bancária deseja realizar?\n'
-                              'Saque [1] ou Depósito [2]')
+            operation = input(messages_module.banking_message())
+        CashMachine
