@@ -16,11 +16,16 @@ class Client:
 
 
 def get_client_data(account_number):
+    client_list = []
     with open(db_module.db_path, 'r+') as database:
         data_obj = json.load(database)
         for client_id, client_data in data_obj.items():
             if client_data['account_number'] == account_number:
-                current_client_data = {client_id: client_data}
+                data = {client_id: client_data}
+            else:
+                client_list.append(data_obj)
+            json.dump(client_list, database)
+        return data
 
 
 def get_next_id():

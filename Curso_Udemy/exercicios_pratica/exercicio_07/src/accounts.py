@@ -50,6 +50,7 @@ def check_value(value):
     if not isinstance(value, (int, float)) or value <= 0:
         return False
     return True
+
 # ----------------------------
 
 
@@ -140,4 +141,4 @@ class CashMachine:
         operation = input(messages_module.banking_message())
         while operation not in '12':
             operation = input(messages_module.banking_message())
-        CashMachine
+

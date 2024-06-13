@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 from pathlib import Path
 
@@ -30,3 +31,15 @@ def get_transaction_logs(date):
         data_list = database.readlines()
         extract_list = filter(lambda data: data if date in data else None, data_list)
         return extract_list
+
+
+def add_client(data):
+    with open(db_path, 'r') as db:
+        clients = json.load(db)
+    for client in clients:
+        for client_id, data_client in client.items():
+            if data_client['account_number'] == data['account_number']:
+                return False
+        with open(db_path, 'a') as db:
+            db.write(data + '\n')
+            return True
