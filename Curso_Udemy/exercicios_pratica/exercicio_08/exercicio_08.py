@@ -1,24 +1,22 @@
-import shutil
 from os import walk
 from zipfile import ZipFile
-from itertools import count
 from pathlib import Path
 
 to_zip_path = Path().absolute() / 'to_zip_files'
 empty_dir_path = Path().absolute() / 'empty_dir'
-
-counter = count()
-
 to_zip_path.mkdir(exist_ok=True)
 empty_dir_path.mkdir(exist_ok=True)
 
-with open(to_zip_path, 'a') as file:
-    while next(counter) < 10:
-        file_name = f'file_{next(counter)}'
-        mew_file_path = Path.joinpath(to_zip_path, file_name)
-        Path.touch(mew_file_path)
+
+def criar_arquivos(qtd: int, path: Path):
+    for i in range(qtd):
+        texto = f'arquivo_{i}'
+        with open(path / f'{texto}.txt', 'w') as arquivo:
+            arquivo.write(texto)
 
 
-with ZipFile(empty_dir_path, 'a') as file:
+criar_arquivos(10, to_zip_path)
+
+with ZipFile(empty_dir_path, 'w') as file:
     for file_, dir_, path_ in walk(to_zip_path):
-        ZipFile.write(file, file_, arcname=file_name)
+        file.write(Path.joinpath(to_zip_path, file_), arcname=file_)
