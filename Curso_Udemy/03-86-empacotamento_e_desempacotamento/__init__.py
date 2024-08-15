@@ -9,8 +9,8 @@ print(a, b, c, sep=', ')
 # Desempacotando:
 print(a, b, *c, sep=', ')
 
-# Por convenção, quando iremos empacotar itens que não iremos utilizar, utilizamos, por convenção,
-# o símbolo de underline (_). Ex.: Digamos que queremos apenas os itens de índice 0, 1 e 4:
+# Por convenção, quando iremos empacotar itens que não iremos utilizar, utilizamos o símbolo de underline (_).
+# Ex.: Digamos que queremos apenas os itens de índice 0, 1 e 4:
 
 tupla = (0, 1, 2, 3, 4)
 zero, um, *_, quatro = tupla

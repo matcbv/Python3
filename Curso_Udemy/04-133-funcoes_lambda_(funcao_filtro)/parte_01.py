@@ -14,6 +14,7 @@ lista_para_filtro = [{'nome': 'Pedro', 'Idade': 23},
 # somente referenciá-la. Ex.:
 
 # lista_para_filtro.sort(key=filtrar)
+
 print(lista_para_filtro)
 
 # Podemos simplificar o que realizamos acima através das chamadas funções lambda.
