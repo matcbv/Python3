@@ -1,2 +1,2 @@
 Para ver como um módulo consegue 'exportar' seus elementos por outro módulo quando
-importado, vá até o final da página, no módulo e pacote chamados exportacao_de_modulos.
+importado, vá até o final da página, no módulo e pacote chamados exportacao_de_modulos.py
