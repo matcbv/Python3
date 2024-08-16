@@ -1,9 +1,10 @@
-# Fará uma cópia do dicionário em questão, não associando as informações contidas nele.
+# Ao realizarmos uma shallow copy, uma cópia do dicionário em questão, não associando as informações contidas nele.
 # Essa cópia irá enviar somente dados imutáveis para o objeto a ser atribuído,
 # enquanto mutáveis (listas, dicionários, etc.) também serão associadas entre o dicionário e o objeto em questão.
-# Esse evento é chamado de shallow copy (cópia rasa).
+
 # Caso desejemos que todos os elementos do nosso dicionário sejam copiados,
 # devemos importar o módulo copy, e utilizar o método deepcopy(‘dicionario’).
+
 from copy import deepcopy
 
 lista01 = [1, 2, 3, {'Número final': 999}]

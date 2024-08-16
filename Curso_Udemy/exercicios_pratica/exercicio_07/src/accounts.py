@@ -51,6 +51,7 @@ def check_value(value):
         return False
     return True
 
+
 # ----------------------------
 
 
@@ -77,7 +78,7 @@ class BankAccount(ABC):
 
 
 class CurrentAccount(BankAccount):
-    def __init__(self, account_number, agency_number, retired, balance, overdraft):
+    def __init__(self, account_number, agency_number, retired=False, balance=0, overdraft=0):
         super().__init__(account_number, agency_number, retired, balance)
         self.overdraft = overdraft
 
@@ -124,8 +125,9 @@ class CashMachine:
     def __init__(self, account_number, password):
         self.account_number = account_number
         self.password = password
-        self.account = client_module.get_client_data(account_number)
+        self.account_data = client_module.get_client_data(account_number)
         self.current_account = False
+        self.account = None
 
     @property
     def extract(self):
@@ -133,12 +135,19 @@ class CashMachine:
         return client_extract
 
     def get_account_type(self):
-        for data in self.account.values():
+        for data in self.account_data.values():
             if data == 'overdraft':
                 self.current_account = True
 
-    def banking(self):
+    def banking(self, value):
         operation = input(messages_module.banking_message())
         while operation not in '12':
             operation = input(messages_module.banking_message())
-
+        account_values = self.account_data.values()
+        if self.account:
+            self.account = CurrentAccount(account_values.account_number, account_values.agency_number,
+                                          account_values.retired, account_values.balance, account_values.overdraft)
+        else:
+            self.account = SavingsAccount(account_values.account_number, account_values.agency_number,
+                                          account_values.retired, account_values.balance)
+        self.account.deposit(value) if operation == 1 else self.account.withdraw(value)

@@ -34,10 +34,10 @@ with open(csv_path, 'w', encoding='utf-8', newline='') as file:
 # Ex. 2: Listas contendo dicionários
 with open(csv_path, 'w', encoding='utf-8', newline='') as file:
     # Com dicionários, devemos obter primeiramente os nomes de suas colunas:
-    calumns_names = csv_list_dict[0].keys()
+    columns_names = csv_list_dict[0].keys()
     writer = csv.writer(file)
     # Abaixo, escreveremos o nome de suas colunas e, em seguida, suas linhas.
-    writer.writerow(calumns_names)
+    writer.writerow(columns_names)
     for row in csv_list_dict:
         writer.writerow(row.values())
 

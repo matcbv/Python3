@@ -3,7 +3,7 @@
 # que quando chamados em forma de função, irão retornar o resultado da função armazenada,
 # mantendo as variáveis que recebeu da função pai ou que foram passadas através da chamada.
 
-def chamadaFila(id, nome):
+def chamada_fila(id, nome):
     def chamar():
         return f'Paciente {nome} de código {id}, favor comparecer ao consultório.'
     return chamar
@@ -12,8 +12,8 @@ def chamadaFila(id, nome):
 # Ao armazenarmos nossa função chamar() nos objetos paciente01 e paciente 02, ela será gravada
 # na memória RAM da máquina, contendo as informações passadas por parâmetro abaixo. Dessa forma,
 # podemos executá-la quando bem entendermos.
-paciente01 = chamadaFila(1, 'Daniel')
-paciente02 = chamadaFila(2, 'Matheus')
+paciente01 = chamada_fila(1, 'Daniel')
+paciente02 = chamada_fila(2, 'Matheus')
 # Executando a função chamar() com os valores acima:
 print(paciente01())
 print(paciente02())
