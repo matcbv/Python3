@@ -17,9 +17,9 @@ def gerador02():
 
 def gerador03(gen):
     yield from gen()
-    yield 4
-    yield 5
-    yield 6
+    yield 7
+    yield 8
+    yield 9
 
 
 g01 = gerador02()
@@ -29,6 +29,6 @@ print('-'*60)
 
 # Ainda podemos passar a função geradora que quisermos por parâmetro:
 # Dessa maneira, passamos a própria função geradora, que será executada dentro da função geradora 03.
-g02 = gerador03(gerador01)
+g02 = gerador03(gerador02)
 for num in g02:
     print(num)

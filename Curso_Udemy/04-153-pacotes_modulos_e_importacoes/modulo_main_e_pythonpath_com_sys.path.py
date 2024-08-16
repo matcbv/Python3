@@ -19,7 +19,7 @@ print('Este módulo se chama:', __name__)
 # pois ele será o módulo inicial daquela execução.
 
 # Quando um módulo é importado, ele é executado automaticamente.
-# Dessa maneira, o Pytho irá executar tudo o que for possível de imediato, como um comando print(),
+# Dessa maneira, o Python irá executar tudo o que for possível de imediato, como um comando print(),
 # mas não uma função, por exemplo.
 
 soma = modulo_secundario.somar(2, 3)

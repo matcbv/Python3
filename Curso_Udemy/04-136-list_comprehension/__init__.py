@@ -31,7 +31,7 @@ print('-'*90)
 # Ficaria da seguinte maneira por meio de um list comprehension:
 novos_produtos = [{**produto, 'preco': produto['preco'] * 1.05} if (produto['preco']) > 10 else {**produto}
                   for produto in produtos]
-print(novos_produtos)
+print('list comprehension:', novos_produtos)
 print('-'*90)
 
 # No exemplo acima, utilizando o kwargs para desempacotarmos nosso dicionário. Caso desejemos que
@@ -42,6 +42,8 @@ print('-'*90)
 # Podemos também utilizar filtros para adicionar ou não elemento em nossa nova sequência.
 # Nesse caso, devemos utilizar o if após nosso for. Digamos que queremos que a condição acima seja feita
 # somente para valores maiores que 20:
+# Obs: Devemos utilizar **produto para que as demais chaves também sejam armazenadas no novo dicionário,
+# enquanto a especificada é alterada pelo novo valor.
 novos_produtos = [{**produto, 'preco': produto['preco'] * 1.05} if (produto['preco']) > 10 else {**produto}
                   for produto in produtos
                   if produto['preco'] > 20]

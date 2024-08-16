@@ -1,5 +1,5 @@
 # Um módulo é um executável (.py), que pode conter definições de classes, métodos, variáveis e um código executável.
-# Um pacote é basicamente um diretório que contém um módulo ou mais módulos que também podem conter outros módulos.
+# Um pacote é basicamente um diretório que contém um ou mais módulos que também podem conter outros módulos.
 # Podemos importar módulos de classes de diferentes maneiras:
 # import "nome_da_classe": dessa maneira, importamos todos os métodos dessa classe.
 # from "nome_da_classe" import "nome do método": desse modo, importamos somente um método da classe em questão.

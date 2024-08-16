@@ -14,7 +14,7 @@ me = MyClass()
 # Caso exista, estaremos executando-o através do getattr.
 # Obs.: Os atributos passados para hasattr e getattr devem ser em formato de string.
 if hasattr(me, 'name'):
-    print(f'O atributo marca existe.')
+    print(f'O atributo name existe.')
     print(getattr(me, 'name'))
 
 # Podemos estar verificando todos os atributos para aquele objeto com o dir.
