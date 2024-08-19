@@ -1,8 +1,8 @@
 # Em Python, uma classe é uma estrutura que representa um tipo de objeto. Ela é como um modelo para criar
 # objetos (instâncias), definindo os atributos (características) e métodos (ações) que os objetos desse tipo podem ter.
-#
+
 # Para criar uma classe em Python, usamos a palavra-chave class, seguida pelo nome da classe.
-#
+
 # Obs.: Cada nome de uma classe deve começar com letra maiúscula por questões de padronização.
 class Classe:
     # Para criarmos um método (função atrelada a uma classe), devemos criar nossa função no escopo da classe em

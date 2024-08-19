@@ -16,7 +16,7 @@ class Classe:
         # um atributo de instância de mesmo nome, como é esse o caso, caso utilizarmos o self, ele sempre irá
         # preferenciar o atributo de instância.
         print(self.atb_classe)
-        # Ao especificarmps nossa classe, ele mostra o resultado do atributo global. Lembrando que caso o atributo de
+        # Ao especificarmos nossa classe, ele mostra o resultado do atributo global. Lembrando que caso o atributo de
         # instância de mesmo nome não existisse, a chamada self.atb_classe faria referência ao atributo da classe, já
         # que as instâncias também tem acesso aos atributos de classe.
         print(Classe.atb_classe)

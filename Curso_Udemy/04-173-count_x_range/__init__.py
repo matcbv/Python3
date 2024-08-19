@@ -14,7 +14,7 @@ print('-' * 15)
 # Como o count já é um iterador, ao utilizarmos o método iter, ele mesmo é retornado.
 contador = count()
 for c in contador:
-    if c == 100:
+    if c == 10:
         break
     print(contador)
 

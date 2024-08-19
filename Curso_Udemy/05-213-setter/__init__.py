@@ -10,7 +10,7 @@ class ClasseComSetter:
         # responsável por definir nosso atributo _nome e atribuir um valor a ele.
         self.name = name
         # Para obtermos a idade, iremos utilizar um método diferente. Não iremos chamar diretamente nosso
-        # setter, nos referindo diretamente ao _age atributo.
+        # setter, nos referindo diretamente ao _age atributo. 
         self._age = None
 
     @property
