@@ -4,7 +4,7 @@ class MyException(Exception):
 
 def levantar_excecao(msg):
     excecao = MyException(msg)
-    # Podemos criar nota para nossas exceções através da função add_note:
+    # Podemos criar notas para nossas exceções através da função add_note:
     excecao.add_note('Podemos criar notas para nossa exceção!')
     raise excecao
 

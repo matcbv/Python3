@@ -1,7 +1,7 @@
 # Para convertemos um objeto para JSON, podemos utilizar o módulo json, pertencente a biblioteca padrão do Python.
 import json
 
-caminho = 'H:/GitHub/Python3/Curso_Udemy/06-288-json/banco_de_dados/dados_JSON.json'
+caminho = ''
 
 dados_alunos = {'Pessoa01': {'Nome': 'Matheus', 'Idade': 21, 'Notas': [10, 8, 9]},
                 'Pessoa02': {'Nome': 'Lucas', 'Idade': 32, 'Notas': [9, 7, 7]}}
@@ -49,7 +49,7 @@ print(json.loads(dados_alunos_json))
 print()
 
 with open(caminho, 'w+', encoding='utf-8') as arquivo:
-    # Podemos utilizar o argumento indent, para indentarmos nossos dados em JSON. Ao passarmos o valor True,
+    # Podemos utilizar o argumento indent para indentarmos nossos dados em JSON. Ao passarmos o valor True,
     # informamos que queremos indentar nosso JSON com espaçamentos. Podemos também passar um
     # número inteiro como valor, indicando quantos espaços queremos em nossa indentação.
     # Convertendo um objeto Pyhton em JSON e adicionando-o em um arquivo JSON:

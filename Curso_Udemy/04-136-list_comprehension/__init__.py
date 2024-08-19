@@ -1,5 +1,5 @@
 # -------# List Comprehension #-------
-# A compreensão de listas é o processo de empacotar listar com auxílio de estruturas de repetição.
+# A compreensão de listas é o processo de empacotar listas com auxílio de estruturas de repetição.
 # Todavia, realizamos esse empacotamento de forma simplificada. Ex.:
 
 lista_numeros = (num for num in range(10))

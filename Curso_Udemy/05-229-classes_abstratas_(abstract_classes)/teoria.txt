@@ -6,10 +6,10 @@ Uma classe abstrata em Python tem como metaclasse ABCMeta, através da classe AB
 pelo menos um método abstrato.
 
 Métodos abstratos - São métodos que não possuem corpo, somente sua assinatura.
-Métodos concretos são métodos que tem um corpo.
+Métodos concretos são métodos com um corpo.
 
 Nossas classes abstratas não podem ser instanciadas diretamente e métodos abstratos devem ser
 implementados nas subclasses.
 
-Conseguimos criar @property, @setter @classmethod, @staticmethod e @method como elementos abstratos
+Conseguimos criar @property, @setter, @classmethod, @staticmethod e @method como elementos abstratos
 através do decorador @abstractmethod. Ele deve ser utilizado como o decorador mais interno.

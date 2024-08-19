@@ -7,6 +7,7 @@ path = "/05-225-mixins_e_abstracao/text_model.txt"
 
 
 class Log:
+
     def _log(self, msg):
         raise NotImplementedError('Implemente o método logs.txt')
 

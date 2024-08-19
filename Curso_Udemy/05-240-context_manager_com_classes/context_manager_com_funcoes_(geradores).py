@@ -13,7 +13,7 @@ def my_context_manager(path, open_mode):
         print('Abrindo arquivo...')
         arq = open(path, open_mode, encoding='utf-8')
         # Através do decorador contextmanager, nossa função passa a ser tratada como um gerador.
-        # Ele realiza a tratativa de nossa função, utilizando os métodos especiais
+        # Ele realiza a tratativa de nossa função utilizando os métodos especiais
         # __enter__ e __exit__ internamente, facilitando o uso do context manager.
         # O yield, em context generators, é responsável por marcar um ponto de interrupção
         # entre o início e o fim do bloco with. Ele também pode retornar um objeto nessa situação.

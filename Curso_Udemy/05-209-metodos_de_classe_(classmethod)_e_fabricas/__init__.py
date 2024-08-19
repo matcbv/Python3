@@ -1,7 +1,7 @@
 # Os métodos de classe (class methods) são métodos que se referem a própria classe (por meio do parâmetro especial cls),
 # ao contrário dos métodos padrão, que se referem as instâncias.
-# Nós métodos de classe, não temos acesso direto as instâncias através do parâmetro especial self, já
-# que nos referênciamos a própria casse através do parâmetro especial cls. Entretanto, conseguimos
+# Nos métodos de classe, não temos acesso direto as instâncias através do parâmetro especial self, já
+# que nos referênciamos a própria classe através do parâmetro especial cls. Entretanto, conseguimos
 # ter acesso às instâncias caso as referênciarmos em nosso método de classe. Ex.:
 class ClasseComMetodos:
     def __init__(self, nome, idade):

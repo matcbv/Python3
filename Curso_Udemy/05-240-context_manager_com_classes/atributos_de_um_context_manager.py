@@ -17,11 +17,11 @@ class MyContextManager:
         # Quando uma exceção é gerada em nosso context manager, temos acesso a alguns atributos dessa
         # exceção em nosso método especial __exit__:
         # O tipo (classe) da nossa exceção
-        print(exc_type)
+        print('Classe do exceção:', exc_type)
         # A instância da nossa exceção:
-        print(exc_val)
+        print('Instância do exceção:', exc_val)
         # O traceback da nossa exceção:
-        print(exc_tb)
+        print('Traceback da exceção:', exc_tb)
         # Quando retornamos o boolean True em nosso context manager, as exceções são "ignoradas", não
         # interrompendo nosso código. Isso pode ser utilizado em caso de ciência do problema que está
         # ocorrendo. Lembrando que erros não devem ser silenciosos e sim explícitos em nosso código.
@@ -33,7 +33,7 @@ class MyContextManager:
 instancia = MyContextManager('banco_de_dados.txt', 'w+')
 
 with instancia as arquivo:
-    print(arquivo)
+    print('Instância de TextIoWrapper:', arquivo)
     # Por mais que logo abaixo tenhamos um problema em nosso código, o erro não seria gerado
     # caso o return True não estivesse comentado.
     arquivo.write('Estamos adicionado um texto ao nosso arquivo.', 'Outro valor qualquer')

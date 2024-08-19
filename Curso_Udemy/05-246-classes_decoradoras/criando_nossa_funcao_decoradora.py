@@ -3,7 +3,7 @@
 # atributo dessa instância (no exemplo abaixo, o atributo func).
 class Somar:
     def __init__(self, func):
-        # func passa a ser a função soma.
+        # O atributo func passa a ser a função soma.
         self.func = func
 
     # Para conseguirmos tornar nossa instância chamável, utilizaremos o método especial
@@ -23,5 +23,6 @@ def soma(x, y):
 # Caso não tivéssemos implementado o método __call__, teríamos que chamar nossa
 # função da seguinte maneira: soma.func(2, 2). Entretanto, __call__ torna nossa
 # instância chamável.
+print(isinstance(soma, Somar))  # Checando que a função soma se tornou uma instância da classe Somar
 resultado = soma(2, 2)
 print(resultado)

@@ -19,6 +19,7 @@ class Cliente:
             print('Rua:', endereco.rua)
             print('Número:', endereco.numero)
             print('-' * 20)
+        print('# FIM')
 
 
 class Endereco:
@@ -33,7 +34,7 @@ endereco_cliente = Endereco('Rua Barão do Rio Branco', 254)
 pessoa.obter_endereco_externo(endereco_cliente)
 pessoa.exibir_informacoes()
 
-# Agora, caso deletarmos a instância da classe cliente criada, as instâncias da classe Endereco vinculadas a instância
+# Agora, caso deletarmos a instância da classe Cliente criada, as instâncias da classe Endereco vinculadas a instância
 # enderecos serão perdidos. Entretanto, o endereco externo adicionado, ainda existirá, podendo ser acessado através da
 # classe Endereco.
 
