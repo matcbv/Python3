@@ -6,7 +6,7 @@ class ClasseComSetter:
         # Ao lidarmos com getters e setters, é uma prática comum que os atributos utilizados
         # por eles sejam antecedidos por um ou dois underlines (_ ou __) por convenção.
         # Isso significa que esses atributos são protegidos, e não devem ser acessados diretamente.
-        # Com o atributo nome, iremos chamar diretamente nosso setter na criação das instâncias e ele será
+        # Com o atributo name, iremos chamar diretamente nosso setter na criação das instâncias e ele será
         # responsável por definir nosso atributo _nome e atribuir um valor a ele.
         self.name = name
         # Para obtermos a idade, iremos utilizar um método diferente. Não iremos chamar diretamente nosso

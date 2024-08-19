@@ -8,11 +8,11 @@ class Somar:
         return interna
 
 # Quando chamamos nossa função, estamos realizando os seguintes passos:
-# Nossa função se tornará uma instância de soma, assim como no exemplo anterior:
-# soma = Soma(10)(soma) - O (soma) ao final é feito de maneira automática pelo Python,
+# Nossa função se tornará uma instância de Somar, assim como no exemplo anterior:
+# soma = Somar(10)(soma): O (soma) ao final é feito de maneira automática pelo Python,
 # como adicionamos o parâmetro (10), a função a ser decorada foi adicionada seguidamente.
 
-# Isso irá criar uma instância da classe Soma, e chamando-a logo em seguida, passando a função
+# Isso irá criar uma instância da classe Somar, e chamando-a logo em seguida, passando a função
 # soma como argumento para o método especial __call__.
 
 # __call__ por sua vez, retornará a função interna. Quando chamarmos soma(2, 2) ao final de

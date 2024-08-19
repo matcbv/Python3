@@ -11,7 +11,7 @@ Chamamos as classes herdeiras de:
  - child class;
  - derived class
 
-As sub classes são do tipo sub classe, mas também são do tipo superclass, já que as subclasses são uma
+As subclasses são do tipo subclass, mas também são do tipo superclass, já que as subclasses são uma
 especificação das superclasses.
 
-As heranças são em sua maioria, são feitas para extensão de funcionalidades entre classes.
+As heranças são, em sua maioria, feitas para extender funcionalidades entre classes.

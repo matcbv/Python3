@@ -6,7 +6,7 @@ import os
 import os
 from itertools import count
 contador = count()
-path = 'C:/Users/Suporte/Documents/GitHub/Python3/Curso_Udemy/06-281-modulo_os'
+path = '/media/matcbv/hd/GitHub/Python3/Curso_Udemy/06-281-modulo_os'
 
 for root, directories, files in os.walk(path):
     print(next(contador), '- Diretório atual:', root)
@@ -17,9 +17,10 @@ for root, directories, files in os.walk(path):
             # dois métodos. O método stat, do módulo os, ou o método getsize, do
             # módulo path.
             # Com o método stat:
-            size_file = os.stat(file_path).st_size
+            os_size_file = os.stat(file_path).st_size
             # Com o método path:
-            size_file = os.path.getsize(file_path)
-            print('     ', file, size_file)
+            getsize_size_file = os.path.getsize(file_path)
+            print('     ', file, getsize_size_file)
+    print()
     print('Subdiretórios:', directories)
     print()

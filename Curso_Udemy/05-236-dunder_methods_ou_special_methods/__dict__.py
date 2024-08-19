@@ -1,6 +1,6 @@
 # O método dict é responsável por retornar um dicionário com o par chave e valor de um objeto.
 class Foo:
-    # Abaixo iremos criar uma docstring par documentação de nossa classe
+    # Abaixo iremos criar uma docstring para documentação de nossa classe
     """
     Está é uma função de exemplo para o uso do método especial __dict__
     """

@@ -2,4 +2,9 @@ Usuário matcbv logado com sucesso, 10:45-10 20/05/24
 Usuário matcbv logado com sucesso, 10:45-30 20/05/24
 Usuário matcbv logado com sucesso, 10:50-47 20/05/24
 Usuário matcbv logado com sucesso, 10:51-26 20/05/24
-Usuário matcbv logado com sucesso, 10:52-18 20/05/24
+Usuário matcbv logado com sucesso, 10:52-18 20/05/24Usuário matheuscbv23 criado com sucesso, 13:36-53 18/08/24
+Usuário matheuscbv23 logado com sucesso, 13:37-19 18/08/24
+Usuário matheuscbv23 alterou sua chave name para Lucas, 13:37-47 18/08/24
+Usuário matheuscbv23 alterou sua chave lastname para Silva, 13:38-07 18/08/24
+Usuário matheuscbv23 alterou sua chave name para Lucas, 13:38-19 18/08/24
+Usuário matheuscbv23 alterou sua chave password para 12345678abc, 13:39-15 18/08/24

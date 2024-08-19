@@ -1,11 +1,11 @@
-# Utilizaremos ad classe do tópico 05-225 para darmos continuidade neste tópico.
+# Utilizaremos a classe do tópico 05-225 para darmos continuidade neste tópico.
 # Para definirmos nossa classe como abstrata, precisamos importar a classe ABC do módulo abc.
 from abc import ABC, abstractmethod
 
 
 # Nossa classe Log irá herdar a classe ABC:
 class Log(ABC):
-    # Para transformarmos nosso método Log em abstrato, devemos utilizar o decorador @abstractmethod.
+    # Para transformarmos nosso método _log em abstrato, devemos utilizar o decorador @abstractmethod.
     @abstractmethod
     # Iremos eliminar seu corpo, mantendo somente sua assinatura.
     def _log(self, msg): ...  # Obs.: As reticências substituem a palavra-chave pass.

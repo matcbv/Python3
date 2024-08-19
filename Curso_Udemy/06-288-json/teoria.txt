@@ -15,7 +15,7 @@ Abaixo, veremos a conversão entre Python e JSON:
     Python -> JSON
 - int / float -> number
 - str -> string
-- dict - objetct
+- dict - object
 - tuple/list -> array
 - bool (True/False) - bool (true/false)
 - None -> null

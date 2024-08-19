@@ -8,7 +8,7 @@ print(dir(modulo_para_importar))
 print(modulo_para_importar.__name__)
 print(modulo_para_importar.__doc__)
 
-print()
+print('-'*30)
 # help: Com a função help, podemos obter informações como: nome do módulo, suas funções,
 # seus dados e seu caminho.
 help(modulo_para_importar)
