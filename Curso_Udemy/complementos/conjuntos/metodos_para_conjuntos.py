@@ -29,7 +29,7 @@ print(random_set)
 set_01 = {1, 2, 3}
 set_02 = {3, 4, 5}
 intersection_set = set_01.intersection(set_02)
-print(intersection_set)
+print('Intersection', intersection_set)
 # Obs.: Também podemos realizar a operação com o operador |. Ex.: ‘conjunto1’ | ‘conjunto2’
 intersection_set = set_01 | set_02
 print(intersection_set)
@@ -38,7 +38,7 @@ print(intersection_set)
 
 # Diferentemente do intersection, difference irá criar um novo conjunto com os elementos não existentes nos conjuntos.
 difference_set = set_01.difference(set_02)
-print(difference_set)
+print('Difference', difference_set)
 
 # --------- set_01.symmetric_difference(set_02) ---------
 
