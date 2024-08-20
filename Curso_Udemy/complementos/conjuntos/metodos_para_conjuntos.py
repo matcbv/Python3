@@ -55,7 +55,7 @@ print('Difference:', difference_set)
 
 # --------- set_01.symmetric_difference(set_02) ---------
 
-# Criará um terceiro conjunto contendo apenas os valores exclusivos entre dois outros conjuntos.
+# Retorna um novo conjunto que contém todos os elementos que estão em um conjunto ou no outro, mas não em ambos.
 symmetric_difference_set = set_01.symmetric_difference(set_02)
 print('Symmetric difference:', symmetric_difference_set)
 # Obs.: Podemos realizar a operação com o operador ^. Ex.:
@@ -64,9 +64,10 @@ print('Symmetric difference:', symmetric_difference_set)
 
 # --------- set_01.symmetric_difference_update(set_02) ---------
 
-# Possui a mesma função do symmetric_update, porém, ao invés de criar um terceiro conjunto, irá alterar o primeiro.
+# Possui a mesma função do symmetric_update, porém, ao invés de criar um novo conjunto, irá alterar o primeiro.
 set_01.symmetric_difference_update(set_02)
 print('Symmetric difference update:', set_01)
+set_01 = {1, 2, 3}
 # Podemos realizar a operação com o operador ^=. Ex.:
 set_01 ^= set_02
 print('Symmetric difference update:', set_01)

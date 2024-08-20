@@ -10,6 +10,7 @@ lista_numeros = (num for num in range(10))
 #     lista_numeros.append(num)
 
 # -------# Mapeamento de dados em list comprehension #-------
+
 # O mapeamento em list comprehension é a aplicação de uma função para cada elemento de uma sequência
 # (como uma lista) para criar uma nova sequência.
 produtos = [

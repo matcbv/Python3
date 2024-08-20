@@ -19,7 +19,7 @@ class Opcoes(Enum):
 
 
 contador = count()
-caminho = Path().absolute() / 'text_model.txt'
+caminho = Path().absolute() / 'banco_de_dados.txt'
 
 
 @contextmanager
