@@ -1,16 +1,11 @@
 def to_weird_case(words):
     words_list = words.split()
-    final_list = []
+    case_list = []
     for word in words_list:
-        letter_list = []
-        for i, letter in enumerate(word):
-            if i % 2 == 0:
-                letter_list.append(letter.upper())
-            else:
-                letter_list.append(letter)
-        final_list.append(''.join(letter_list))
-    return ' '.join(final_list)
+        letter_list = [letter.upper() if i % 2 == 0 else letter for i, letter in enumerate(word)]
+        case_list.append(''.join(letter_list))
+    return ' '.join(case_list)
 
 
-answer = to_weird_case('Uma frase qualquer')
-print(answer)
+answer = to_weird_case('This is a test')
+print('Resposta:', answer)
