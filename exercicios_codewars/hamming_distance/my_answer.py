@@ -1,4 +1,4 @@
-def hamming(a,b):
+def hamming(a, b):
     difference = 0
     for i, letter in enumerate(a):
         if a[i] != b[i]:
