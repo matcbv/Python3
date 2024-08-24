@@ -1,29 +1,31 @@
-from itertools import repeat
-
+from itertools import product
 
 def proc_arrII(arr):
     digits_set = set(arr)
-    counts = 0
     if len(digits_set) < 3:
         return []
-    for num in digits_set:
-        if counts == 0: counts = arr.count(num)
-        elif counts >= arr.count(num): counts = arr.count(num)
-    get_repeat_num = get_factorial(len(digits_set))
-    repeat_count = get_repeat_num()
-    for i in repeat_count:
-        first_three = arr[:counts]
+    lower, _ = get_count(list(digits_set), arr)
+    digits = arr[:lower]
+    combinations = [''.join([str(p) for p in p]) for p in product(digits, repeat=lower)]
+    more_than_once_digits = [num for num in combinations if test(str(num), digits) >= 2]
+    return [len(combinations), len(more_than_once_digits), int(max(more_than_once_digits))]
 
+def get_count(digits, lst):
+    bigger = 0
+    lower = 0
+    for num in digits:
+        if bigger == 0: bigger = lst.count(num)
+        elif bigger <= lst.count(num): bigger = lst.count(num)
+        if lower == 0: lower = lst.count(num)
+        elif lower >= lst.count(num): lower = lst.count(num)
+    return lower, bigger
 
-def get_factorial(num):
-    num_factorial = 0
-    def calc_factorial(n=1):
-        if num == 1: return num_factorial
-        return num * calc_factorial(num - 1)
-    return calc_factorial
+def test(number, digits):
+    opa = 0
+    for num in digits:
+        if opa == 0: opa = number.count(str(num))
+        if opa <= number.count(str(num)): opa = number.count(str(num))
+    return opa
 
-
-
-
-result = proc_arrII([1, 2, 2, 2, 1, 1, 1, 3, 3, 3, 3])
+result = proc_arrII([1, 1, 2, 2, 3, 3, 1, 2, 3, 1, 2])
 print(result)
