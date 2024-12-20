@@ -9,7 +9,7 @@ onde -m informa ao interpretador Python para rodar um módulo como um script.
 venv é a biblioteca padrão do Python responsável por criar e gerenciar ambientes virtuais.
 
 "nome_ambiente_virtual" é o nome do ambiente virtual que iremos utilizar. Podemos colocar qualquer
-nome que vir em mente, porém o padrão é sempre utilizarmos venv ou env.
+nome que vir em mente, porém o padrão é sempre utilizarmos venv.
 
 Para verificarmos o interpretador Python que está sendo utilizado em um projeto, podemos utilizar
 o seguinte comando no powershell:
